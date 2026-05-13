@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,800;1,9..144,800&family=Plus+Jakarta+Sans:wght@600;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-cream: #fbf5ef;
+        --brown-deep: #2a2520;
+        --terracotta: #c56f4a;
+        --sage: #87a878;
+        --highlight: #f2c84b;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body {
+        width: 1080px; height: 1920px;
+        overflow: hidden; background: #1a1410;
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+
+      .broll {
+        position: absolute; inset: 0;
+        width: 100%; height: 100%;
+        object-fit: cover;
+      }
+
+      .scrim {
+        position: absolute; inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.45) 0%,
+          rgba(0, 0, 0, 0) 35%,
+          rgba(0, 0, 0, 0) 60%,
+          rgba(0, 0, 0, 0.55) 100%
+        );
+        pointer-events: none;
+      }
+
+      .caption {
+        position: absolute;
+        left: 60px; right: 60px;
+        top: 1100px;
+        text-align: center;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-weight: 800;
+        font-size: 92px;
+        line-height: 1.05;
+        color: var(--bg-cream);
+        text-shadow: 0 4px 24px rgba(0, 0, 0, 0.55);
+        letter-spacing: -0.01em;
+      }
+      .caption .hl-terra { color: var(--terracotta); }
+      .caption .hl-sage  { color: var(--sage); }
+      .caption .hl-mark {
+        background: rgba(242, 200, 75, 0.55);
+        padding: 0 10px; border-radius: 6px;
+        color: var(--brown-deep);
+      }
+
+      .badge {
+        position: absolute; left: 50%;
+        top: 240px;
+        transform: translateX(-50%);
+        background: var(--bg-cream);
+        color: var(--brown-deep);
+        padding: 18px 40px;
+        border-radius: 999px;
+        font-family: "Fraunces", serif;
+        font-style: italic; font-weight: 800;
+        font-size: 56px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        border: 3px solid var(--terracotta);
+      }
+
+      .hook {
+        position: absolute; inset: 0;
+        display: flex; align-items: center; justify-content: center;
+        padding: 80px;
+        text-align: center;
+        font-family: "Fraunces", serif;
+        font-style: italic; font-weight: 800;
+        font-size: 120px; line-height: 1.0;
+        color: var(--bg-cream);
+        text-shadow: 0 6px 30px rgba(0, 0, 0, 0.7);
+      }
+      .hook .hl { color: var(--highlight); }
+
+      .cta {
+        position: absolute; left: 60px; right: 60px;
+        top: 880px;
+        text-align: center;
+        font-family: "Fraunces", serif;
+        font-style: italic; font-weight: 800;
+        font-size: 110px; line-height: 1.05;
+        color: var(--bg-cream);
+        text-shadow: 0 4px 24px rgba(0, 0, 0, 0.55);
+      }
+      .cta .hl-mark {
+        background: rgba(242, 200, 75, 0.55);
+        padding: 0 12px; border-radius: 8px;
+        color: var(--brown-deep);
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="83"
+      data-width="1080"
+      data-height="1920"
+    >
+      <video class="clip broll" id="broll-1"   data-start="0"  data-duration="5"  data-track-index="0" muted src="assets/broll/01-hook.mp4"></video>
+      <video class="clip broll" id="broll-2"   data-start="5"  data-duration="5"  data-track-index="0" muted src="assets/broll/02-promise.mp4"></video>
+      <video class="clip broll" id="broll-3a"  data-start="10" data-duration="10" data-track-index="0" muted src="assets/broll/03-erreur1-bunny.mp4"></video>
+      <video class="clip broll" id="broll-3b"  data-start="20" data-duration="10" data-track-index="0" muted src="assets/broll/03-erreur1-bunny.mp4"></video>
+      <video class="clip broll" id="broll-3c"  data-start="30" data-duration="4"  data-track-index="0" muted src="assets/broll/03-erreur1-bunny.mp4"></video>
+      <video class="clip broll" id="broll-4a"  data-start="34" data-duration="10" data-track-index="0" muted src="assets/broll/04-erreur2-redlight.mp4"></video>
+      <video class="clip broll" id="broll-4b"  data-start="44" data-duration="10" data-track-index="0" muted src="assets/broll/04-erreur2-redlight.mp4"></video>
+      <video class="clip broll" id="broll-4c"  data-start="54" data-duration="3"  data-track-index="0" muted src="assets/broll/04-erreur2-redlight.mp4"></video>
+      <video class="clip broll" id="broll-5a"  data-start="57" data-duration="10" data-track-index="0" muted src="assets/broll/05-erreur3-mobile.mp4"></video>
+      <video class="clip broll" id="broll-5b"  data-start="67" data-duration="8"  data-track-index="0" muted src="assets/broll/05-erreur3-mobile.mp4"></video>
+      <video class="clip broll" id="broll-6a"  data-start="75" data-duration="5"  data-track-index="0" muted src="assets/broll/06-cta-journal.mp4"></video>
+      <video class="clip broll" id="broll-6b"  data-start="80" data-duration="3"  data-track-index="0" muted src="assets/broll/06-cta-journal.mp4"></video>
+
+      <div class="clip scrim" id="scrim-overlay" data-start="0" data-duration="83" data-track-index="1"></div>
+
+      <div class="clip hook" id="hook" data-start="0" data-duration="5.40" data-track-index="2">
+        Réveils toutes les <span class="hl">2 h</span> ?
+      </div>
+
+      <div class="clip caption" id="promise" data-start="5.40" data-duration="6.40" data-track-index="2">
+        <span class="hl-mark">3 erreurs</span> que presque tous les parents font
+      </div>
+
+      <div class="clip badge" id="badge-1" data-start="11.89" data-duration="22.00" data-track-index="2">
+        Erreur n°1
+      </div>
+      <div class="clip caption" id="cap-1a" data-start="13.00" data-duration="3.50" data-track-index="3">
+        Tu attends qu'il <span class="hl-terra">bâille</span>
+      </div>
+      <div class="clip caption" id="cap-1b" data-start="16.50" data-duration="5.50" data-track-index="3">
+        <span class="hl-mark">Trop tard.</span> Cerveau en <span class="hl-terra">cortisol</span>.
+      </div>
+      <div class="clip caption" id="cap-1c" data-start="22.00" data-duration="4.50" data-track-index="3">
+        <span class="hl-mark">30-40 min</span> avant de pouvoir dormir
+      </div>
+      <div class="clip caption" id="cap-1d" data-start="26.50" data-duration="7.00" data-track-index="3">
+        Couche-le <span class="hl-sage">avant</span> les signes
+      </div>
+
+      <div class="clip badge" id="badge-2" data-start="33.93" data-duration="22.55" data-track-index="2">
+        Erreur n°2
+      </div>
+      <div class="clip caption" id="cap-2a" data-start="35.00" data-duration="4.50" data-track-index="3">
+        Tu rallumes la <span class="hl-terra">lumière blanche</span>
+      </div>
+      <div class="clip caption" id="cap-2b" data-start="39.50" data-duration="6.00" data-track-index="3">
+        1 seconde = <span class="hl-mark">45 min</span> sans mélatonine
+      </div>
+      <div class="clip caption" id="cap-2c" data-start="45.50" data-duration="6.00" data-track-index="3">
+        Son cerveau pense qu'il est <span class="hl-mark">6 h du matin</span>
+      </div>
+      <div class="clip caption" id="cap-2d" data-start="51.50" data-duration="4.80" data-track-index="3">
+        Veilleuse <span class="hl-terra">rouge ou ambre</span>, jamais blanche
+      </div>
+
+      <div class="clip badge" id="badge-3" data-start="56.53" data-duration="18.41" data-track-index="2">
+        Erreur n°3
+      </div>
+      <div class="clip caption" id="cap-3a" data-start="58.00" data-duration="4.50" data-track-index="3">
+        Tu <span class="hl-terra">coupes la sieste</span>
+      </div>
+      <div class="clip caption" id="cap-3b" data-start="62.50" data-duration="6.00" data-track-index="3">
+        Trop fatigué = <span class="hl-mark">nuit agitée</span>
+      </div>
+      <div class="clip caption" id="cap-3c" data-start="68.50" data-duration="6.30" data-track-index="3">
+        La sieste <span class="hl-sage">protège</span> la nuit
+      </div>
+
+      <div class="clip cta" id="cta" data-start="74.94" data-duration="7.56" data-track-index="2">
+        Sauvegarde<br />pour <span class="hl-mark">ce soir</span>.
+      </div>
+
+      <audio
+        id="voiceover"
+        class="clip"
+        data-start="0"
+        data-duration="83"
+        data-track-index="10"
+        data-volume="1.0"
+        src="assets/audio/voiceover.mp3"
+      ></audio>
+
+      <audio
+        id="music"
+        class="clip"
+        data-start="0"
+        data-duration="83"
+        data-track-index="11"
+        data-volume="0.018"
+        src="assets/audio/music-pad.mp3"
+      ></audio>
+
+      <audio id="sfx-boom" class="clip" data-start="0"     data-duration="0.55" data-track-index="12" data-volume="0.85" src="assets/audio/sfx/hook-boom.mp3"></audio>
+      <audio id="sfx-w1"   class="clip" data-start="11.44" data-duration="0.62" data-track-index="12" data-volume="0.75" src="assets/audio/sfx/whoosh.mp3"></audio>
+      <audio id="sfx-w2"   class="clip" data-start="33.48" data-duration="0.62" data-track-index="12" data-volume="0.75" src="assets/audio/sfx/whoosh.mp3"></audio>
+      <audio id="sfx-w3"   class="clip" data-start="56.08" data-duration="0.62" data-track-index="12" data-volume="0.75" src="assets/audio/sfx/whoosh.mp3"></audio>
+      <audio id="sfx-chime" class="clip" data-start="74.94" data-duration="1.23" data-track-index="12" data-volume="0.70" src="assets/audio/sfx/chime.mp3"></audio>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      tl.from("#hook", { scale: 0.85, opacity: 0, duration: 0.30, ease: "back.out(2)" }, 0);
+      tl.to("#hook", { opacity: 0, duration: 0.25 }, 5.15);
+      tl.set("#hook", { opacity: 0 }, 5.40);
+
+      tl.from("#promise", { y: 40, opacity: 0, duration: 0.30, ease: "power3.out" }, 5.40);
+      tl.to("#promise", { opacity: 0, duration: 0.25 }, 11.55);
+      tl.set("#promise", { opacity: 0 }, 11.80);
+
+      const badges = [
+        ["#badge-1", 11.89, 21.95],
+        ["#badge-2", 33.93, 22.50],
+        ["#badge-3", 56.53, 18.36],
+      ];
+      badges.forEach(function (entry) {
+        var sel = entry[0], t0 = entry[1], dur = entry[2];
+        tl.from(sel, { y: -40, opacity: 0, duration: 0.30, ease: "back.out(2)" }, t0);
+        tl.to(sel, { y: -20, opacity: 0, duration: 0.25 }, t0 + dur);
+      });
+
+      const caps = [
+        ["#cap-1a", 13.00], ["#cap-1b", 16.50], ["#cap-1c", 22.00], ["#cap-1d", 26.50],
+        ["#cap-2a", 35.00], ["#cap-2b", 39.50], ["#cap-2c", 45.50], ["#cap-2d", 51.50],
+        ["#cap-3a", 58.00], ["#cap-3b", 62.50], ["#cap-3c", 68.50],
+        ["#cta",    74.94],
+      ];
+      caps.forEach(function (entry) {
+        tl.from(entry[0], { y: 30, opacity: 0, duration: 0.20, ease: "power3.out" }, entry[1]);
+      });
+
+      // Ken Burns: slow scale-up on every B-roll clip for dynamism
+      const brolls = [
+        ["#broll-1",  0,    5],
+        ["#broll-2",  5,    5],
+        ["#broll-3a", 10,   10],
+        ["#broll-3b", 20,   10],
+        ["#broll-3c", 30,   4],
+        ["#broll-4a", 34,   10],
+        ["#broll-4b", 44,   10],
+        ["#broll-4c", 54,   3],
+        ["#broll-5a", 57,   10],
+        ["#broll-5b", 67,   8],
+        ["#broll-6a", 75,   5],
+        ["#broll-6b", 80,   3],
+      ];
+      brolls.forEach(function (b, i) {
+        var sel = b[0], t0 = b[1], dur = b[2];
+        // Alternate zoom-in / zoom-out for variety
+        var fromScale = i % 2 === 0 ? 1.0 : 1.08;
+        var toScale   = i % 2 === 0 ? 1.08 : 1.0;
+        tl.fromTo(sel,
+          { scale: fromScale, transformOrigin: "50% 50%" },
+          { scale: toScale, duration: dur, ease: "none" }, t0);
+      });
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

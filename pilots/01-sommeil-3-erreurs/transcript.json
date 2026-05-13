@@ -1,0 +1,1072 @@
+[
+  {
+    "text": "Si",
+    "start": 0.09,
+    "end": 0.12
+  },
+  {
+    "text": "ton",
+    "start": 0.12,
+    "end": 0.3
+  },
+  {
+    "text": "enfant",
+    "start": 0.3,
+    "end": 0.66
+  },
+  {
+    "text": "se",
+    "start": 0.66,
+    "end": 0.77
+  },
+  {
+    "text": "réveille",
+    "start": 0.83,
+    "end": 1.2
+  },
+  {
+    "text": "toutes",
+    "start": 1.34,
+    "end": 1.68
+  },
+  {
+    "text": "les",
+    "start": 1.68,
+    "end": 1.86
+  },
+  {
+    "text": "deux",
+    "start": 1.86,
+    "end": 2.1
+  },
+  {
+    "text": "heures",
+    "start": 2.1,
+    "end": 2.29
+  },
+  {
+    "text": "la",
+    "start": 2.29,
+    "end": 2.84
+  },
+  {
+    "text": "nuit,",
+    "start": 2.84,
+    "end": 2.95
+  },
+  {
+    "text": "ce",
+    "start": 3,
+    "end": 3.06
+  },
+  {
+    "text": "n'est",
+    "start": 3.06,
+    "end": 3.25
+  },
+  {
+    "text": "probablement",
+    "start": 3.52,
+    "end": 4
+  },
+  {
+    "text": "pas",
+    "start": 4,
+    "end": 4.25
+  },
+  {
+    "text": "un",
+    "start": 4.49,
+    "end": 4.56
+  },
+  {
+    "text": "caprice.",
+    "start": 4.56,
+    "end": 5.4
+  },
+  {
+    "text": "Voici",
+    "start": 5.49,
+    "end": 5.77
+  },
+  {
+    "text": "trois",
+    "start": 5.77,
+    "end": 6.12
+  },
+  {
+    "text": "erreurs",
+    "start": 6.14,
+    "end": 6.6
+  },
+  {
+    "text": "que",
+    "start": 6.74,
+    "end": 6.84
+  },
+  {
+    "text": "presque",
+    "start": 6.96,
+    "end": 7.4
+  },
+  {
+    "text": "tous",
+    "start": 7.4,
+    "end": 7.67
+  },
+  {
+    "text": "les",
+    "start": 7.7,
+    "end": 7.71
+  },
+  {
+    "text": "parents",
+    "start": 8.34,
+    "end": 8.43
+  },
+  {
+    "text": "font",
+    "start": 8.44,
+    "end": 8.65
+  },
+  {
+    "text": "sans",
+    "start": 8.92,
+    "end": 9.04
+  },
+  {
+    "text": "le",
+    "start": 9.04,
+    "end": 9.19
+  },
+  {
+    "text": "savoir,",
+    "start": 9.19,
+    "end": 9.84
+  },
+  {
+    "text": "sauf",
+    "start": 9.84,
+    "end": 10.04
+  },
+  {
+    "text": "cette",
+    "start": 10.04,
+    "end": 10.24
+  },
+  {
+    "text": "vidéo",
+    "start": 10.24,
+    "end": 10.6
+  },
+  {
+    "text": "pour",
+    "start": 10.6,
+    "end": 10.8
+  },
+  {
+    "text": "ce",
+    "start": 10.9,
+    "end": 11.13
+  },
+  {
+    "text": "soir.",
+    "start": 11.13,
+    "end": 11.8
+  },
+  {
+    "text": "Erreur",
+    "start": 11.89,
+    "end": 12.27
+  },
+  {
+    "text": "numéro",
+    "start": 12.41,
+    "end": 12.92
+  },
+  {
+    "text": "1,",
+    "start": 12.92,
+    "end": 13.22
+  },
+  {
+    "text": "tu",
+    "start": 13.36,
+    "end": 13.48
+  },
+  {
+    "text": "attends",
+    "start": 13.48,
+    "end": 13.99
+  },
+  {
+    "text": "qu'il",
+    "start": 13.99,
+    "end": 14.21
+  },
+  {
+    "text": "baille",
+    "start": 14.42,
+    "end": 14.77
+  },
+  {
+    "text": "pour",
+    "start": 14.8,
+    "end": 15.05
+  },
+  {
+    "text": "le",
+    "start": 15.05,
+    "end": 15.32
+  },
+  {
+    "text": "coucher.",
+    "start": 15.32,
+    "end": 15.76
+  },
+  {
+    "text": "Quand",
+    "start": 15.86,
+    "end": 16.13
+  },
+  {
+    "text": "tu",
+    "start": 16.13,
+    "end": 16.23
+  },
+  {
+    "text": "vois",
+    "start": 16.37,
+    "end": 16.52
+  },
+  {
+    "text": "les",
+    "start": 16.6,
+    "end": 16.79
+  },
+  {
+    "text": "baillements,",
+    "start": 16.79,
+    "end": 17.74
+  },
+  {
+    "text": "c'est",
+    "start": 17.74,
+    "end": 18.03
+  },
+  {
+    "text": "déjà",
+    "start": 18.1,
+    "end": 18.13
+  },
+  {
+    "text": "trop",
+    "start": 18.73,
+    "end": 18.83
+  },
+  {
+    "text": "tard,",
+    "start": 18.83,
+    "end": 19.26
+  },
+  {
+    "text": "son",
+    "start": 19.28,
+    "end": 19.48
+  },
+  {
+    "text": "cerveau",
+    "start": 19.48,
+    "end": 19.99
+  },
+  {
+    "text": "a",
+    "start": 19.99,
+    "end": 20.01
+  },
+  {
+    "text": "basculé",
+    "start": 20.18,
+    "end": 20.61
+  },
+  {
+    "text": "en",
+    "start": 20.62,
+    "end": 20.78
+  },
+  {
+    "text": "cortisol,",
+    "start": 21.51,
+    "end": 21.64
+  },
+  {
+    "text": "l'hormone",
+    "start": 21.7,
+    "end": 22.11
+  },
+  {
+    "text": "du",
+    "start": 22.25,
+    "end": 22.3
+  },
+  {
+    "text": "stress,",
+    "start": 22.3,
+    "end": 22.78
+  },
+  {
+    "text": "et",
+    "start": 22.78,
+    "end": 22.84
+  },
+  {
+    "text": "il",
+    "start": 22.98,
+    "end": 23.02
+  },
+  {
+    "text": "ne",
+    "start": 23.02,
+    "end": 23.12
+  },
+  {
+    "text": "pourra",
+    "start": 23.2,
+    "end": 23.5
+  },
+  {
+    "text": "plus",
+    "start": 23.5,
+    "end": 23.74
+  },
+  {
+    "text": "s'endormir",
+    "start": 23.74,
+    "end": 24.33
+  },
+  {
+    "text": "avant",
+    "start": 24.57,
+    "end": 24.64
+  },
+  {
+    "text": "30",
+    "start": 24.64,
+    "end": 24.89
+  },
+  {
+    "text": "ou",
+    "start": 24.89,
+    "end": 25.16
+  },
+  {
+    "text": "40",
+    "start": 25.16,
+    "end": 25.48
+  },
+  {
+    "text": "minutes.",
+    "start": 25.48,
+    "end": 26.2
+  },
+  {
+    "text": "La",
+    "start": 26.29,
+    "end": 26.34
+  },
+  {
+    "text": "bonne",
+    "start": 26.34,
+    "end": 26.68
+  },
+  {
+    "text": "fenêtre,",
+    "start": 26.81,
+    "end": 27.4
+  },
+  {
+    "text": "c'est",
+    "start": 27.49,
+    "end": 27.77
+  },
+  {
+    "text": "avant",
+    "start": 27.77,
+    "end": 28.13
+  },
+  {
+    "text": "les",
+    "start": 28.13,
+    "end": 28.35
+  },
+  {
+    "text": "signes,",
+    "start": 28.35,
+    "end": 28.92
+  },
+  {
+    "text": "un",
+    "start": 28.92,
+    "end": 29.2
+  },
+  {
+    "text": "peu",
+    "start": 29.2,
+    "end": 29.28
+  },
+  {
+    "text": "de",
+    "start": 29.28,
+    "end": 29.42
+  },
+  {
+    "text": "calme",
+    "start": 29.42,
+    "end": 29.78
+  },
+  {
+    "text": "dans",
+    "start": 29.78,
+    "end": 30.07
+  },
+  {
+    "text": "le",
+    "start": 30.07,
+    "end": 30.21
+  },
+  {
+    "text": "regard,",
+    "start": 30.21,
+    "end": 30.79
+  },
+  {
+    "text": "des",
+    "start": 30.79,
+    "end": 30.97
+  },
+  {
+    "text": "gestes",
+    "start": 30.97,
+    "end": 31.56
+  },
+  {
+    "text": "plus",
+    "start": 31.66,
+    "end": 31.89
+  },
+  {
+    "text": "dents.",
+    "start": 31.89,
+    "end": 32.56
+  },
+  {
+    "text": "C'est",
+    "start": 32.61,
+    "end": 32.82
+  },
+  {
+    "text": "là",
+    "start": 32.82,
+    "end": 32.98
+  },
+  {
+    "text": "que",
+    "start": 32.98,
+    "end": 33.03
+  },
+  {
+    "text": "tu",
+    "start": 33.17,
+    "end": 33.25
+  },
+  {
+    "text": "couches.",
+    "start": 33.25,
+    "end": 33.76
+  },
+  {
+    "text": "Erreur",
+    "start": 33.93,
+    "end": 34.31
+  },
+  {
+    "text": "numéro",
+    "start": 34.31,
+    "end": 34.9
+  },
+  {
+    "text": "2,",
+    "start": 34.9,
+    "end": 35.28
+  },
+  {
+    "text": "tu",
+    "start": 35.4,
+    "end": 35.46
+  },
+  {
+    "text": "rallumes",
+    "start": 35.46,
+    "end": 36.11
+  },
+  {
+    "text": "la",
+    "start": 36.11,
+    "end": 36.14
+  },
+  {
+    "text": "lumière",
+    "start": 36.78,
+    "end": 36.94
+  },
+  {
+    "text": "blanche",
+    "start": 36.94,
+    "end": 37.51
+  },
+  {
+    "text": "pour",
+    "start": 37.51,
+    "end": 37.84
+  },
+  {
+    "text": "le",
+    "start": 37.84,
+    "end": 38
+  },
+  {
+    "text": "change",
+    "start": 38,
+    "end": 38.49
+  },
+  {
+    "text": "de",
+    "start": 38.49,
+    "end": 38.63
+  },
+  {
+    "text": "nu.",
+    "start": 38.64,
+    "end": 39.04
+  },
+  {
+    "text": "Une",
+    "start": 39.26,
+    "end": 39.32
+  },
+  {
+    "text": "seule",
+    "start": 39.37,
+    "end": 39.63
+  },
+  {
+    "text": "seconde",
+    "start": 39.77,
+    "end": 40.23
+  },
+  {
+    "text": "de",
+    "start": 40.23,
+    "end": 40.36
+  },
+  {
+    "text": "lumière",
+    "start": 40.5,
+    "end": 40.94
+  },
+  {
+    "text": "froide,",
+    "start": 40.94,
+    "end": 41.44
+  },
+  {
+    "text": "et",
+    "start": 41.44,
+    "end": 41.715
+  },
+  {
+    "text": "la",
+    "start": 41.715,
+    "end": 41.99
+  },
+  {
+    "text": "melatonine",
+    "start": 41.99,
+    "end": 42.41
+  },
+  {
+    "text": "s'effondre",
+    "start": 42.51,
+    "end": 43.18
+  },
+  {
+    "text": "pour",
+    "start": 43.18,
+    "end": 43.41
+  },
+  {
+    "text": "45",
+    "start": 43.58,
+    "end": 43.87
+  },
+  {
+    "text": "minutes.",
+    "start": 43.87,
+    "end": 44.72
+  },
+  {
+    "text": "Tu",
+    "start": 44.81,
+    "end": 44.84
+  },
+  {
+    "text": "remets",
+    "start": 44.84,
+    "end": 45.19
+  },
+  {
+    "text": "le",
+    "start": 45.19,
+    "end": 45.33
+  },
+  {
+    "text": "bébé",
+    "start": 45.33,
+    "end": 45.68
+  },
+  {
+    "text": "au",
+    "start": 45.68,
+    "end": 45.8
+  },
+  {
+    "text": "lit,",
+    "start": 45.8,
+    "end": 46.1
+  },
+  {
+    "text": "mais",
+    "start": 46.1,
+    "end": 46.34
+  },
+  {
+    "text": "son",
+    "start": 46.34,
+    "end": 46.52
+  },
+  {
+    "text": "cerveau",
+    "start": 46.52,
+    "end": 46.94
+  },
+  {
+    "text": "pense",
+    "start": 46.94,
+    "end": 47.01
+  },
+  {
+    "text": "qu'il",
+    "start": 47.36,
+    "end": 47.54
+  },
+  {
+    "text": "est",
+    "start": 47.68,
+    "end": 47.72
+  },
+  {
+    "text": "6",
+    "start": 47.76,
+    "end": 47.9
+  },
+  {
+    "text": "heures",
+    "start": 47.9,
+    "end": 48.26
+  },
+  {
+    "text": "du",
+    "start": 48.26,
+    "end": 48.38
+  },
+  {
+    "text": "matin.",
+    "start": 48.38,
+    "end": 48.96
+  },
+  {
+    "text": "La",
+    "start": 49.05,
+    "end": 49.11
+  },
+  {
+    "text": "solution?",
+    "start": 49.11,
+    "end": 49.96
+  },
+  {
+    "text": "Une",
+    "start": 49.96,
+    "end": 50.16
+  },
+  {
+    "text": "veilleuse",
+    "start": 50.3,
+    "end": 50.99
+  },
+  {
+    "text": "rouge",
+    "start": 50.99,
+    "end": 51.25
+  },
+  {
+    "text": "ou",
+    "start": 51.25,
+    "end": 51.76
+  },
+  {
+    "text": "embre,",
+    "start": 51.76,
+    "end": 52.19
+  },
+  {
+    "text": "jamais",
+    "start": 52.19,
+    "end": 52.71
+  },
+  {
+    "text": "blanche.",
+    "start": 52.71,
+    "end": 53.61
+  },
+  {
+    "text": "Le",
+    "start": 53.73,
+    "end": 53.79
+  },
+  {
+    "text": "rouge",
+    "start": 53.79,
+    "end": 54.12
+  },
+  {
+    "text": "ne",
+    "start": 54.25,
+    "end": 54.32
+  },
+  {
+    "text": "casse",
+    "start": 54.32,
+    "end": 54.7
+  },
+  {
+    "text": "pas",
+    "start": 54.7,
+    "end": 54.84
+  },
+  {
+    "text": "l'endormissement.",
+    "start": 54.98,
+    "end": 56.44
+  },
+  {
+    "text": "Erreur",
+    "start": 56.53,
+    "end": 56.89
+  },
+  {
+    "text": "numéro",
+    "start": 56.89,
+    "end": 57.43
+  },
+  {
+    "text": "3,",
+    "start": 57.43,
+    "end": 57.8
+  },
+  {
+    "text": "tu",
+    "start": 57.81,
+    "end": 57.92
+  },
+  {
+    "text": "coupes",
+    "start": 58,
+    "end": 58.41
+  },
+  {
+    "text": "ou",
+    "start": 58.41,
+    "end": 58.56
+  },
+  {
+    "text": "raccourcis",
+    "start": 58.56,
+    "end": 59.32
+  },
+  {
+    "text": "la",
+    "start": 59.41,
+    "end": 59.45
+  },
+  {
+    "text": "sieste",
+    "start": 59.48,
+    "end": 59.69
+  },
+  {
+    "text": "en",
+    "start": 59.96,
+    "end": 60.07
+  },
+  {
+    "text": "espérant",
+    "start": 60.07,
+    "end": 60.69
+  },
+  {
+    "text": "qu'il",
+    "start": 60.86,
+    "end": 61.09
+  },
+  {
+    "text": "dorme",
+    "start": 61.09,
+    "end": 61.5
+  },
+  {
+    "text": "mieux",
+    "start": 61.5,
+    "end": 61.99
+  },
+  {
+    "text": "la",
+    "start": 62.1,
+    "end": 62.22
+  },
+  {
+    "text": "nuit.",
+    "start": 62.22,
+    "end": 63
+  },
+  {
+    "text": "C'est",
+    "start": 63.05,
+    "end": 63.27
+  },
+  {
+    "text": "l'inverse.",
+    "start": 63.27,
+    "end": 64
+  },
+  {
+    "text": "Un",
+    "start": 64.09,
+    "end": 64.15
+  },
+  {
+    "text": "enfant",
+    "start": 64.15,
+    "end": 64.62
+  },
+  {
+    "text": "trop",
+    "start": 64.62,
+    "end": 64.93
+  },
+  {
+    "text": "fatigué",
+    "start": 64.93,
+    "end": 65.42
+  },
+  {
+    "text": "entre",
+    "start": 65.56,
+    "end": 65.93
+  },
+  {
+    "text": "dans",
+    "start": 65.93,
+    "end": 66.24
+  },
+  {
+    "text": "une",
+    "start": 66.24,
+    "end": 66.29
+  },
+  {
+    "text": "nuit",
+    "start": 66.29,
+    "end": 66.91
+  },
+  {
+    "text": "agité,",
+    "start": 66.91,
+    "end": 67.25
+  },
+  {
+    "text": "avec",
+    "start": 67.52,
+    "end": 67.7
+  },
+  {
+    "text": "plus",
+    "start": 67.7,
+    "end": 68.01
+  },
+  {
+    "text": "de",
+    "start": 68.01,
+    "end": 68.16
+  },
+  {
+    "text": "micro-réveil.",
+    "start": 68.16,
+    "end": 69.52
+  },
+  {
+    "text": "Jusqu'à",
+    "start": 69.59,
+    "end": 69.99
+  },
+  {
+    "text": "3",
+    "start": 70.13,
+    "end": 70.3
+  },
+  {
+    "text": "ou",
+    "start": 70.35,
+    "end": 70.48
+  },
+  {
+    "text": "4",
+    "start": 70.48,
+    "end": 70.7
+  },
+  {
+    "text": "ans,",
+    "start": 70.7,
+    "end": 70.94
+  },
+  {
+    "text": "la",
+    "start": 71.08,
+    "end": 71.22
+  },
+  {
+    "text": "sieste",
+    "start": 71.22,
+    "end": 71.67
+  },
+  {
+    "text": "protège",
+    "start": 71.67,
+    "end": 71.97
+  },
+  {
+    "text": "la",
+    "start": 71.97,
+    "end": 72.52
+  },
+  {
+    "text": "nuit,",
+    "start": 72.52,
+    "end": 72.77
+  },
+  {
+    "text": "elle",
+    "start": 73.04,
+    "end": 73.17
+  },
+  {
+    "text": "ne",
+    "start": 73.17,
+    "end": 73.32
+  },
+  {
+    "text": "la",
+    "start": 73.32,
+    "end": 73.47
+  },
+  {
+    "text": "concurrence",
+    "start": 73.47,
+    "end": 74.29
+  },
+  {
+    "text": "pas.",
+    "start": 74.29,
+    "end": 74.72
+  },
+  {
+    "text": "Sauvegarde",
+    "start": 74.94,
+    "end": 75.69
+  },
+  {
+    "text": "pour",
+    "start": 75.72,
+    "end": 76.04
+  },
+  {
+    "text": "ce",
+    "start": 76.18,
+    "end": 76.22
+  },
+  {
+    "text": "soir,",
+    "start": 76.22,
+    "end": 76.74
+  },
+  {
+    "text": "suie",
+    "start": 76.74,
+    "end": 77.08
+  },
+  {
+    "text": "pour",
+    "start": 77.08,
+    "end": 77.15
+  },
+  {
+    "text": "la",
+    "start": 77.36,
+    "end": 77.6
+  },
+  {
+    "text": "suite,",
+    "start": 77.81,
+    "end": 78.09
+  },
+  {
+    "text": "alimentation,",
+    "start": 78.36,
+    "end": 79.44
+  },
+  {
+    "text": "écran,",
+    "start": 79.44,
+    "end": 80.04
+  },
+  {
+    "text": "crise,",
+    "start": 80.57,
+    "end": 80.74
+  },
+  {
+    "text": "tout",
+    "start": 80.74,
+    "end": 80.92
+  },
+  {
+    "text": "t'y",
+    "start": 81.12,
+    "end": 81.33
+  },
+  {
+    "text": "passe.",
+    "start": 81.33,
+    "end": 82.14
+  }
+]
