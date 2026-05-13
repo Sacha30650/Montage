@@ -24,207 +24,149 @@
         overflow: hidden; background: #1a1410;
         font-family: "Plus Jakarta Sans", sans-serif;
       }
-
-      .broll {
-        position: absolute; inset: 0;
-        width: 100%; height: 100%;
-        object-fit: cover;
-      }
-
+      .broll { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
       .scrim {
         position: absolute; inset: 0;
-        background: linear-gradient(
-          180deg,
-          rgba(0, 0, 0, 0.45) 0%,
-          rgba(0, 0, 0, 0) 35%,
-          rgba(0, 0, 0, 0) 60%,
-          rgba(0, 0, 0, 0.55) 100%
-        );
+        background: linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0) 35%, rgba(0,0,0,0) 60%, rgba(0,0,0,0.55) 100%);
         pointer-events: none;
       }
-
       .caption {
-        position: absolute;
-        left: 60px; right: 60px;
+        position: absolute; left: 60px; right: 60px;
         top: 1100px;
         text-align: center;
-        font-family: "Plus Jakarta Sans", sans-serif;
-        font-weight: 800;
-        font-size: 92px;
-        line-height: 1.05;
+        font-family: "Plus Jakarta Sans", sans-serif; font-weight: 800;
+        font-size: 92px; line-height: 1.05;
         color: var(--bg-cream);
-        text-shadow: 0 4px 24px rgba(0, 0, 0, 0.55);
+        text-shadow: 0 4px 24px rgba(0,0,0,0.55);
         letter-spacing: -0.01em;
       }
       .caption .hl-terra { color: var(--terracotta); }
       .caption .hl-sage  { color: var(--sage); }
-      .caption .hl-mark {
-        background: rgba(242, 200, 75, 0.55);
-        padding: 0 10px; border-radius: 6px;
-        color: var(--brown-deep);
-      }
-
+      .caption .hl-mark  { background: rgba(242,200,75,0.55); padding: 0 10px; border-radius: 6px; color: var(--brown-deep); }
       .badge {
-        position: absolute; left: 50%;
-        top: 240px;
+        position: absolute; left: 50%; top: 240px;
         transform: translateX(-50%);
-        background: var(--bg-cream);
-        color: var(--brown-deep);
-        padding: 18px 40px;
-        border-radius: 999px;
-        font-family: "Fraunces", serif;
-        font-style: italic; font-weight: 800;
+        background: var(--bg-cream); color: var(--brown-deep);
+        padding: 18px 40px; border-radius: 999px;
+        font-family: "Fraunces", serif; font-style: italic; font-weight: 800;
         font-size: 56px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         border: 3px solid var(--terracotta);
       }
-
       .hook {
         position: absolute; inset: 0;
         display: flex; align-items: center; justify-content: center;
-        padding: 80px;
-        text-align: center;
-        font-family: "Fraunces", serif;
-        font-style: italic; font-weight: 800;
+        padding: 80px; text-align: center;
+        font-family: "Fraunces", serif; font-style: italic; font-weight: 800;
         font-size: 120px; line-height: 1.0;
         color: var(--bg-cream);
-        text-shadow: 0 6px 30px rgba(0, 0, 0, 0.7);
+        text-shadow: 0 6px 30px rgba(0,0,0,0.7);
       }
       .hook .hl { color: var(--highlight); }
-
       .cta {
-        position: absolute; left: 60px; right: 60px;
-        top: 880px;
+        position: absolute; left: 60px; right: 60px; top: 880px;
         text-align: center;
-        font-family: "Fraunces", serif;
-        font-style: italic; font-weight: 800;
+        font-family: "Fraunces", serif; font-style: italic; font-weight: 800;
         font-size: 110px; line-height: 1.05;
         color: var(--bg-cream);
-        text-shadow: 0 4px 24px rgba(0, 0, 0, 0.55);
+        text-shadow: 0 4px 24px rgba(0,0,0,0.55);
       }
-      .cta .hl-mark {
-        background: rgba(242, 200, 75, 0.55);
-        padding: 0 12px; border-radius: 8px;
-        color: var(--brown-deep);
-      }
+      .cta .hl-mark { background: rgba(242,200,75,0.55); padding: 0 12px; border-radius: 8px; color: var(--brown-deep); }
     </style>
   </head>
   <body>
-    <div
-      id="root"
-      data-composition-id="main"
-      data-start="0"
-      data-duration="76"
-      data-width="1080"
-      data-height="1920"
-    >
-      <video class="clip broll" id="broll-1"   data-start="0"     data-duration="5"     data-track-index="0" muted src="assets/broll-02/01-hook-pillows.mp4"></video>
-      <img   class="clip broll" id="broll-2"   data-start="5"     data-duration="6.83"  data-track-index="0"       src="assets/broll-02/02-promise-globe.png">
-      <img   class="clip broll" id="broll-3"   data-start="11.83" data-duration="15.31" data-track-index="0"       src="assets/broll-02/03-verite1-cultures.png">
-      <img   class="clip broll" id="broll-4a"  data-start="27.14" data-duration="12.16" data-track-index="0"       src="assets/broll-02/04-verite2-safesleep.png">
-      <img   class="clip broll" id="broll-4b"  data-start="39.30" data-duration="12.13" data-track-index="0"       src="assets/broll-02/04b-verite2-swaddle.png">
-      <img   class="clip broll" id="broll-5"   data-start="51.43" data-duration="17.04" data-track-index="0"       src="assets/broll-02/05-verite3-hands.png">
-      <img   class="clip broll" id="broll-6"   data-start="68.47" data-duration="7.53"  data-track-index="0"       src="assets/broll-02/06-cta-notebook.png">
+    <div id="root" data-composition-id="main" data-start="0" data-duration="73" data-width="1080" data-height="1920">
 
-      <div class="clip scrim" id="scrim-overlay" data-start="0" data-duration="76" data-track-index="1"></div>
+      <img class="clip broll" id="broll-1"  data-start="0"     data-duration="2.37"  data-track-index="0" src="assets/broll-03/01-hook-shoe.png">
+      <img class="clip broll" id="broll-2"  data-start="2.37"  data-duration="7.29"  data-track-index="0" src="assets/broll-03/02-promise-hourglass.png">
+      <img class="clip broll" id="broll-3"  data-start="9.66"  data-duration="15.10" data-track-index="0" src="assets/broll-03/03-etape1-hands.png">
+      <img class="clip broll" id="broll-4a" data-start="24.81" data-duration="11.14" data-track-index="0" src="assets/broll-03/04a-etape2-book.png">
+      <img class="clip broll" id="broll-4b" data-start="36.00" data-duration="11.13" data-track-index="0" src="assets/broll-03/04b-etape2-words.png">
+      <img class="clip broll" id="broll-5"  data-start="47.18" data-duration="18.25" data-track-index="0" src="assets/broll-03/05-etape3-candle.png">
+      <img class="clip broll" id="broll-6"  data-start="65.48" data-duration="7.52"  data-track-index="0" src="assets/broll-03/06-cta-notebook.png">
 
-      <div class="clip hook" id="hook" data-start="0" data-duration="3.87" data-track-index="2">
-        Tu dors avec ton <span class="hl">bébé</span> ?
+      <div class="clip scrim" id="scrim-overlay" data-start="0" data-duration="73" data-track-index="1"></div>
+
+      <div class="clip hook" id="hook" data-start="0" data-duration="2.37" data-track-index="2">
+        Crise au <span class="hl">supermarché</span> ?
       </div>
 
-      <div class="clip caption" id="promise" data-start="3.87" data-duration="7.96" data-track-index="2">
-        <span class="hl-mark">3 vérités</span> sur le co-sleeping
+      <div class="clip caption" id="promise" data-start="2.37" data-duration="7.29" data-track-index="2">
+        <span class="hl-mark">3 étapes</span> pour calmer en <span class="hl-terra">90 secondes</span>
       </div>
 
-      <div class="clip badge" id="badge-1" data-start="11.83" data-duration="15.26" data-track-index="2">
-        Vérité n°1
+      <div class="clip badge" id="badge-1" data-start="9.66" data-duration="15.10" data-track-index="2">
+        Étape n°1
       </div>
-      <div class="clip caption" id="cap-1a" data-start="12.50" data-duration="4.00" data-track-index="3">
-        Ce n'est <span class="hl-terra">pas une mode</span>
+      <div class="clip caption" id="cap-1a" data-start="10.50" data-duration="4.50" data-track-index="3">
+        Descends à son <span class="hl-terra">niveau</span>
       </div>
-      <div class="clip caption" id="cap-1b" data-start="16.50" data-duration="5.50" data-track-index="3">
-        <span class="hl-mark">Majorité</span> des cultures du monde
+      <div class="clip caption" id="cap-1b" data-start="15.00" data-duration="4.50" data-track-index="3">
+        <span class="hl-sage">Respire</span> lentement
       </div>
-      <div class="clip caption" id="cap-1c" data-start="22.00" data-duration="5.00" data-track-index="3">
-        Séparation = <span class="hl-terra">~200 ans</span>
-      </div>
-
-      <div class="clip badge" id="badge-2" data-start="27.14" data-duration="24.24" data-track-index="2">
-        Vérité n°2
-      </div>
-      <div class="clip caption" id="cap-2a" data-start="28.00" data-duration="5.00" data-track-index="3">
-        Sécurité = <span class="hl-sage">conditions</span>
-      </div>
-      <div class="clip caption" id="cap-2b" data-start="33.00" data-duration="5.00" data-track-index="3">
-        <span class="hl-mark">Safe Sleep Seven</span>
-      </div>
-      <div class="clip caption" id="cap-2c" data-start="38.00" data-duration="7.00" data-track-index="3">
-        <span class="hl-terra">7 règles</span> à respecter
-      </div>
-      <div class="clip caption" id="cap-2d" data-start="45.00" data-duration="6.00" data-track-index="3">
-        Jamais sur <span class="hl-terra">canapé ni fauteuil</span>
+      <div class="clip caption" id="cap-1c" data-start="19.50" data-duration="5.20" data-track-index="3">
+        <span class="hl-mark">Co-régulation</span>
       </div>
 
-      <div class="clip badge" id="badge-3" data-start="51.43" data-duration="16.99" data-track-index="2">
-        Vérité n°3
+      <div class="clip badge" id="badge-2" data-start="24.81" data-duration="22.32" data-track-index="2">
+        Étape n°2
       </div>
-      <div class="clip caption" id="cap-3a" data-start="52.50" data-duration="4.50" data-track-index="3">
-        Pas un enfant <span class="hl-terra">dépendant</span>
+      <div class="clip caption" id="cap-2a" data-start="26.00" data-duration="5.50" data-track-index="3">
+        <span class="hl-terra">Nomme</span> l'émotion
       </div>
-      <div class="clip caption" id="cap-3b" data-start="57.00" data-duration="6.00" data-track-index="3">
-        Attachement → <span class="hl-sage">autonomie</span>
+      <div class="clip caption" id="cap-2b" data-start="31.50" data-duration="5.50" data-track-index="3">
+        « Tu es très <span class="hl-mark">en colère</span> »
       </div>
-      <div class="clip caption" id="cap-3c" data-start="63.00" data-duration="5.00" data-track-index="3">
-        Transition en <span class="hl-sage">douceur</span>
+      <div class="clip caption" id="cap-2c" data-start="37.00" data-duration="5.00" data-track-index="3">
+        Pas <span class="hl-terra">« arrête »</span>, pas <span class="hl-terra">« calme-toi »</span>
+      </div>
+      <div class="clip caption" id="cap-2d" data-start="42.00" data-duration="5.10" data-track-index="3">
+        <span class="hl-mark">Name it to tame it</span>
       </div>
 
-      <div class="clip cta" id="cta" data-start="68.47" data-duration="7.50" data-track-index="2">
-        Sauvegarde<br />pour <span class="hl-mark">ce soir</span>.
+      <div class="clip badge" id="badge-3" data-start="47.18" data-duration="18.25" data-track-index="2">
+        Étape n°3
+      </div>
+      <div class="clip caption" id="cap-3a" data-start="48.50" data-duration="5.00" data-track-index="3">
+        Pas de raisonnement <span class="hl-terra">pendant le pic</span>
+      </div>
+      <div class="clip caption" id="cap-3b" data-start="53.50" data-duration="5.00" data-track-index="3">
+        Préfrontal <span class="hl-terra">hors-ligne</span>
+      </div>
+      <div class="clip caption" id="cap-3c" data-start="58.50" data-duration="6.90" data-track-index="3">
+        <span class="hl-mark">60-90 sec</span> de silence calme
       </div>
 
-      <audio
-        id="voiceover"
-        class="clip"
-        data-start="0"
-        data-duration="76"
-        data-track-index="10"
-        data-volume="1.0"
-        src="assets/audio/voiceover.mp3"
-      ></audio>
+      <div class="clip cta" id="cta" data-start="65.48" data-duration="7.50" data-track-index="2">
+        Sauvegarde<br />pour la <span class="hl-mark">prochaine</span>.
+      </div>
 
-      <audio
-        id="music"
-        class="clip"
-        data-start="0"
-        data-duration="76"
-        data-track-index="11"
-        data-volume="0.018"
-        src="assets/audio/music-pad.mp3"
-      ></audio>
+      <audio id="voiceover" class="clip" data-start="0" data-duration="73" data-track-index="10" data-volume="1.0" src="assets/audio/voiceover.mp3"></audio>
+      <audio id="music"     class="clip" data-start="0" data-duration="73" data-track-index="11" data-volume="0.018" src="assets/audio/music-pad.mp3"></audio>
 
       <audio id="sfx-boom"  class="clip" data-start="0"     data-duration="0.55" data-track-index="12" data-volume="0.85" src="assets/audio/sfx/hook-boom.mp3"></audio>
-      <audio id="sfx-w1"    class="clip" data-start="11.38" data-duration="0.62" data-track-index="12" data-volume="0.75" src="assets/audio/sfx/whoosh.mp3"></audio>
-      <audio id="sfx-w2"    class="clip" data-start="26.69" data-duration="0.62" data-track-index="12" data-volume="0.75" src="assets/audio/sfx/whoosh.mp3"></audio>
-      <audio id="sfx-w3"    class="clip" data-start="50.98" data-duration="0.62" data-track-index="12" data-volume="0.75" src="assets/audio/sfx/whoosh.mp3"></audio>
-      <audio id="sfx-chime" class="clip" data-start="68.47" data-duration="1.23" data-track-index="12" data-volume="0.70" src="assets/audio/sfx/chime.mp3"></audio>
+      <audio id="sfx-w1"    class="clip" data-start="9.21"  data-duration="0.62" data-track-index="12" data-volume="0.75" src="assets/audio/sfx/whoosh.mp3"></audio>
+      <audio id="sfx-w2"    class="clip" data-start="24.36" data-duration="0.62" data-track-index="12" data-volume="0.75" src="assets/audio/sfx/whoosh.mp3"></audio>
+      <audio id="sfx-w3"    class="clip" data-start="46.73" data-duration="0.62" data-track-index="12" data-volume="0.75" src="assets/audio/sfx/whoosh.mp3"></audio>
+      <audio id="sfx-chime" class="clip" data-start="65.48" data-duration="1.23" data-track-index="12" data-volume="0.70" src="assets/audio/sfx/chime.mp3"></audio>
     </div>
 
     <script>
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({ paused: true });
 
-      tl.from("#hook", { scale: 0.85, opacity: 0, duration: 0.30, ease: "back.out(2)" }, 0);
-      tl.to("#hook", { opacity: 0, duration: 0.25 }, 3.62);
-      tl.set("#hook", { opacity: 0 }, 3.87);
+      tl.from("#hook", { scale: 0.85, opacity: 0, duration: 0.28, ease: "back.out(2)" }, 0);
+      tl.to("#hook", { opacity: 0, duration: 0.22 }, 2.15);
+      tl.set("#hook", { opacity: 0 }, 2.37);
 
-      tl.from("#promise", { y: 40, opacity: 0, duration: 0.30, ease: "power3.out" }, 3.87);
-      tl.to("#promise", { opacity: 0, duration: 0.25 }, 11.58);
-      tl.set("#promise", { opacity: 0 }, 11.83);
+      tl.from("#promise", { y: 40, opacity: 0, duration: 0.30, ease: "power3.out" }, 2.37);
+      tl.to("#promise", { opacity: 0, duration: 0.25 }, 9.41);
+      tl.set("#promise", { opacity: 0 }, 9.66);
 
       const badges = [
-        ["#badge-1", 11.83, 15.21],
-        ["#badge-2", 27.14, 24.19],
-        ["#badge-3", 51.43, 16.94],
+        ["#badge-1", 9.66,  15.05],
+        ["#badge-2", 24.81, 22.27],
+        ["#badge-3", 47.18, 18.20],
       ];
       badges.forEach(function (entry) {
         var sel = entry[0], t0 = entry[1], dur = entry[2];
@@ -233,24 +175,24 @@
       });
 
       const caps = [
-        ["#cap-1a", 12.50], ["#cap-1b", 16.50], ["#cap-1c", 22.00],
-        ["#cap-2a", 28.00], ["#cap-2b", 33.00], ["#cap-2c", 38.00], ["#cap-2d", 45.00],
-        ["#cap-3a", 52.50], ["#cap-3b", 57.00], ["#cap-3c", 63.00],
-        ["#cta",    68.47],
+        ["#cap-1a", 10.50], ["#cap-1b", 15.00], ["#cap-1c", 19.50],
+        ["#cap-2a", 26.00], ["#cap-2b", 31.50], ["#cap-2c", 37.00], ["#cap-2d", 42.00],
+        ["#cap-3a", 48.50], ["#cap-3b", 53.50], ["#cap-3c", 58.50],
+        ["#cta",    65.48],
       ];
       caps.forEach(function (entry) {
         tl.from(entry[0], { y: 30, opacity: 0, duration: 0.20, ease: "power3.out" }, entry[1]);
       });
 
-      // Ken Burns: slow scale-up / scale-down on each B-roll for image animation
+      // Ken Burns: alternating zoom-in/out on every image
       const brolls = [
-        ["#broll-1",  0,     5],
-        ["#broll-2",  5,     6.83],
-        ["#broll-3",  11.83, 15.31],
-        ["#broll-4a", 27.14, 12.16],
-        ["#broll-4b", 39.30, 12.13],
-        ["#broll-5",  51.43, 17.04],
-        ["#broll-6",  68.47, 7.53],
+        ["#broll-1",  0,     2.37],
+        ["#broll-2",  2.37,  7.29],
+        ["#broll-3",  9.66,  15.15],
+        ["#broll-4a", 24.81, 11.19],
+        ["#broll-4b", 36.00, 11.18],
+        ["#broll-5",  47.18, 18.30],
+        ["#broll-6",  65.48, 7.52],
       ];
       brolls.forEach(function (b, i) {
         var sel = b[0], t0 = b[1], dur = b[2];
