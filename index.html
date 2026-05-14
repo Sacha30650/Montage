@@ -7,192 +7,204 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,800;1,9..144,800&family=Plus+Jakarta+Sans:wght@600;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:wght@800&display=swap"
       rel="stylesheet"
     />
     <style>
       :root {
-        --bg-cream: #fbf5ef;
-        --brown-deep: #2a2520;
-        --terracotta: #c56f4a;
-        --sage: #87a878;
-        --highlight: #f2c84b;
+        --fp-red:  #e62029;
+        --fp-black:#0a0a0a;
+        --fp-white:#ffffff;
       }
       * { margin: 0; padding: 0; box-sizing: border-box; }
-      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #1a1410; font-family: "Plus Jakarta Sans", sans-serif; }
-      .broll { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-      .scrim {
+      html, body {
+        width: 1080px; height: 1920px;
+        overflow: hidden; background: #000;
+        font-family: "Anton", "Plus Jakarta Sans", sans-serif;
+      }
+      .broll {
         position: absolute; inset: 0;
-        background: linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0) 35%, rgba(0,0,0,0) 60%, rgba(0,0,0,0.55) 100%);
+        width: 100%; height: 100%;
+        object-fit: cover;
+      }
+      .vignette {
+        position: absolute; inset: 0;
+        background:
+          linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 65%, rgba(0,0,0,0.85) 100%),
+          radial-gradient(ellipse at center, rgba(0,0,0,0) 60%, rgba(0,0,0,0.65) 100%);
         pointer-events: none;
       }
-      .caption {
-        position: absolute; left: 60px; right: 60px; top: 1100px;
+      .brand {
+        position: absolute;
+        top: 130px; left: 0; right: 0;
         text-align: center;
-        font-family: "Plus Jakarta Sans", sans-serif; font-weight: 800;
-        font-size: 92px; line-height: 1.05;
-        color: var(--bg-cream);
-        text-shadow: 0 4px 24px rgba(0,0,0,0.55);
-        letter-spacing: -0.01em;
+        font-family: "Anton", sans-serif;
+        font-size: 96px;
+        letter-spacing: 0.04em;
+        color: var(--fp-white);
+        text-shadow: 0 6px 30px rgba(0,0,0,0.85), 0 0 16px rgba(0,0,0,0.6);
       }
-      .caption .hl-terra { color: var(--terracotta); }
-      .caption .hl-sage  { color: var(--sage); }
-      .caption .hl-mark  { background: rgba(242,200,75,0.55); padding: 0 10px; border-radius: 6px; color: var(--brown-deep); }
-      .badge {
-        position: absolute; left: 50%; top: 240px;
-        transform: translateX(-50%);
-        background: var(--bg-cream); color: var(--brown-deep);
-        padding: 18px 40px; border-radius: 999px;
-        font-family: "Fraunces", serif; font-style: italic; font-weight: 800;
-        font-size: 56px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        border: 3px solid var(--terracotta);
+      .brand .fp {
+        color: var(--fp-red);
+        text-shadow: 0 6px 30px rgba(0,0,0,0.95), 0 0 14px rgba(230,32,41,0.65);
       }
-      .hook {
+      .flash {
         position: absolute; inset: 0;
-        display: flex; align-items: center; justify-content: center;
-        padding: 80px; text-align: center;
-        font-family: "Fraunces", serif; font-style: italic; font-weight: 800;
-        font-size: 110px; line-height: 1.0;
-        color: var(--bg-cream);
-        text-shadow: 0 6px 30px rgba(0,0,0,0.7);
+        background: var(--fp-white);
+        opacity: 0;
       }
-      .hook .hl { color: var(--highlight); }
-      .cta {
-        position: absolute; left: 60px; right: 60px; top: 880px;
+      .reveal {
+        position: absolute;
+        inset: 0;
+        display: flex; flex-direction: column; align-items: center; justify-content: center;
+        gap: 24px;
         text-align: center;
-        font-family: "Fraunces", serif; font-style: italic; font-weight: 800;
-        font-size: 110px; line-height: 1.05;
-        color: var(--bg-cream);
-        text-shadow: 0 4px 24px rgba(0,0,0,0.55);
+        font-family: "Anton", sans-serif;
+        color: var(--fp-white);
+        text-transform: uppercase;
       }
-      .cta .hl-mark { background: rgba(242,200,75,0.55); padding: 0 12px; border-radius: 8px; color: var(--brown-deep); }
+      .reveal .line1 {
+        font-size: 170px;
+        letter-spacing: 0.02em;
+        line-height: 0.95;
+        text-shadow: 0 10px 50px rgba(0,0,0,0.95);
+      }
+      .reveal .line2 {
+        font-size: 200px;
+        letter-spacing: 0.02em;
+        line-height: 0.95;
+        color: var(--fp-red);
+        text-shadow:
+          0 0 30px rgba(230,32,41,0.85),
+          0 10px 60px rgba(0,0,0,0.95),
+          4px 4px 0 rgba(0,0,0,0.55);
+      }
+      .reveal-bg {
+        position: absolute; inset: 0;
+        background: linear-gradient(180deg, rgba(0,0,0,0.65), rgba(0,0,0,0.85));
+      }
+      .corner-mark {
+        position: absolute;
+        bottom: 220px; left: 0; right: 0;
+        text-align: center;
+        font-family: "Anton", sans-serif;
+        font-size: 56px;
+        letter-spacing: 0.16em;
+        color: var(--fp-red);
+        text-shadow: 0 4px 18px rgba(0,0,0,0.85);
+      }
     </style>
   </head>
   <body>
-    <div id="root" data-composition-id="main" data-start="0" data-duration="78" data-width="1080" data-height="1920">
+    <div id="root" data-composition-id="main" data-start="0" data-duration="20" data-width="1080" data-height="1920">
 
-      <img class="clip broll" id="broll-1"  data-start="0"     data-duration="3.13"  data-track-index="0" src="assets/broll-04/01-hook-bottle.png">
-      <img class="clip broll" id="broll-2"  data-start="3.13"  data-duration="6.02"  data-track-index="0" src="assets/broll-04/02-promise-clock.png">
-      <img class="clip broll" id="broll-3a" data-start="9.20"  data-duration="10.75" data-track-index="0" src="assets/broll-04/03a-exo1-belly.png">
-      <img class="clip broll" id="broll-3b" data-start="19.95" data-duration="10.41" data-track-index="0" src="assets/broll-04/03b-exo1-yoga.png">
-      <img class="clip broll" id="broll-4"  data-start="30.41" data-duration="19.43" data-track-index="0" src="assets/broll-04/04-exo2-carrier.png">
-      <img class="clip broll" id="broll-5"  data-start="49.89" data-duration="20.65" data-track-index="0" src="assets/broll-04/05-exo3-stroller.png">
-      <img class="clip broll" id="broll-6"  data-start="70.59" data-duration="7.41"  data-track-index="0" src="assets/broll-04/06-cta-notebook.png">
+      <!-- 4 clips beat-synced (each ~3s, total 12s) -->
+      <video class="clip broll" id="broll-1" data-start="0"  data-duration="3" data-track-index="0" data-volume="0" muted src="assets/teaser/01.mp4"></video>
+      <video class="clip broll" id="broll-2" data-start="3"  data-duration="3" data-track-index="0" data-volume="0" muted src="assets/teaser/02.mp4"></video>
+      <video class="clip broll" id="broll-3" data-start="6"  data-duration="3" data-track-index="0" data-volume="0" muted src="assets/teaser/03.mp4"></video>
+      <video class="clip broll" id="broll-4" data-start="9"  data-duration="3" data-track-index="0" data-volume="0" muted src="assets/teaser/04.mp4"></video>
 
-      <div class="clip scrim" id="scrim-overlay" data-start="0" data-duration="78" data-track-index="1"></div>
+      <!-- Speed-cut montage 12-15s: 0.75s each, back to first frame -->
+      <video class="clip broll" id="broll-fast-1" data-start="12.00" data-duration="0.75" data-track-index="0" data-volume="0" muted src="assets/teaser/01.mp4"></video>
+      <video class="clip broll" id="broll-fast-2" data-start="12.75" data-duration="0.75" data-track-index="0" data-volume="0" muted src="assets/teaser/02.mp4"></video>
+      <video class="clip broll" id="broll-fast-3" data-start="13.50" data-duration="0.75" data-track-index="0" data-volume="0" muted src="assets/teaser/03.mp4"></video>
+      <video class="clip broll" id="broll-fast-4" data-start="14.25" data-duration="0.75" data-track-index="0" data-volume="0" muted src="assets/teaser/04.mp4"></video>
 
-      <div class="clip hook" id="hook" data-start="0" data-duration="3.13" data-track-index="2">
-        Pas une minute pour le <span class="hl">sport</span> ?
-      </div>
+      <!-- Reveal background (15-20s): hold on clip 04 -->
+      <video class="clip broll" id="broll-reveal" data-start="15" data-duration="5" data-track-index="0" data-volume="0" muted src="assets/teaser/04.mp4"></video>
 
-      <div class="clip caption" id="promise" data-start="3.13" data-duration="6.02" data-track-index="2">
-        <span class="hl-mark">3 exos</span> · 10 min · pendant la sieste
-      </div>
+      <!-- Vignette overlay always -->
+      <div class="clip vignette" id="vignette" data-start="0" data-duration="20" data-track-index="1"></div>
 
-      <div class="clip badge" id="badge-1" data-start="9.20" data-duration="21.16" data-track-index="2">
-        Exo n°1
-      </div>
-      <div class="clip caption" id="cap-1a" data-start="10.50" data-duration="5.00" data-track-index="3">
-        <span class="hl-terra">Respiration</span> hypopressive
-      </div>
-      <div class="clip caption" id="cap-1b" data-start="15.50" data-duration="6.50" data-track-index="3">
-        Aspire ton ventre · <span class="hl-mark">10 sec</span>
-      </div>
-      <div class="clip caption" id="cap-1c" data-start="22.00" data-duration="8.00" data-track-index="3">
-        Reconstruit le <span class="hl-sage">transverse</span>
+      <!-- Reveal dark overlay 15-20s -->
+      <div class="clip reveal-bg" id="reveal-bg" data-start="15" data-duration="5" data-track-index="2"></div>
+
+      <!-- White flash for impact at 15s -->
+      <div class="clip flash" id="flash" data-start="14.85" data-duration="0.6" data-track-index="3"></div>
+
+      <!-- Brand top text "FITNESS PARK" 0-12s -->
+      <div class="clip brand" id="brand" data-start="0" data-duration="12" data-track-index="4">
+        <span class="fp">FITNESS</span> PARK
       </div>
 
-      <div class="clip badge" id="badge-2" data-start="30.41" data-duration="19.43" data-track-index="2">
-        Exo n°2
-      </div>
-      <div class="clip caption" id="cap-2a" data-start="31.50" data-duration="6.00" data-track-index="3">
-        <span class="hl-terra">Squats</span> bébé en écharpe
-      </div>
-      <div class="clip caption" id="cap-2b" data-start="37.50" data-duration="6.00" data-track-index="3">
-        <span class="hl-mark">3 × 15</span> répétitions
-      </div>
-      <div class="clip caption" id="cap-2c" data-start="43.50" data-duration="6.20" data-track-index="3">
-        Le bébé = ton <span class="hl-sage">lest naturel</span>
+      <!-- Bottom small mark 0-12s -->
+      <div class="clip corner-mark" id="corner-mark" data-start="0" data-duration="12" data-track-index="5">
+        — UNE NOUVELLE ÈRE —
       </div>
 
-      <div class="clip badge" id="badge-3" data-start="49.89" data-duration="20.65" data-track-index="2">
-        Exo n°3
-      </div>
-      <div class="clip caption" id="cap-3a" data-start="51.00" data-duration="6.00" data-track-index="3">
-        <span class="hl-terra">Fente avant</span> alternée
-      </div>
-      <div class="clip caption" id="cap-3b" data-start="57.00" data-duration="6.00" data-track-index="3">
-        <span class="hl-mark">10</span> de chaque côté
-      </div>
-      <div class="clip caption" id="cap-3c" data-start="63.00" data-duration="7.40" data-track-index="3">
-        Calme bébé en <span class="hl-mark">15 sec</span>
+      <!-- Final reveal 15-20s -->
+      <div class="clip reveal" id="reveal" data-start="15" data-duration="5" data-track-index="6">
+        <div class="line1">QUELQUE CHOSE</div>
+        <div class="line2">SE PRÉPARE</div>
       </div>
 
-      <div class="clip cta" id="cta" data-start="70.59" data-duration="7.41" data-track-index="2">
-        Sauvegarde<br />pour ta <span class="hl-mark">sieste</span>.
-      </div>
+      <!-- Audio: synth EDM beat -->
+      <audio id="music" class="clip" data-start="0" data-duration="20" data-track-index="10" data-volume="0.65" src="assets/audio/workout-beat.mp3"></audio>
 
-      <audio id="voiceover" class="clip" data-start="0" data-duration="78" data-track-index="10" data-volume="1.0" src="assets/audio/voiceover.mp3"></audio>
-      <audio id="music"     class="clip" data-start="0" data-duration="78" data-track-index="11" data-volume="0.018" src="assets/audio/music-pad.mp3"></audio>
-
-      <audio id="sfx-boom"  class="clip" data-start="0"     data-duration="0.55" data-track-index="12" data-volume="0.85" src="assets/audio/sfx/hook-boom.mp3"></audio>
-      <audio id="sfx-w1"    class="clip" data-start="8.75"  data-duration="0.62" data-track-index="12" data-volume="0.75" src="assets/audio/sfx/whoosh.mp3"></audio>
-      <audio id="sfx-w2"    class="clip" data-start="29.96" data-duration="0.62" data-track-index="12" data-volume="0.75" src="assets/audio/sfx/whoosh.mp3"></audio>
-      <audio id="sfx-w3"    class="clip" data-start="49.44" data-duration="0.62" data-track-index="12" data-volume="0.75" src="assets/audio/sfx/whoosh.mp3"></audio>
-      <audio id="sfx-chime" class="clip" data-start="70.59" data-duration="1.23" data-track-index="12" data-volume="0.70" src="assets/audio/sfx/chime.mp3"></audio>
+      <!-- SFX: hook impact + bass drop + whoosh on each cut -->
+      <audio id="sfx-hook"  class="clip" data-start="0"     data-duration="0.55" data-track-index="11" data-volume="0.55" src="assets/audio/sfx/hook-boom.mp3"></audio>
+      <audio id="sfx-w-a"   class="clip" data-start="2.55"  data-duration="0.62" data-track-index="11" data-volume="0.55" src="assets/audio/sfx/whoosh.mp3"></audio>
+      <audio id="sfx-w-b"   class="clip" data-start="5.55"  data-duration="0.62" data-track-index="11" data-volume="0.55" src="assets/audio/sfx/whoosh.mp3"></audio>
+      <audio id="sfx-w-c"   class="clip" data-start="8.55"  data-duration="0.62" data-track-index="11" data-volume="0.55" src="assets/audio/sfx/whoosh.mp3"></audio>
+      <audio id="sfx-drop"  class="clip" data-start="14.85" data-duration="1.20" data-track-index="11" data-volume="0.95" src="assets/audio/sfx/bass-drop.mp3"></audio>
     </div>
 
     <script>
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({ paused: true });
 
-      tl.from("#hook", { scale: 0.85, opacity: 0, duration: 0.30, ease: "back.out(2)" }, 0);
-      tl.to("#hook", { opacity: 0, duration: 0.25 }, 2.88);
-      tl.set("#hook", { opacity: 0 }, 3.13);
+      // Brand text reveal: slide up + slight scale
+      tl.from("#brand", { y: 80, opacity: 0, duration: 0.45, ease: "back.out(2)" }, 0);
+      tl.from("#corner-mark", { y: -30, opacity: 0, duration: 0.45, ease: "power3.out" }, 0.2);
+      tl.to("#brand", { opacity: 0, duration: 0.3 }, 11.7);
+      tl.to("#corner-mark", { opacity: 0, duration: 0.3 }, 11.7);
+      tl.set("#brand", { opacity: 0 }, 12);
+      tl.set("#corner-mark", { opacity: 0 }, 12);
 
-      tl.from("#promise", { y: 40, opacity: 0, duration: 0.30, ease: "power3.out" }, 3.13);
-      tl.to("#promise", { opacity: 0, duration: 0.25 }, 8.95);
-      tl.set("#promise", { opacity: 0 }, 9.20);
-
-      const badges = [
-        ["#badge-1", 9.20,  21.11],
-        ["#badge-2", 30.41, 19.38],
-        ["#badge-3", 49.89, 20.60],
+      // Punch zoom on each main clip (subtle motion)
+      const mainClips = [
+        ["#broll-1", 0,  3],
+        ["#broll-2", 3,  3],
+        ["#broll-3", 6,  3],
+        ["#broll-4", 9,  3],
       ];
-      badges.forEach(function (entry) {
-        var sel = entry[0], t0 = entry[1], dur = entry[2];
-        tl.from(sel, { y: -40, opacity: 0, duration: 0.30, ease: "back.out(2)" }, t0);
-        tl.to(sel, { y: -20, opacity: 0, duration: 0.25 }, t0 + dur);
-      });
-
-      const caps = [
-        ["#cap-1a", 10.50], ["#cap-1b", 15.50], ["#cap-1c", 22.00],
-        ["#cap-2a", 31.50], ["#cap-2b", 37.50], ["#cap-2c", 43.50],
-        ["#cap-3a", 51.00], ["#cap-3b", 57.00], ["#cap-3c", 63.00],
-        ["#cta",    70.59],
-      ];
-      caps.forEach(function (entry) {
-        tl.from(entry[0], { y: 30, opacity: 0, duration: 0.20, ease: "power3.out" }, entry[1]);
-      });
-
-      const brolls = [
-        ["#broll-1",  0,     3.13],
-        ["#broll-2",  3.13,  6.02],
-        ["#broll-3a", 9.20,  10.75],
-        ["#broll-3b", 19.95, 10.41],
-        ["#broll-4",  30.41, 19.43],
-        ["#broll-5",  49.89, 20.65],
-        ["#broll-6",  70.59, 7.41],
-      ];
-      brolls.forEach(function (b, i) {
-        var sel = b[0], t0 = b[1], dur = b[2];
-        var fromScale = i % 2 === 0 ? 1.0 : 1.10;
-        var toScale   = i % 2 === 0 ? 1.10 : 1.0;
+      mainClips.forEach(function (c, i) {
+        var sel = c[0], t0 = c[1], dur = c[2];
         tl.fromTo(sel,
-          { scale: fromScale, transformOrigin: "50% 50%" },
-          { scale: toScale, duration: dur, ease: "none" }, t0);
+          { scale: 1.0, transformOrigin: "50% 50%" },
+          { scale: 1.08, duration: dur, ease: "none" }, t0);
       });
+
+      // Speed-cut clips: hard zoom-in
+      ["#broll-fast-1","#broll-fast-2","#broll-fast-3","#broll-fast-4"].forEach(function (sel, i) {
+        var t0 = 12 + i * 0.75;
+        tl.fromTo(sel,
+          { scale: 1.15 },
+          { scale: 1.20, duration: 0.75, ease: "none" }, t0);
+      });
+
+      // Flash impact at 15s: short white blast
+      tl.fromTo("#flash",
+        { opacity: 0 },
+        { opacity: 0.95, duration: 0.08, ease: "power2.in" }, 14.85);
+      tl.to("#flash",
+        { opacity: 0, duration: 0.45, ease: "power2.out" }, 14.93);
+      tl.set("#flash", { opacity: 0 }, 15.45);
+
+      // Reveal text: scale + bounce in, hold, slight breathe
+      tl.fromTo("#reveal .line1",
+        { scale: 0.6, opacity: 0, y: 30 },
+        { scale: 1.0, opacity: 1, y: 0, duration: 0.55, ease: "back.out(2.5)" }, 14.95);
+      tl.fromTo("#reveal .line2",
+        { scale: 0.5, opacity: 0, y: 40, rotate: -2 },
+        { scale: 1.0, opacity: 1, y: 0, rotate: 0, duration: 0.65, ease: "back.out(2.2)" }, 15.20);
+      // Breathe (subtle scale pulse)
+      tl.to("#reveal .line2",
+        { scale: 1.05, duration: 0.8, ease: "sine.inOut", yoyo: true, repeat: 1 }, 16.0);
+      // Reveal background slow zoom on broll-reveal
+      tl.fromTo("#broll-reveal",
+        { scale: 1.0 },
+        { scale: 1.12, duration: 5, ease: "none" }, 15);
 
       window.__timelines["main"] = tl;
     </script>
