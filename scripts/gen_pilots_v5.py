@@ -29,7 +29,7 @@ STYLES = {
 PILOTS = {
     "pilot-05-sommeil-97": {
         "hook_style": "punch",
-        "total_dur": 60,
+        "total_dur": 67,  # was 60 — user asked >1min with margin
         # (filename, start, duration, kind, kb_dir) — kb_dir: "in"/"out"/"left"/"right"
         "images": [
             ("00-hook-stat.png",     0,    4, "hook", "in"),
@@ -40,7 +40,7 @@ PILOTS = {
             ("02-notes.png",        25,    7, "body", "in"),
             ("02-notes.png",        32,    4, "body", "out"),
             ("04-outro.png",        36,   12, "body", "in"),
-            ("04-outro.png",        48,   12, "body", "out"),
+            ("04-outro.png",        48,   19, "body", "out"),   # extended to 67s
         ],
         # Hook 0-3.5s
         "hook_caps": [
@@ -48,7 +48,7 @@ PILOTS = {
             ("font CETTE erreur",       1.0, 1.2, "white"),
             ("le soir",                 2.3, 1.2, "hl"),
         ],
-        # Dense body caps — VO is 50s, caps every ~2.5s
+        # Dense body caps — VO is 46.7s, caps every ~2.5s
         "body_caps": [
             ("Voici les 3 ERREURS",                3.6, 2.5, "hl"),
             ("ERREUR 1",                           6.2, 1.5, "hl"),
@@ -65,11 +65,13 @@ PILOTS = {
             ("Lumière chaude · Phrase calme",     33.8, 3.5, "white"),
             ("Tu changes ces 3 trucs",            37.4, 3.0, "white"),
             ("Tu gagnes 2h de sommeil 🌙",         40.5, 5.0, "hl"),
-            ("par soir.",                         45.6, 3.0, "white"),
+            ("par soir.",                         45.6, 2.5, "white"),
         ],
         "outro_caps": [
-            ("Sauvegarde 💾",                     49.0, 5.0, "xxl"),
-            ("À un parent épuisé",                54.2, 5.8, "hl"),
+            ("Sauvegarde 💾",                     48.3, 5.0, "xxl"),
+            ("Partage 🤝",                        53.5, 4.0, "hl"),
+            ("À un parent épuisé",                57.7, 4.5, "hl"),
+            ("Suis pour + d'astuces 👉",          62.4, 4.6, "xxl"),
         ],
     },
     "pilot-06-crises-personne": {
