@@ -134,70 +134,81 @@ PILOTS = {
 # ------------------------------------------------------------------
 def render(pilot_slug, cfg):
     s = STYLES[cfg["hook_style"]]
-    total = cfg["total_dur"]
+    # Shift body/outro by 1.5s — VO has 1.5s leading silence so the hook visual
+    # breathes before VO kicks in (replicates short-test V2 pattern).
+    VO_PAD = 1.5
+    total = cfg["total_dur"] + VO_PAD
     asset_prefix = f"pilots/{pilot_slug}/assets"
 
-    # Build images with proper styling per kind
+    # Build images. Hook image is extended by VO_PAD (it stays visible during the silence).
+    # Body images are shifted by VO_PAD.
     img_html_parts = []
     ken_burns_lines = []
     for idx, (filename, start, dur, kind) in enumerate(cfg["images"]):
         sid = f"broll-{idx}"
         cls = "broll-hook" if kind == "hook" else "broll-body"
+        if kind == "hook":
+            img_start = start  # stays at 0
+            img_dur = dur + VO_PAD  # extends to cover the silence
+        else:
+            img_start = start + VO_PAD
+            img_dur = dur
         img_html_parts.append(
             f'      <img class="clip {cls}" id="{sid}" '
-            f'data-start="{start}" data-duration="{dur}" data-track-index="0" '
+            f'data-start="{img_start}" data-duration="{img_dur}" data-track-index="0" '
             f'src="{asset_prefix}/broll/{filename}">'
         )
         # Ken Burns per image: slight scale animation over its window
         if kind == "hook":
             ken_burns_lines.append(
                 f'      tl.fromTo("#{sid}", {{ scale: 1.25 }}, '
-                f'{{ scale: 1.40, duration: {dur}, ease: "none" }}, {start});'
+                f'{{ scale: 1.40, duration: {img_dur}, ease: "none" }}, {img_start});'
             )
         else:
             ken_burns_lines.append(
                 f'      tl.fromTo("#{sid}", {{ scale: 1.04 }}, '
-                f'{{ scale: 1.12, duration: {dur}, ease: "none" }}, {start});'
+                f'{{ scale: 1.12, duration: {img_dur}, ease: "none" }}, {img_start});'
             )
     img_html = "\n".join(img_html_parts)
     ken_burns_anim = "\n".join(ken_burns_lines)
 
     # Build captions for each phase (hook = track 2, body = track 3, outro = track 4)
-    def caps_block(caps, track, kind):
+    # Hook captions stay at original timings (start at 0). Body/outro shifted by VO_PAD.
+    def caps_block(caps, track, kind, shift=0.0):
         sorted_caps = sorted(enumerate(caps), key=lambda kv: kv[1][1])
         html_parts = []
         anim_parts = []
         for j, (i, (text, t0, dur, kind_cap)) in enumerate(sorted_caps):
+            t0s = t0 + shift
             if j + 1 < len(sorted_caps):
-                next_t0 = sorted_caps[j+1][1][1]
-                eff_dur = min(dur, next_t0 - t0 - 0.02)
+                next_t0 = sorted_caps[j+1][1][1] + shift
+                eff_dur = min(dur, next_t0 - t0s - 0.02)
             else:
                 eff_dur = dur
             inner = (
                 f'<span class="hl-mark">{text}</span>'
                 if kind_cap in ("hl", "xxl") else text
             )
-            # Sizing
             if kind == "body":
                 base_size = 84 if kind_cap == "hl" else 80
-            else:  # hook or outro = punch-style centered
+            else:
                 base_size = 200 if kind_cap == "xxl" else (160 if kind_cap == "hl" else 150)
             cls = f"caption-{kind}"
             cid = f"cap-{kind}-{i}"
             html_parts.append(
                 f'      <div class="clip {cls}" id="{cid}" '
-                f'data-start="{t0}" data-duration="{eff_dur:.2f}" '
+                f'data-start="{t0s:.2f}" data-duration="{eff_dur:.2f}" '
                 f'data-track-index="{track}" style="font-size:{base_size}px;">{inner}</div>'
             )
             anim_parts.append(
                 f'      tl.from("#{cid}", {{ y: 40, opacity: 0, '
-                f'duration: 0.18, ease: "power3.out" }}, {t0});'
+                f'duration: 0.18, ease: "power3.out" }}, {t0s});'
             )
         return "\n".join(html_parts), "\n".join(anim_parts)
 
-    hook_html, hook_anim = caps_block(cfg["hook_caps"], 2, "hook")
-    body_html, body_anim = caps_block(cfg["body_caps"], 3, "body")
-    outro_html, outro_anim = caps_block(cfg["outro_caps"], 4, "outro")
+    hook_html, hook_anim = caps_block(cfg["hook_caps"], 2, "hook", shift=0.0)
+    body_html, body_anim = caps_block(cfg["body_caps"], 3, "body", shift=VO_PAD)
+    outro_html, outro_anim = caps_block(cfg["outro_caps"], 4, "outro", shift=VO_PAD)
 
     return f"""<!doctype html>
 <html lang="fr">
@@ -246,8 +257,8 @@ def render(pilot_slug, cfg):
     <div id="root" data-composition-id="main" data-start="0" data-duration="{total}" data-width="1080" data-height="1920">
 {img_html}
 
-      <div class="clip scrim-hook" id="scrim-hook" data-start="0" data-duration="5" data-track-index="1"></div>
-      <div class="clip scrim-body" id="scrim-body" data-start="5" data-duration="{total - 5}" data-track-index="1"></div>
+      <div class="clip scrim-hook" id="scrim-hook" data-start="0" data-duration="{5 + VO_PAD}" data-track-index="1"></div>
+      <div class="clip scrim-body" id="scrim-body" data-start="{5 + VO_PAD}" data-duration="{total - 5 - VO_PAD}" data-track-index="1"></div>
 
 {hook_html}
 {body_html}
