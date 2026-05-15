@@ -31,15 +31,15 @@
   </head>
   <body>
     <div id="root" data-composition-id="main" data-start="0" data-duration="15" data-width="1080" data-height="1920">
-      <img class="clip broll" id="broll" data-start="0" data-duration="15" data-track-index="0" src="tests/hooks/images/N6-intimate-tear.png">
+      <img class="clip broll" id="broll" data-start="0" data-duration="15" data-track-index="0" src="tests/hooks/images/N5-mysterious-door.png">
       <div class="clip scrim" id="scrim" data-start="0" data-duration="15" data-track-index="1"></div>
 
-      <div class="clip caption" id="cap-N6-0" data-start="0.0" data-duration="1.98" data-track-index="3" style="font-size:92px; line-height:0.98;">Quand mon enfant</div>
-      <div class="clip caption" id="cap-N6-1" data-start="2.0" data-duration="2.48" data-track-index="3" style="font-size:92px; line-height:0.98;"><span class="hl-mark">a fait sa 1ère NUIT</span></div>
-      <div class="clip caption" id="cap-N6-2" data-start="4.5" data-duration="2.50" data-track-index="3" style="font-size:92px; line-height:0.98;">j'ai pleuré.</div>
-      <div class="clip caption" id="cap-N6-3" data-start="7.5" data-duration="7.50" data-track-index="3" style="font-size:92px; line-height:0.98;"><span class="hl-mark">3 changements 👇</span></div>
+      <div class="clip caption" id="cap-N5-0" data-start="0.0" data-duration="1.98" data-track-index="3" style="font-size:92px; line-height:0.98;"><span class="hl-mark">L'erreur n°1</span></div>
+      <div class="clip caption" id="cap-N5-1" data-start="2.0" data-duration="2.48" data-track-index="3" style="font-size:92px; line-height:0.98;">qui empêche ton bébé</div>
+      <div class="clip caption" id="cap-N5-2" data-start="4.5" data-duration="2.00" data-track-index="3" style="font-size:92px; line-height:0.98;">de dormir…</div>
+      <div class="clip caption" id="cap-N5-3" data-start="7.0" data-duration="8.00" data-track-index="3" style="font-size:92px; line-height:0.98;"><span class="hl-mark">…tu la fais ce soir.</span></div>
 
-      <audio id="voiceover" class="clip" data-start="0" data-duration="15" data-track-index="10" data-volume="1.0" src="tests/hooks/audio/E.mp3"></audio>
+      <audio id="voiceover" class="clip" data-start="0" data-duration="15" data-track-index="10" data-volume="1.0" src="tests/hooks/audio/D.mp3"></audio>
       <audio id="music" class="clip" data-start="0" data-duration="15" data-track-index="11" data-volume="0.025" src="assets/audio/music-pad.mp3"></audio>
       <audio id="sfx-boom" class="clip" data-start="0" data-duration="0.55" data-track-index="12" data-volume="0.45" src="assets/audio/sfx/hook-boom.mp3"></audio>
 
@@ -48,10 +48,10 @@
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({ paused: true });
       tl.fromTo("#broll", { scale: 1.0 }, { scale: 1.10, duration: 15, ease: "none" }, 0);
-      tl.from("#cap-N6-0", { y: 30, opacity: 0, duration: 0.3, ease: "power3.out" }, 0.0);
-      tl.from("#cap-N6-1", { y: 30, opacity: 0, duration: 0.3, ease: "power3.out" }, 2.0);
-      tl.from("#cap-N6-2", { y: 30, opacity: 0, duration: 0.3, ease: "power3.out" }, 4.5);
-      tl.from("#cap-N6-3", { y: 30, opacity: 0, duration: 0.3, ease: "power3.out" }, 7.5);
+      tl.from("#cap-N5-0", { y: 30, opacity: 0, duration: 0.3, ease: "power3.out" }, 0.0);
+      tl.from("#cap-N5-1", { y: 30, opacity: 0, duration: 0.3, ease: "power3.out" }, 2.0);
+      tl.from("#cap-N5-2", { y: 30, opacity: 0, duration: 0.3, ease: "power3.out" }, 4.5);
+      tl.from("#cap-N5-3", { y: 30, opacity: 0, duration: 0.3, ease: "power3.out" }, 7.0);
       window.__timelines["main"] = tl;
     </script>
   </body>

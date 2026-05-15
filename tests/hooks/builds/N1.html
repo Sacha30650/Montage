@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,800;1,800&family=Plus+Jakarta+Sans:wght@800&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg-cream: #fbf5ef;
+        --brown-deep: #2a2520;
+        --terracotta: #c56f4a;
+        --sage: #87a878;
+        --highlight: #f2c84b;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width:1080px; height:1920px; overflow:hidden; background:#0a0a0a; font-family:"Plus Jakarta Sans",sans-serif; }
+      .broll { position:absolute; inset:0; width:100%; height:100%; object-fit:cover;  }
+      .scrim { position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 35%, rgba(0,0,0,0) 60%, rgba(0,0,0,0.7) 100%); pointer-events:none; }
+      .caption {
+        position:absolute; left:60px; right:60px; top:1050px;
+        text-align:center; font-weight:800; line-height:1.05;
+        color:var(--bg-cream);
+        text-shadow:0 4px 24px rgba(0,0,0,0.85), 0 0 14px rgba(0,0,0,0.4);
+        letter-spacing:-0.01em;
+      }
+      .hl-mark { background: rgba(242,200,75,0.55); padding:0 12px; border-radius:6px; color:var(--brown-deep); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="15" data-width="1080" data-height="1920">
+      <img class="clip broll" id="broll" data-start="0" data-duration="15" data-track-index="0" src="tests/hooks/images/N1-dynamic-nursery.png">
+      <div class="clip scrim" id="scrim" data-start="0" data-duration="15" data-track-index="1"></div>
+
+      <div class="clip caption" id="cap-N1-0" data-start="0.0" data-duration="2.48" data-track-index="3" style="font-size:108px; line-height:0.98;">Ton enfant se réveille</div>
+      <div class="clip caption" id="cap-N1-1" data-start="2.5" data-duration="1.98" data-track-index="3" style="font-size:108px; line-height:0.98;"><span class="hl-mark">toutes les 2 h ?</span></div>
+      <div class="clip caption" id="cap-N1-2" data-start="4.5" data-duration="4.98" data-track-index="3" style="font-size:108px; line-height:0.98;">CE N'EST PAS UN CAPRICE.</div>
+      <div class="clip caption" id="cap-N1-3" data-start="9.5" data-duration="5.50" data-track-index="3" style="font-size:108px; line-height:0.98;"><span class="hl-mark">L'erreur invisible 👇</span></div>
+
+      <audio id="voiceover" class="clip" data-start="0" data-duration="15" data-track-index="10" data-volume="1.0" src="tests/hooks/audio/A.mp3"></audio>
+      <audio id="music" class="clip" data-start="0" data-duration="15" data-track-index="11" data-volume="0.025" src="assets/audio/music-pad.mp3"></audio>
+      <audio id="sfx-boom" class="clip" data-start="0" data-duration="0.55" data-track-index="12" data-volume="0.45" src="assets/audio/sfx/hook-boom.mp3"></audio>
+      <audio id="sfx-N1-w0" class="clip" data-start="0.6" data-duration="0.62" data-track-index="13" data-volume="0.30" src="assets/audio/sfx/whoosh.mp3"></audio>
+      <audio id="sfx-N1-w1" class="clip" data-start="2.45" data-duration="0.62" data-track-index="13" data-volume="0.30" src="assets/audio/sfx/whoosh.mp3"></audio>
+      <audio id="sfx-N1-w2" class="clip" data-start="4.45" data-duration="0.62" data-track-index="13" data-volume="0.30" src="assets/audio/sfx/whoosh.mp3"></audio>
+      <audio id="sfx-N1-w3" class="clip" data-start="9.45" data-duration="0.62" data-track-index="13" data-volume="0.30" src="assets/audio/sfx/whoosh.mp3"></audio>
+
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      tl.fromTo("#broll", { scale: 1.05 }, { scale: 1.10, duration: 5, ease: "none" }, 0);
+      tl.to("#broll", { scale: 1.18, duration: 5, ease: "power2.in" }, 5);
+      tl.to("#broll", { scale: 1.04, duration: 0.20, ease: "power2.out" }, 10);
+      tl.to("#broll", { scale: 1.18, duration: 5, ease: "power2.in" }, 10.2);
+      tl.from("#cap-N1-0", { y: 50, opacity: 0, duration: 0.18, ease: "power3.out" }, 0.0);
+      tl.from("#cap-N1-1", { y: 50, opacity: 0, duration: 0.18, ease: "power3.out" }, 2.5);
+      tl.from("#cap-N1-2", { y: 50, opacity: 0, duration: 0.18, ease: "power3.out" }, 4.5);
+      tl.from("#cap-N1-3", { y: 50, opacity: 0, duration: 0.18, ease: "power3.out" }, 9.5);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
