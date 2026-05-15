@@ -12,9 +12,10 @@
     />
     <style>
       :root {
-        --fp-red:  #e62029;
-        --fp-black:#0a0a0a;
-        --fp-white:#ffffff;
+        --fp-yellow: #f8d80f;
+        --fp-charcoal: #3a3f42;
+        --fp-black: #0a0a0a;
+        --fp-white: #ffffff;
       }
       * { margin: 0; padding: 0; box-sizing: border-box; }
       html, body {
@@ -34,19 +35,39 @@
           radial-gradient(ellipse at center, rgba(0,0,0,0) 60%, rgba(0,0,0,0.65) 100%);
         pointer-events: none;
       }
-      .brand {
+      .logo-card {
         position: absolute;
-        top: 130px; left: 0; right: 0;
+        top: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--fp-charcoal);
+        padding: 32px 64px 26px;
         text-align: center;
-        font-family: "Anton", sans-serif;
-        font-size: 96px;
-        letter-spacing: 0.04em;
-        color: var(--fp-white);
-        text-shadow: 0 6px 30px rgba(0,0,0,0.85), 0 0 16px rgba(0,0,0,0.6);
+        box-shadow: 0 12px 60px rgba(0,0,0,0.75), 0 0 0 2px rgba(0,0,0,0.4) inset;
       }
-      .brand .fp {
-        color: var(--fp-red);
-        text-shadow: 0 6px 30px rgba(0,0,0,0.95), 0 0 14px rgba(230,32,41,0.65);
+      .logo-card .name {
+        font-family: "Anton", sans-serif;
+        font-size: 116px;
+        line-height: 0.95;
+        color: var(--fp-white);
+        letter-spacing: 0.02em;
+        font-style: italic;
+        text-shadow: 0 4px 16px rgba(0,0,0,0.6);
+      }
+      .logo-card .bar {
+        height: 8px;
+        background: var(--fp-yellow);
+        margin: 16px 0 14px;
+        box-shadow: 0 0 14px rgba(248,216,15,0.6);
+      }
+      .logo-card .tagline {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-weight: 800;
+        color: var(--fp-yellow);
+        font-size: 30px;
+        letter-spacing: 0.30em;
+        text-transform: uppercase;
+        text-shadow: 0 0 12px rgba(248,216,15,0.45);
       }
       .flash {
         position: absolute; inset: 0;
@@ -54,8 +75,7 @@
         opacity: 0;
       }
       .reveal {
-        position: absolute;
-        inset: 0;
+        position: absolute; inset: 0;
         display: flex; flex-direction: column; align-items: center; justify-content: center;
         gap: 24px;
         text-align: center;
@@ -73,25 +93,57 @@
         font-size: 200px;
         letter-spacing: 0.02em;
         line-height: 0.95;
-        color: var(--fp-red);
+        color: var(--fp-yellow);
         text-shadow:
-          0 0 30px rgba(230,32,41,0.85),
+          0 0 35px rgba(248,216,15,0.85),
           0 10px 60px rgba(0,0,0,0.95),
           4px 4px 0 rgba(0,0,0,0.55);
       }
       .reveal-bg {
         position: absolute; inset: 0;
-        background: linear-gradient(180deg, rgba(0,0,0,0.65), rgba(0,0,0,0.85));
+        background: linear-gradient(180deg, rgba(0,0,0,0.65), rgba(10,10,10,0.92));
       }
       .corner-mark {
         position: absolute;
         bottom: 220px; left: 0; right: 0;
         text-align: center;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-weight: 800;
+        font-size: 50px;
+        letter-spacing: 0.22em;
+        color: var(--fp-yellow);
+        text-shadow: 0 4px 18px rgba(0,0,0,0.85), 0 0 16px rgba(248,216,15,0.35);
+        text-transform: uppercase;
+      }
+      .reveal-logo {
+        position: absolute;
+        bottom: 220px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--fp-charcoal);
+        padding: 18px 38px 14px;
+        text-align: center;
+      }
+      .reveal-logo .name {
         font-family: "Anton", sans-serif;
-        font-size: 56px;
-        letter-spacing: 0.16em;
-        color: var(--fp-red);
-        text-shadow: 0 4px 18px rgba(0,0,0,0.85);
+        font-size: 68px;
+        line-height: 0.95;
+        color: var(--fp-white);
+        letter-spacing: 0.02em;
+        font-style: italic;
+      }
+      .reveal-logo .bar {
+        height: 5px;
+        background: var(--fp-yellow);
+        margin: 8px 0 6px;
+      }
+      .reveal-logo .tagline {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-weight: 800;
+        color: var(--fp-yellow);
+        font-size: 17px;
+        letter-spacing: 0.30em;
+        text-transform: uppercase;
       }
     </style>
   </head>
@@ -122,20 +174,29 @@
       <!-- White flash for impact at 15s -->
       <div class="clip flash" id="flash" data-start="14.85" data-duration="0.6" data-track-index="3"></div>
 
-      <!-- Brand top text "FITNESS PARK" 0-12s -->
-      <div class="clip brand" id="brand" data-start="0" data-duration="12" data-track-index="4">
-        <span class="fp">FITNESS</span> PARK
+      <!-- Brand logo card top (CSS-reproduced Fitness Park badge) 0-12s -->
+      <div class="clip logo-card" id="logo-card" data-start="0" data-duration="12" data-track-index="4">
+        <div class="name">FITNESS PARK</div>
+        <div class="bar"></div>
+        <div class="tagline">Se dépasser · Se surpasser</div>
       </div>
 
       <!-- Bottom small mark 0-12s -->
       <div class="clip corner-mark" id="corner-mark" data-start="0" data-duration="12" data-track-index="5">
-        — UNE NOUVELLE ÈRE —
+        Une nouvelle ère
       </div>
 
       <!-- Final reveal 15-20s -->
       <div class="clip reveal" id="reveal" data-start="15" data-duration="5" data-track-index="6">
         <div class="line1">QUELQUE CHOSE</div>
         <div class="line2">SE PRÉPARE</div>
+      </div>
+
+      <!-- Logo badge at bottom during reveal 15.5-20s -->
+      <div class="clip reveal-logo" id="reveal-logo" data-start="15.5" data-duration="4.5" data-track-index="7">
+        <div class="name">FITNESS PARK</div>
+        <div class="bar"></div>
+        <div class="tagline">Se dépasser · Se surpasser</div>
       </div>
 
       <!-- Audio: synth EDM beat -->
@@ -153,12 +214,12 @@
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({ paused: true });
 
-      // Brand text reveal: slide up + slight scale
-      tl.from("#brand", { y: 80, opacity: 0, duration: 0.45, ease: "back.out(2)" }, 0);
-      tl.from("#corner-mark", { y: -30, opacity: 0, duration: 0.45, ease: "power3.out" }, 0.2);
-      tl.to("#brand", { opacity: 0, duration: 0.3 }, 11.7);
+      // Brand logo card reveal: slide up + bounce
+      tl.from("#logo-card", { y: -120, opacity: 0, duration: 0.55, ease: "back.out(2.2)" }, 0);
+      tl.from("#corner-mark", { y: -30, opacity: 0, duration: 0.45, ease: "power3.out" }, 0.25);
+      tl.to("#logo-card", { y: -40, opacity: 0, duration: 0.35, ease: "power3.in" }, 11.6);
       tl.to("#corner-mark", { opacity: 0, duration: 0.3 }, 11.7);
-      tl.set("#brand", { opacity: 0 }, 12);
+      tl.set("#logo-card", { opacity: 0 }, 12);
       tl.set("#corner-mark", { opacity: 0 }, 12);
 
       // Punch zoom on each main clip (subtle motion)
@@ -205,6 +266,9 @@
       tl.fromTo("#broll-reveal",
         { scale: 1.0 },
         { scale: 1.12, duration: 5, ease: "none" }, 15);
+
+      // Reveal logo card slides up from bottom
+      tl.from("#reveal-logo", { y: 80, opacity: 0, duration: 0.55, ease: "back.out(2.2)" }, 15.6);
 
       window.__timelines["main"] = tl;
     </script>
