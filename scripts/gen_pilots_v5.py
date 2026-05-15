@@ -29,49 +29,52 @@ STYLES = {
 PILOTS = {
     "pilot-05-sommeil-97": {
         "hook_style": "punch",
-        "total_dur": 67,  # was 60 — user asked >1min with margin
-        # (filename, start, duration, kind, kb_dir) — kb_dir: "in"/"out"/"left"/"right"
+        "total_dur": 62,  # VO 58.6s + small CTA tail — minimal silence
+        # Timings synced to silencedetect of the v3 VO
         "images": [
             ("00-hook-stat.png",     0,    4, "hook", "in"),
-            ("01-screens.png",       4,    7, "body", "in"),
-            ("01-screens.png",      11,    4, "body", "out"),    # reuse, opposite KB
-            ("03-phrase.png",       15,    7, "body", "in"),
-            ("03-phrase.png",       22,    3, "body", "left"),
-            ("02-notes.png",        25,    7, "body", "in"),
-            ("02-notes.png",        32,    4, "body", "out"),
-            ("04-outro.png",        36,   12, "body", "in"),
-            ("04-outro.png",        48,   19, "body", "out"),   # extended to 67s
+            ("01-screens.png",       4,    6, "body", "in"),
+            ("00-hook-stat.png",    10,    3, "body", "out"),
+            ("01-screens.png",      13,    9, "body", "left"),
+            ("02-notes.png",        22,    8, "body", "in"),
+            ("03-phrase.png",       30,    6, "body", "in"),
+            ("03-phrase.png",       36,    4, "body", "out"),
+            ("04-outro.png",        40,    7, "body", "in"),
+            ("02-notes.png",        47,    6, "body", "out"),
+            ("04-outro.png",        53,    9, "body", "in"),
         ],
-        # Hook 0-3.5s
+        # Hook 0-3.94s (synced to first major pause)
         "hook_caps": [
-            ("97 %",                    0.0, 1.0, "xxl"),
-            ("font CETTE erreur",       1.0, 1.2, "white"),
-            ("le soir",                 2.3, 1.2, "hl"),
+            ("97 %",                            0.0, 1.0, "xxl"),
+            ("font CETTE erreur",               1.0, 1.5, "white"),
+            ("le soir",                         2.6, 1.3, "hl"),
         ],
-        # Dense body caps — VO is 46.7s, caps every ~2.5s
+        # Body caps synced to silence_end times from ffmpeg silencedetect
         "body_caps": [
-            ("Voici les 3 ERREURS",                3.6, 2.5, "hl"),
-            ("ERREUR 1",                           6.2, 1.5, "hl"),
-            ("Les écrans après 19h",               7.8, 2.5, "white"),
-            ("Même la télé en arrière-plan",      10.4, 2.5, "white"),
-            ("Le cerveau confond jour & nuit",    13.0, 3.0, "hl"),
-            ("ERREUR 2",                          16.1, 1.5, "hl"),
-            ('Le mot "DORMIR" déclenche le stress', 17.7, 3.5, "white"),
-            ('Dis "on va se calmer" à la place',   21.3, 3.0, "hl"),
-            ("ERREUR 3",                          24.4, 1.5, "hl"),
-            ("Tu cèdes à la 3ème demande",        26.0, 2.5, "white"),
-            ("Eau · Câlin · Pipi",                28.6, 2.5, "white"),
-            ("Pose les règles AVANT",             31.2, 2.5, "hl"),
-            ("Lumière chaude · Phrase calme",     33.8, 3.5, "white"),
-            ("Tu changes ces 3 trucs",            37.4, 3.0, "white"),
-            ("Tu gagnes 2h de sommeil 🌙",         40.5, 5.0, "hl"),
-            ("par soir.",                         45.6, 2.5, "white"),
+            ("45 min à s'endormir 😴",          3.95, 3.05, "hl"),
+            ("Voici les 3 ERREURS",             7.05, 2.50, "hl"),
+            ("ERREUR 1",                        9.65, 1.75, "hl"),
+            ("Écrans après 19h",               11.45, 1.95, "white"),
+            ("Même la TV en arrière-plan",     13.50, 2.60, "white"),
+            ("Cerveau confond jour & nuit",    16.20, 2.30, "hl"),
+            ("Passe en LUMIÈRE CHAUDE 💡",      18.55, 2.65, "hl"),
+            ("ERREUR 2",                       21.70, 1.20, "hl"),
+            ('"va dormir" → anxiété',          22.95, 3.05, "white"),
+            ('Dis "on va se CALMER"',          26.05, 3.20, "hl"),
+            ("Utilise le mot CALME ✨",         29.35, 3.05, "hl"),
+            ("ERREUR 3",                       32.95, 1.10, "hl"),
+            ("Tu cèdes à la 3ème demande",     34.15, 2.10, "white"),
+            ("Eau · Câlin · Pipi",             36.30, 1.95, "white"),
+            ("Tu rentres dans le jeu",         38.30, 2.00, "white"),
+            ("Pose les règles AVANT 📋",        40.35, 3.45, "hl"),
+            ("1 seule demande max",            43.90, 2.40, "white"),
+            ("Lumière chaude · Phrase calme · Règles avant", 46.35, 2.20, "hl"),
+            ("Tu gagnes 2h de sommeil 🌙",      48.60, 4.95, "hl"),
+            ("Il fait ses NUITS ✨",            53.65, 2.15, "xxl"),
         ],
         "outro_caps": [
-            ("Sauvegarde 💾",                     48.3, 5.0, "xxl"),
-            ("Partage 🤝",                        53.5, 4.0, "hl"),
-            ("À un parent épuisé",                57.7, 4.5, "hl"),
-            ("Suis pour + d'astuces 👉",          62.4, 4.6, "xxl"),
+            ("Sauvegarde 💾",                  55.85, 2.60, "xxl"),
+            ("Partage à un parent épuisé 🤝",  58.50, 3.50, "hl"),
         ],
     },
     "pilot-06-crises-personne": {
