@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@800;900&display=swap" rel="stylesheet" />
+    <style>
+      * { margin:0; padding:0; box-sizing:border-box; }
+      html, body { width:1080px; height:1920px; overflow:hidden; background:#1a1410; font-family:"Plus Jakarta Sans",sans-serif; }
+      .broll { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter: blur(14px) brightness(0.45); }
+      .scrim { position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.44999999999999996) 60%, rgba(0,0,0,0.85) 100%); pointer-events:none; }
+      .caption {
+        position:absolute; left:48px; right:48px;
+        text-align:center; font-weight:900; line-height:0.95;
+        color:#fbf5ef;
+        text-shadow:0 6px 28px rgba(0,0,0,0.95), 0 0 18px rgba(0,0,0,0.6);
+        letter-spacing:-0.02em;
+      }
+      .hl-mark { background: rgba(242, 200, 75, 0.55); padding:0 16px; border-radius:8px; color:#2a2520; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="15" data-width="1080" data-height="1920">
+      <img class="clip broll" id="broll" data-start="0" data-duration="15" data-track-index="0" src="tests/hooks/images/N1-dynamic-nursery.png">
+      <div class="clip scrim" id="scrim" data-start="0" data-duration="15" data-track-index="1"></div>
+
+      <div class="clip caption" id="cap-V9-0" data-start="0.0" data-duration="1.18" data-track-index="3" style="font-size:200px; top:720px;"><span class="hl-mark">11h</span></div>
+      <div class="clip caption" id="cap-V9-1" data-start="1.2" data-duration="1.78" data-track-index="3" style="font-size:150px; top:720px;">de sommeil d'affilée.</div>
+      <div class="clip caption" id="cap-V9-2" data-start="3.0" data-duration="1.80" data-track-index="3" style="font-size:96px; top:1100px;"><span class="hl-mark">UN changement.</span></div>
+      <div class="clip caption" id="cap-V9-3" data-start="4.9" data-duration="10.10" data-track-index="3" style="font-size:96px; top:1100px;"><span class="hl-mark">Voici lequel 👇</span></div>
+      <audio id="voiceover" class="clip" data-start="0" data-duration="15" data-track-index="10" data-volume="1.0" src="tests/hooks/audio/V9.mp3"></audio>
+      <audio id="music" class="clip" data-start="0" data-duration="15" data-track-index="11" data-volume="0.025" src="assets/audio/music-pad.mp3"></audio>
+      <audio id="sfx-boom" class="clip" data-start="0" data-duration="0.55" data-track-index="12" data-volume="0.55" src="assets/audio/sfx/hook-boom.mp3"></audio>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#broll", { scale: 1.20 }, { scale: 1.32, duration: 3, ease: "none" }, 0);
+      tl.to("#broll", { filter: "blur(0px) brightness(1.0)", scale: 1.0, duration: 0.8, ease: "power2.out" }, 3);
+      tl.to("#broll", { scale: 1.12, duration: 12, ease: "none" }, 3.8);
+      tl.from("#cap-V9-0", { y: 60, opacity: 0, duration: 0.18, ease: "power3.out" }, 0.0);
+      tl.from("#cap-V9-1", { y: 60, opacity: 0, duration: 0.18, ease: "power3.out" }, 1.2);
+      tl.from("#cap-V9-2", { y: 60, opacity: 0, duration: 0.18, ease: "power3.out" }, 3.0);
+      tl.from("#cap-V9-3", { y: 60, opacity: 0, duration: 0.18, ease: "power3.out" }, 4.9);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

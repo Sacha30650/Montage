@@ -24,15 +24,13 @@
   </head>
   <body>
     <div id="root" data-composition-id="main" data-start="0" data-duration="15" data-width="1080" data-height="1920">
-      <img class="clip broll" id="broll" data-start="0" data-duration="15" data-track-index="0" src="tests/hooks/images/N5-mysterious-door.png">
+      <img class="clip broll" id="broll" data-start="0" data-duration="15" data-track-index="0" src="tests/hooks/images/N1-dynamic-nursery.png">
       <div class="clip scrim" id="scrim" data-start="0" data-duration="15" data-track-index="1"></div>
 
-      <div class="clip caption" id="cap-V10-0" data-start="0.0" data-duration="1.18" data-track-index="3" style="font-size:200px; top:720px;"><span class="hl-mark">Personne</span></div>
-      <div class="clip caption" id="cap-V10-1" data-start="1.2" data-duration="0.98" data-track-index="3" style="font-size:150px; top:720px;">ne te dit la</div>
-      <div class="clip caption" id="cap-V10-2" data-start="2.2" data-duration="1.48" data-track-index="3" style="font-size:160px; top:720px;"><span class="hl-mark">VÉRITÉ</span></div>
-      <div class="clip caption" id="cap-V10-3" data-start="3.7" data-duration="1.50" data-track-index="3" style="font-size:92px; top:720px;">sur le sommeil.</div>
-      <div class="clip caption" id="cap-V10-4" data-start="5.3" data-duration="9.70" data-track-index="3" style="font-size:96px; top:720px;"><span class="hl-mark">3 min 👇</span></div>
-      <audio id="voiceover" class="clip" data-start="0" data-duration="15" data-track-index="10" data-volume="1.0" src="tests/hooks/audio/V10.mp3"></audio>
+      <div class="clip caption" id="cap-V8-0" data-start="0.0" data-duration="2.48" data-track-index="3" style="font-size:150px; top:720px;">Pour qu'il dorme MIEUX</div>
+      <div class="clip caption" id="cap-V8-1" data-start="2.5" data-duration="2.00" data-track-index="3" style="font-size:200px; top:720px;"><span class="hl-mark">fais l'INVERSE.</span></div>
+      <div class="clip caption" id="cap-V8-2" data-start="4.8" data-duration="10.20" data-track-index="3" style="font-size:96px; top:720px;"><span class="hl-mark">3 changements 👇</span></div>
+      <audio id="voiceover" class="clip" data-start="0" data-duration="15" data-track-index="10" data-volume="1.0" src="tests/hooks/audio/V8.mp3"></audio>
       <audio id="music" class="clip" data-start="0" data-duration="15" data-track-index="11" data-volume="0.025" src="assets/audio/music-pad.mp3"></audio>
       <audio id="sfx-boom" class="clip" data-start="0" data-duration="0.55" data-track-index="12" data-volume="0.55" src="assets/audio/sfx/hook-boom.mp3"></audio>
     </div>
@@ -40,11 +38,9 @@
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({ paused: true });
       tl.fromTo("#broll", { scale: 1.25 }, { scale: 1.40, duration: 15, ease: "none" }, 0);
-      tl.from("#cap-V10-0", { y: 60, opacity: 0, duration: 0.12, ease: "power3.out" }, 0.0);
-      tl.from("#cap-V10-1", { y: 60, opacity: 0, duration: 0.12, ease: "power3.out" }, 1.2);
-      tl.from("#cap-V10-2", { y: 60, opacity: 0, duration: 0.12, ease: "power3.out" }, 2.2);
-      tl.from("#cap-V10-3", { y: 60, opacity: 0, duration: 0.12, ease: "power3.out" }, 3.7);
-      tl.from("#cap-V10-4", { y: 60, opacity: 0, duration: 0.12, ease: "power3.out" }, 5.3);
+      tl.from("#cap-V8-0", { y: 60, opacity: 0, duration: 0.12, ease: "power3.out" }, 0.0);
+      tl.from("#cap-V8-1", { y: 60, opacity: 0, duration: 0.12, ease: "power3.out" }, 2.5);
+      tl.from("#cap-V8-2", { y: 60, opacity: 0, duration: 0.12, ease: "power3.out" }, 4.8);
       window.__timelines["main"] = tl;
     </script>
   </body>
