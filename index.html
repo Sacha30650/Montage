@@ -6,7 +6,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@1,800&family=Plus+Jakarta+Sans:wght@800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@800;900&display=swap" rel="stylesheet" />
     <style>
       * { margin:0; padding:0; box-sizing:border-box; }
       html, body { width:1080px; height:1920px; overflow:hidden; background:#1a0606; font-family:"Plus Jakarta Sans",sans-serif; }
@@ -14,7 +14,6 @@
       .broll-body { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
       .scrim-hook { position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.35) 60%, rgba(0,0,0,0.85) 100%); pointer-events:none; }
       .scrim-body { position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.50) 0%, rgba(0,0,0,0) 35%, rgba(0,0,0,0) 60%, rgba(0,0,0,0.72) 100%); pointer-events:none; }
-
       .caption-hook {
         position:absolute; left:48px; right:48px; top:720px;
         text-align:center; font-weight:900; line-height:0.96;
@@ -42,57 +41,57 @@
     </style>
   </head>
   <body>
-    <div id="root" data-composition-id="main" data-start="0" data-duration="63.5" data-width="1080" data-height="1920">
-      <img class="clip broll-hook" id="broll-0" data-start="0" data-duration="6.5" data-track-index="0" src="pilots/pilot-07-discipline-stop/assets/broll/00-hook-fist.png">
-      <img class="clip broll-body" id="broll-1" data-start="6.5" data-duration="13" data-track-index="0" src="pilots/pilot-07-discipline-stop/assets/broll/01-hands-toy.png">
-      <img class="clip broll-body" id="broll-2" data-start="19.5" data-duration="10" data-track-index="0" src="pilots/pilot-07-discipline-stop/assets/broll/02-cart.png">
-      <img class="clip broll-body" id="broll-3" data-start="29.5" data-duration="14" data-track-index="0" src="pilots/pilot-07-discipline-stop/assets/broll/03-non-blocks.png">
-      <img class="clip broll-body" id="broll-4" data-start="43.5" data-duration="20" data-track-index="0" src="pilots/pilot-07-discipline-stop/assets/broll/04-outro.png">
+    <div id="root" data-composition-id="main" data-start="0" data-duration="80" data-width="1080" data-height="1920">
+      <img class="clip broll-hook" id="broll-0" data-start="0" data-duration="9" data-track-index="0" src="pilots/pilot-07-discipline-stop/assets/broll/00-hook-fist.png">
+      <img class="clip broll-body" id="broll-1" data-start="9" data-duration="16" data-track-index="0" src="pilots/pilot-07-discipline-stop/assets/broll/01-hands-toy.png">
+      <img class="clip broll-body" id="broll-2" data-start="25" data-duration="14" data-track-index="0" src="pilots/pilot-07-discipline-stop/assets/broll/02-cart.png">
+      <img class="clip broll-body" id="broll-3" data-start="39" data-duration="17" data-track-index="0" src="pilots/pilot-07-discipline-stop/assets/broll/03-non-blocks.png">
+      <img class="clip broll-body" id="broll-4" data-start="56" data-duration="24" data-track-index="0" src="pilots/pilot-07-discipline-stop/assets/broll/04-outro.png">
 
-      <div class="clip scrim-hook" id="scrim-hook" data-start="0" data-duration="6.5" data-track-index="1"></div>
-      <div class="clip scrim-body" id="scrim-body" data-start="6.5" data-duration="57.0" data-track-index="1"></div>
+      <div class="clip scrim-hook" id="scrim-hook" data-start="0" data-duration="7" data-track-index="1"></div>
+      <div class="clip scrim-body" id="scrim-body" data-start="7" data-duration="73" data-track-index="1"></div>
 
-      <div class="clip caption-hook" id="cap-hook-0" data-start="0.00" data-duration="1.00" data-track-index="2" style="font-size:200px;"><span class="hl-mark">STOP.</span></div>
-      <div class="clip caption-hook" id="cap-hook-1" data-start="1.20" data-duration="1.30" data-track-index="2" style="font-size:150px;">Tu disciplines</div>
-      <div class="clip caption-hook" id="cap-hook-2" data-start="2.60" data-duration="2.40" data-track-index="2" style="font-size:160px;"><span class="hl-mark">pour RIEN</span></div>
-      <div class="clip caption-body" id="cap-body-0" data-start="6.70" data-duration="4.60" data-track-index="3" style="font-size:84px;"><span class="hl-mark">3 comportements NORMAUX punis à tort</span></div>
-      <div class="clip caption-body" id="cap-body-1" data-start="11.50" data-duration="4.00" data-track-index="3" style="font-size:84px;"><span class="hl-mark">1 — Refuser de partager à 2 ans</span></div>
-      <div class="clip caption-body" id="cap-body-2" data-start="15.70" data-duration="3.60" data-track-index="3" style="font-size:80px;">C'est neurologique. Pas l'égoïsme.</div>
-      <div class="clip caption-body" id="cap-body-3" data-start="19.50" data-duration="4.60" data-track-index="3" style="font-size:84px;"><span class="hl-mark">2 — Crise au supermarché</span></div>
-      <div class="clip caption-body" id="cap-body-4" data-start="24.50" data-duration="4.80" data-track-index="3" style="font-size:80px;">C'est de la SURCHARGE sensorielle</div>
-      <div class="clip caption-body" id="cap-body-5" data-start="29.50" data-duration="4.00" data-track-index="3" style="font-size:84px;"><span class="hl-mark">3 — Dire « NON » à tout</span></div>
-      <div class="clip caption-body" id="cap-body-6" data-start="33.70" data-duration="4.00" data-track-index="3" style="font-size:80px;">C'est l'apprentissage de SOI</div>
-      <div class="clip caption-body" id="cap-body-7" data-start="37.90" data-duration="5.40" data-track-index="3" style="font-size:80px;">Il découvre qu'il existe.</div>
-      <div class="clip caption-body" id="cap-body-8" data-start="43.50" data-duration="8.00" data-track-index="3" style="font-size:84px;"><span class="hl-mark">Pas besoin de punir 💛</span></div>
-      <div class="clip caption-outro" id="cap-outro-0" data-start="51.50" data-duration="5.80" data-track-index="4" style="font-size:200px;"><span class="hl-mark">Sauvegarde 💾</span></div>
-      <div class="clip caption-outro" id="cap-outro-1" data-start="57.50" data-duration="6.00" data-track-index="4" style="font-size:160px;"><span class="hl-mark">Pour un parent qui doute</span></div>
+      <div class="clip caption-hook" id="cap-hook-0" data-start="0.0" data-duration="2.50" data-track-index="2" style="font-size:200px;"><span class="hl-mark">STOP.</span></div>
+      <div class="clip caption-hook" id="cap-hook-1" data-start="2.7" data-duration="2.50" data-track-index="2" style="font-size:150px;">Tu disciplines</div>
+      <div class="clip caption-hook" id="cap-hook-2" data-start="5.3" data-duration="2.50" data-track-index="2" style="font-size:160px;"><span class="hl-mark">pour RIEN</span></div>
+      <div class="clip caption-body" id="cap-body-0" data-start="8.5" data-duration="6.50" data-track-index="3" style="font-size:84px;"><span class="hl-mark">3 comportements NORMAUX punis à tort</span></div>
+      <div class="clip caption-body" id="cap-body-1" data-start="15.5" data-duration="6.00" data-track-index="3" style="font-size:84px;"><span class="hl-mark">1 — Refuser de partager à 2 ans</span></div>
+      <div class="clip caption-body" id="cap-body-2" data-start="21.8" data-duration="5.00" data-track-index="3" style="font-size:80px;">C'est neurologique. Pas l'égoïsme.</div>
+      <div class="clip caption-body" id="cap-body-3" data-start="27.0" data-duration="6.00" data-track-index="3" style="font-size:84px;"><span class="hl-mark">2 — Crise au supermarché</span></div>
+      <div class="clip caption-body" id="cap-body-4" data-start="33.2" data-duration="5.50" data-track-index="3" style="font-size:80px;">C'est une SURCHARGE sensorielle</div>
+      <div class="clip caption-body" id="cap-body-5" data-start="39.0" data-duration="6.00" data-track-index="3" style="font-size:84px;"><span class="hl-mark">3 — Dire « NON » à tout</span></div>
+      <div class="clip caption-body" id="cap-body-6" data-start="45.2" data-duration="5.00" data-track-index="3" style="font-size:80px;">C'est l'apprentissage de SOI</div>
+      <div class="clip caption-body" id="cap-body-7" data-start="50.5" data-duration="5.50" data-track-index="3" style="font-size:80px;">Il découvre qu'il existe.</div>
+      <div class="clip caption-body" id="cap-body-8" data-start="56.2" data-duration="8.00" data-track-index="3" style="font-size:84px;"><span class="hl-mark">Pas besoin de punir 💛</span></div>
+      <div class="clip caption-outro" id="cap-outro-0" data-start="65.0" data-duration="7.00" data-track-index="4" style="font-size:200px;"><span class="hl-mark">Sauvegarde 💾</span></div>
+      <div class="clip caption-outro" id="cap-outro-1" data-start="72.2" data-duration="7.50" data-track-index="4" style="font-size:160px;"><span class="hl-mark">Pour un parent qui doute</span></div>
 
-      <audio id="voiceover" class="clip" data-start="0" data-duration="63.5" data-track-index="10" data-volume="1.0" src="pilots/pilot-07-discipline-stop/assets/audio/voiceover.mp3"></audio>
-      <audio id="music" class="clip" data-start="0" data-duration="63.5" data-track-index="11" data-volume="0.025" src="pilots/pilot-07-discipline-stop/assets/audio/music-pad.mp3"></audio>
+      <audio id="voiceover" class="clip" data-start="0" data-duration="80" data-track-index="10" data-volume="1.0" src="pilots/pilot-07-discipline-stop/assets/audio/voiceover.mp3"></audio>
+      <audio id="music" class="clip" data-start="0" data-duration="80" data-track-index="11" data-volume="0.025" src="pilots/pilot-07-discipline-stop/assets/audio/music-pad.mp3"></audio>
       <audio id="hook-boom" class="clip" data-start="0" data-duration="0.55" data-track-index="12" data-volume="0.55" src="pilots/pilot-07-discipline-stop/assets/audio/sfx/hook-boom.mp3"></audio>
     </div>
     <script>
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({ paused: true });
-      tl.fromTo("#broll-0", { scale: 1.25 }, { scale: 1.40, duration: 6.5, ease: "none" }, 0);
-      tl.fromTo("#broll-1", { scale: 1.04 }, { scale: 1.12, duration: 13, ease: "none" }, 6.5);
-      tl.fromTo("#broll-2", { scale: 1.04 }, { scale: 1.12, duration: 10, ease: "none" }, 19.5);
-      tl.fromTo("#broll-3", { scale: 1.04 }, { scale: 1.12, duration: 14, ease: "none" }, 29.5);
-      tl.fromTo("#broll-4", { scale: 1.04 }, { scale: 1.12, duration: 20, ease: "none" }, 43.5);
+      tl.fromTo("#broll-0", { scale: 1.25 }, { scale: 1.40, duration: 9, ease: "none" }, 0);
+      tl.fromTo("#broll-1", { scale: 1.04 }, { scale: 1.12, duration: 16, ease: "none" }, 9);
+      tl.fromTo("#broll-2", { scale: 1.04 }, { scale: 1.12, duration: 14, ease: "none" }, 25);
+      tl.fromTo("#broll-3", { scale: 1.04 }, { scale: 1.12, duration: 17, ease: "none" }, 39);
+      tl.fromTo("#broll-4", { scale: 1.04 }, { scale: 1.12, duration: 24, ease: "none" }, 56);
       tl.from("#cap-hook-0", { y: 40, opacity: 0, duration: 0.18, ease: "power3.out" }, 0.0);
-      tl.from("#cap-hook-1", { y: 40, opacity: 0, duration: 0.18, ease: "power3.out" }, 1.2);
-      tl.from("#cap-hook-2", { y: 40, opacity: 0, duration: 0.18, ease: "power3.out" }, 2.6);
-      tl.from("#cap-body-0", { y: 40, opacity: 0, duration: 0.18, ease: "power3.out" }, 6.7);
-      tl.from("#cap-body-1", { y: 40, opacity: 0, duration: 0.18, ease: "power3.out" }, 11.5);
-      tl.from("#cap-body-2", { y: 40, opacity: 0, duration: 0.18, ease: "power3.out" }, 15.7);
-      tl.from("#cap-body-3", { y: 40, opacity: 0, duration: 0.18, ease: "power3.out" }, 19.5);
-      tl.from("#cap-body-4", { y: 40, opacity: 0, duration: 0.18, ease: "power3.out" }, 24.5);
-      tl.from("#cap-body-5", { y: 40, opacity: 0, duration: 0.18, ease: "power3.out" }, 29.5);
-      tl.from("#cap-body-6", { y: 40, opacity: 0, duration: 0.18, ease: "power3.out" }, 33.7);
-      tl.from("#cap-body-7", { y: 40, opacity: 0, duration: 0.18, ease: "power3.out" }, 37.9);
-      tl.from("#cap-body-8", { y: 40, opacity: 0, duration: 0.18, ease: "power3.out" }, 43.5);
-      tl.from("#cap-outro-0", { y: 40, opacity: 0, duration: 0.18, ease: "power3.out" }, 51.5);
-      tl.from("#cap-outro-1", { y: 40, opacity: 0, duration: 0.18, ease: "power3.out" }, 57.5);
+      tl.from("#cap-hook-1", { y: 40, opacity: 0, duration: 0.18, ease: "power3.out" }, 2.7);
+      tl.from("#cap-hook-2", { y: 40, opacity: 0, duration: 0.18, ease: "power3.out" }, 5.3);
+      tl.from("#cap-body-0", { y: 40, opacity: 0, duration: 0.18, ease: "power3.out" }, 8.5);
+      tl.from("#cap-body-1", { y: 40, opacity: 0, duration: 0.18, ease: "power3.out" }, 15.5);
+      tl.from("#cap-body-2", { y: 40, opacity: 0, duration: 0.18, ease: "power3.out" }, 21.8);
+      tl.from("#cap-body-3", { y: 40, opacity: 0, duration: 0.18, ease: "power3.out" }, 27.0);
+      tl.from("#cap-body-4", { y: 40, opacity: 0, duration: 0.18, ease: "power3.out" }, 33.2);
+      tl.from("#cap-body-5", { y: 40, opacity: 0, duration: 0.18, ease: "power3.out" }, 39.0);
+      tl.from("#cap-body-6", { y: 40, opacity: 0, duration: 0.18, ease: "power3.out" }, 45.2);
+      tl.from("#cap-body-7", { y: 40, opacity: 0, duration: 0.18, ease: "power3.out" }, 50.5);
+      tl.from("#cap-body-8", { y: 40, opacity: 0, duration: 0.18, ease: "power3.out" }, 56.2);
+      tl.from("#cap-outro-0", { y: 40, opacity: 0, duration: 0.18, ease: "power3.out" }, 65.0);
+      tl.from("#cap-outro-1", { y: 40, opacity: 0, duration: 0.18, ease: "power3.out" }, 72.2);
       window.__timelines["main"] = tl;
     </script>
   </body>

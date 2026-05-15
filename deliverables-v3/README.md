@@ -1,98 +1,97 @@
-# Round 3 — 3 pilotes long-form parentalité (63.5s chacun)
+# Round 3 v4 — 3 pilotes long-form parentalité (ElevenLabs v3)
 
-Vidéos finales prêtes pour publication TikTok / Reels / Shorts.
-Format : 1080×1920 vertical, 63.5s, H.264, MP4.
+Vidéos finales **avec VO ElevenLabs v3** (modèle 2025, intonation naturelle).
+Format : 1080×1920 vertical, 70-80s, H.264, MP4.
+
+---
+
+## ⚡ Changements vs version précédente
+
+**Avant** (v2 du multilingual v2) :
+- Modèle `eleven_multilingual_v2` (2023, prosodie plate)
+- `stability=0.55`, `style=0.15` → monotone
+- `atempo=1.08` post-traitement → voix compressée, intonation déformée
+- Scripts plats sans marqueurs de prosodie
+
+**Maintenant** (v4 avec v3) :
+- Modèle `eleven_v3` (le plus expressif, 74 langues)
+- `stability=0.35` (variation naturelle), `use_speaker_boost=True`
+- **Aucun atempo** — rythme naturel respecté
+- Scripts ré-écrits avec **ellipses, virgules, CAPS** pour l'emphase
+  - Ex: `« 97 pour cent des parents... font CETTE erreur le soir. »`
+  - Pauses sur ellipses (...) → suspense
+  - CAPS → emphase audio
+  - Virgules placées pour micro-respirations
 
 ---
 
 ## 📹 Les 3 pilotes
 
-### 1. **`01__sommeil__hook-97percent.mp4`** — Sommeil bébé (PUNCH)
-- **Hook V2-style** (round 2 best hook score : 53/100, viral 62)
-- Texte d'accroche : **« 97 % font CETTE erreur le soir »**
-- Style : PUNCH (text-first big captions, jaune)
-- 0-1.5s : silence visual — caption « 97 % » flashe en gros + hook-boom SFX
-- 1.5-6.5s : VO démarre, captions hook continuent
-- 6.5-55s : Body cosy slow — 3 erreurs (écrans après 19h, mot « DORMIR », céder à la 3ème demande)
-- 55-63.5s : Outro CTA « Sauvegarde 💾 » → « Pour un parent épuisé »
-- 5 images B-roll (1 hook, 4 body)
+### 1. **`01__sommeil__hook-97percent.mp4`** (75s)
+- Hook : **« 97 % font CETTE erreur le soir »** (V2-style, viral 62)
+- Body : 3 erreurs concrètes (écrans après 19h, mot « DORMIR », céder à la 3ème demande)
+- Outro : Sauvegarde 💾 — Pour un parent épuisé
+- VO v3 raw : 66s + 1.5s silence pad
 
-### 2. **`02__crises__hook-personne-verite.mp4`** — Crises de colère (PUNCH)
-- **Hook V10-style** (round 2 best viral : 63/100, hook 49)
-- Texte d'accroche : **« Personne ne te dit la VÉRITÉ sur les crises »**
-- Style : PUNCH (text-first, jaune, curiosity-driven)
-- 0-1.5s : silence visual — caption « Personne » flashe
-- 1.5-6.5s : VO + captions hook
-- 6.5-55s : Body cosy — reframe neuro (saturation émotionnelle), erreurs courantes, méthode 90 secondes
-- 55-63.5s : Outro CTA « Sauvegarde 💾 » → « Pour la prochaine crise »
-- 6 images B-roll (1 hook, 5 body)
+### 2. **`02__crises__hook-personne-verite.mp4`** (70s)
+- Hook : **« Personne ne te dit la VÉRITÉ sur les crises »** (V10-style, viral 63)
+- Body : reframe émotionnel + erreurs courantes + méthode 90s
+- Outro : Sauvegarde 💾 — Pour la prochaine crise
+- VO v3 raw : 61s + 1.5s silence pad
 
-### 3. **`03__discipline__hook-STOP-red.mp4`** — Discipline / 3 comportements normaux (RED ALERT)
-- **Hook V4-style** (round 2 best brain engagement : 63/100, viral 62)
-- Texte d'accroche : **« STOP. Tu disciplines pour RIEN »**
-- Style : RED ALERT (text-first + highlight rouge, urgence/pattern interrupt)
-- 0-1.5s : silence visual — caption « STOP. » rouge flashe + hook-boom SFX
-- 1.5-6.5s : VO + captions hook
-- 6.5-55s : Body cosy — 3 comportements normaux mal compris (refus partage à 2 ans, supermarché, « non » à tout)
-- 55-63.5s : Outro CTA « Pas besoin de punir 💛 » → « Sauvegarde 💾 » → « Pour un parent qui doute »
-- 5 images B-roll (1 hook, 4 body)
+### 3. **`03__discipline__hook-STOP-red.mp4`** (80s)
+- Hook : **« STOP. Tu disciplines pour RIEN »** (V4-style, brain 63, RED ALERT)
+- Body : 3 comportements normaux mal compris (refus partage à 2 ans, supermarché, « non »)
+- Outro : Pas besoin de punir 💛 — Sauvegarde 💾 — Pour un parent qui doute
+- VO v3 raw : 71s + 1.5s silence pad
 
 ---
 
-## 🎯 Recettes appliquées (validées en round 1+2)
-
-Chaque pilote utilise **la recette gagnante**, plafond viral=62-63 sur tests 15s :
+## 🎬 Structure (validée R2)
 
 ```
-HOOK (0-6.5s)
-├─ 0-1.5s    Visual punch SILENCIEUX : caption "MOT/CHIFFRE" géant (200px)
-│            + hook-boom SFX, image floutée
-├─ 1.5s      VO démarre (a 1.5s pour laisser le hook respirer)
-└─ 1.5-6.5s  Captions hook complets sur image floutée
-
-BODY (6.5-55s)
-├─ Image cosy claire en plein écran avec Ken Burns slow
-├─ Captions au bas, taille moyenne (84px), highlight jaune sur mots-clés
-└─ Image change toutes les 10-13s avec le sujet
-
-OUTRO (55-63.5s)
-└─ Captions CTA centrées en gros (200px), image cosy finale en fond
+0-1.5s     SILENCE — caption MOT/CHIFFRE 200px + hook-boom SFX
+1.5-7s     VO commence + hook captions sur image floutée
+7-(N-12)s  BODY cosy slow — captions au bas, images cosy en succession
+(N-12)s-N  OUTRO CTA — caption gros + image cosy finale
 ```
 
-## 🔍 À propos des scores du predictor
+## 🎙 Réglages ElevenLabs v3 utilisés
 
-J'ai testé les **15 premières secondes** de chaque pilote sur virality_predictor. Les scores sortent **plus bas** que les tests 15s isolés du round 2 :
-- Pilot 05 (v1 sans padding) : viral=44, hook=27 (vs V2 isolé viral=62, hook=53)
-- Pilot 06 (v1 sans padding) : viral=47, hook=34 (vs V10 isolé viral=63, hook=49)
+```python
+{
+    "model_id": "eleven_v3",
+    "voice_id": "sCino0QUmZiNEifQ1lT4",  # Clara FR
+    "voice_settings": {
+        "stability": 0.35,           # variation expressive
+        "similarity_boost": 0.75,
+        "use_speaker_boost": True,
+    }
+}
+```
 
-**Pourquoi ce décalage ?**
-Le predictor analyse les 15 premières secondes seulement. Dans le pilote long-form, ces 15s contiennent déjà du body content (image qui change à 5s, VO continue). Dans les tests 15s isolés, toute la vidéo EST le hook → format optimisé pour le predictor.
-
-**La v2 (rendue ici) ajoute 1.5s de silence visuel au début** pour reproduire le pattern du test isolé : punch visual silencieux puis VO. Re-tests predictor au moment du push (à valider à la prochaine session si le service répond — il a planté ce soir avec « Cannot read properties of undefined (reading 'type') »).
-
-**Important** : le score predictor n'est pas une vérité absolue pour le long-form. Le predictor est calibré pour du 15s where every second counts. Pour du 60s d'éducation, ce qui compte vraiment en vrai = save rate + share rate + complétion → métriques que seul TikTok/Reels mesure.
-
----
+> Note : v3 ne supporte plus le paramètre `style` (remplacé par le contrôle via le texte avec ellipses, CAPS, ponctuation). La prosodie vient de l'écriture du script lui-même.
 
 ## 📦 Comment publier
 
-1. Télécharger un des `.mp4` du dossier (clic droit → enregistrer sous, ou via GitHub Raw)
-2. Importer dans TikTok / Reels / Shorts
-3. Description suggérée : repartir du hook texte + le contenu informatif
-4. Hashtags niche : `#parentalité #parentexhausted #educationpositive #sommeilbebe #crisesenfant #disciplinepositive`
+1. Télécharger un .mp4 via GitHub Raw ou le clone du repo
+2. Importer dans TikTok / Reels / Shorts (formats vertical 9:16)
+3. Description suggérée : recopier le hook texte + le contenu informatif
+4. Hashtags niche : `#parentalité #educationpositive #sommeilbebe #crisesenfant #disciplinepositive #parentexhausted`
 
 ## 📁 Sources dans le repo
 
-- `pilots/pilot-05-sommeil-97/` — projet HyperFrames sommeil
-- `pilots/pilot-06-crises-personne/` — projet HyperFrames crises
-- `pilots/pilot-07-discipline-stop/` — projet HyperFrames discipline
-- `scripts/gen_pilots_v3.py` — générateur de templates (modifiable)
-- `tests/hooks/pilots-v3-hooks/` — extraits 15s pour le predictor
+- `pilots/pilot-05-sommeil-97/` — projet HyperFrames
+- `pilots/pilot-06-crises-personne/` — projet HyperFrames
+- `pilots/pilot-07-discipline-stop/` — projet HyperFrames
+- `scripts/gen_pilots_v4.py` — générateur Python (modifiable)
+- `pilots/*/assets/audio/voiceover-v3-raw.mp3` — VO v3 brut (avant pad)
+- `pilots/*/assets/audio/voiceover.mp3` — VO finale (avec pad 1.5s)
 
-## 💰 Coût round 3
+## 💰 Coût total cumulé
 
-- 7 nouvelles images nano_banana_flash : **10.5 cr**
-- 3 VOs ElevenLabs : free
-- 6 renders locaux (1ère + 2ème version padded) : free
-- predictor : free (mais buggé sur cette session)
-- Solde après : ~**568 cr** (sur 579 cr)
+- R1 (test hooks) : 7.5 cr
+- R2 (test hooks v2) : 0 cr
+- R3 (3 pilotes images) : 10.5 cr
+- R4 (re-gen v3 VOs) : 0 cr (free)
+- **Total** : 18 cr sur ~600 cr initiaux
