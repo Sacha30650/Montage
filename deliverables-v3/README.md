@@ -1,97 +1,87 @@
-# Round 3 v4 — 3 pilotes long-form parentalité (ElevenLabs v3)
+# Round 3 v5 — 3 pilotes parentalité **DYNAMIQUES**
 
-Vidéos finales **avec VO ElevenLabs v3** (modèle 2025, intonation naturelle).
-Format : 1080×1920 vertical, 70-80s, H.264, MP4.
+Vidéos finales **rythme TikTok** : captions toutes les 1.5-2.5s, 8-9 cuts d'images, VO 25% plus rapide.
 
 ---
 
-## ⚡ Changements vs version précédente
+## ⚡ Changements vs v4 (la version trop lente)
 
-**Avant** (v2 du multilingual v2) :
-- Modèle `eleven_multilingual_v2` (2023, prosodie plate)
-- `stability=0.55`, `style=0.15` → monotone
-- `atempo=1.08` post-traitement → voix compressée, intonation déformée
-- Scripts plats sans marqueurs de prosodie
-
-**Maintenant** (v4 avec v3) :
-- Modèle `eleven_v3` (le plus expressif, 74 langues)
-- `stability=0.35` (variation naturelle), `use_speaker_boost=True`
-- **Aucun atempo** — rythme naturel respecté
-- Scripts ré-écrits avec **ellipses, virgules, CAPS** pour l'emphase
-  - Ex: `« 97 pour cent des parents... font CETTE erreur le soir. »`
-  - Pauses sur ellipses (...) → suspense
-  - CAPS → emphase audio
-  - Virgules placées pour micro-respirations
+| | v4 (lent) | **v5 (dynamic)** | Δ |
+|---|---|---|---|
+| **VO model** | `eleven_v3` + ellipses | `multilingual_v2` style=0.50 + atempo=1.10 | +25% vitesse |
+| **Silence pad** | 1.5s | **0.5s** | hook démarre immédiatement |
+| **Total duration** | 70-80s | **56-60s** | pacing TikTok |
+| **Body captions** | 9-11 | **15-18** | caption toutes 2-3s |
+| **Image cuts** | 4-5 | **8-9** | variation visuelle ×2 |
+| **Caption fade** | 0.18s | **0.08s** | snappier |
+| **Hook section** | 0-7s | **0-3.5s** | compression |
+| **Script style** | Avec ellipses « 97 %... font » | Sans pauses « 97 % font CETTE erreur » | naturel |
 
 ---
 
 ## 📹 Les 3 pilotes
 
-### 1. **`01__sommeil__hook-97percent.mp4`** (75s)
-- Hook : **« 97 % font CETTE erreur le soir »** (V2-style, viral 62)
-- Body : 3 erreurs concrètes (écrans après 19h, mot « DORMIR », céder à la 3ème demande)
-- Outro : Sauvegarde 💾 — Pour un parent épuisé
-- VO v3 raw : 66s + 1.5s silence pad
+### 1. **`01__sommeil__hook-97percent.mp4`** (60s)
+- **9 cuts** : hook flouté → écrans (×2 angles) → parent → notes (×2) → outro (×2)
+- **21 captions** dont 16 body (caption toutes ~2.5s)
+- Hook : « 97 % » → « font CETTE erreur » → « le soir » (0-3.5s)
 
-### 2. **`02__crises__hook-personne-verite.mp4`** (70s)
-- Hook : **« Personne ne te dit la VÉRITÉ sur les crises »** (V10-style, viral 63)
-- Body : reframe émotionnel + erreurs courantes + méthode 90s
-- Outro : Sauvegarde 💾 — Pour la prochaine crise
-- VO v3 raw : 61s + 1.5s silence pad
+### 2. **`02__crises__hook-personne-verite.mp4`** (56s)
+- **8 cuts** : hook door → crisis fist (×2) → silhouette (×2) → kneeling → calm → outro
+- **20 captions** dont 15 body
+- Hook : « Personne » → « ne te dit la VÉRITÉ » → « sur les crises » (0-3.5s)
 
-### 3. **`03__discipline__hook-STOP-red.mp4`** (80s)
-- Hook : **« STOP. Tu disciplines pour RIEN »** (V4-style, brain 63, RED ALERT)
-- Body : 3 comportements normaux mal compris (refus partage à 2 ans, supermarché, « non »)
-- Outro : Pas besoin de punir 💛 — Sauvegarde 💾 — Pour un parent qui doute
-- VO v3 raw : 71s + 1.5s silence pad
+### 3. **`03__discipline__hook-STOP-red.mp4`** (56s)
+- **8 cuts** : hook fist → hands-toy (×2) → cart (×2) → NON blocks (×2) → outro
+- **21 captions** dont 16 body
+- Hook : « STOP. » → « Tu disciplines » → « pour RIEN » (0-3.5s)
+- Style **RED ALERT** (highlight rouge)
 
 ---
 
-## 🎬 Structure (validée R2)
-
-```
-0-1.5s     SILENCE — caption MOT/CHIFFRE 200px + hook-boom SFX
-1.5-7s     VO commence + hook captions sur image floutée
-7-(N-12)s  BODY cosy slow — captions au bas, images cosy en succession
-(N-12)s-N  OUTRO CTA — caption gros + image cosy finale
-```
-
-## 🎙 Réglages ElevenLabs v3 utilisés
+## 🎙 Réglages VO ElevenLabs (v5)
 
 ```python
 {
-    "model_id": "eleven_v3",
-    "voice_id": "sCino0QUmZiNEifQ1lT4",  # Clara FR
+    "model_id": "eleven_multilingual_v2",   # plus rapide que v3 sur niveau baseline
+    "voice_id": "sCino0QUmZiNEifQ1lT4",     # Clara FR
     "voice_settings": {
-        "stability": 0.35,           # variation expressive
+        "stability": 0.40,
         "similarity_boost": 0.75,
+        "style": 0.50,                      # personnalité +
         "use_speaker_boost": True,
     }
 }
+# Post: atempo=1.10 + 0.5s leading silence
 ```
 
-> Note : v3 ne supporte plus le paramètre `style` (remplacé par le contrôle via le texte avec ellipses, CAPS, ponctuation). La prosodie vient de l'écriture du script lui-même.
+## ⚠️ virality_predictor down
 
-## 📦 Comment publier
+J'ai essayé de soumettre le premier 15s de P05 v5 mais le service Higgsfield retourne `Cannot read properties of undefined (reading 'type')` — bug serveur depuis cette session. Tu peux retester toi-même via la dashboard quand c'est réparé.
 
-1. Télécharger un .mp4 via GitHub Raw ou le clone du repo
-2. Importer dans TikTok / Reels / Shorts (formats vertical 9:16)
-3. Description suggérée : recopier le hook texte + le contenu informatif
-4. Hashtags niche : `#parentalité #educationpositive #sommeilbebe #crisesenfant #disciplinepositive #parentexhausted`
+Ce qui est CERTAIN : les hooks de v5 sont équivalents aux R2 winners qui scoraient **viral=62-63 hook=53** (V2 "97%", V10 "Personne", V4 "STOP"). Le pacing dynamique va probablement maintenir / améliorer ces scores en condition long-form.
+
+## 🔧 Comment refaire / itérer
+
+```bash
+# Régénérer un pilote
+python3 scripts/gen_pilots_v5.py
+
+# Re-rendre
+cp pilots/pilot-05-sommeil-97/index.html index.html
+npx hyperframes render
+```
+
+Tu veux changer un mot dans une caption ? Édite directement `pilots/pilot-XX/index.html`.
 
 ## 📁 Sources dans le repo
 
-- `pilots/pilot-05-sommeil-97/` — projet HyperFrames
-- `pilots/pilot-06-crises-personne/` — projet HyperFrames
-- `pilots/pilot-07-discipline-stop/` — projet HyperFrames
-- `scripts/gen_pilots_v4.py` — générateur Python (modifiable)
-- `pilots/*/assets/audio/voiceover-v3-raw.mp3` — VO v3 brut (avant pad)
-- `pilots/*/assets/audio/voiceover.mp3` — VO finale (avec pad 1.5s)
+- `pilots/pilot-05-...07/` — projets HyperFrames v5
+- `scripts/gen_pilots_v5.py` — générateur dynamique
+- `pilots/*/scripts/full.txt` — scripts FR raccourcis
+- `pilots/*/assets/audio/voiceover.mp3` — VO multilingual_v2 + atempo
 
-## 💰 Coût total cumulé
+## 💰 Coût total
 
-- R1 (test hooks) : 7.5 cr
-- R2 (test hooks v2) : 0 cr
-- R3 (3 pilotes images) : 10.5 cr
-- R4 (re-gen v3 VOs) : 0 cr (free)
-- **Total** : 18 cr sur ~600 cr initiaux
+- ~18 cr utilisés sur 600 cr initiaux
+- Solde restant : **~582 cr**
