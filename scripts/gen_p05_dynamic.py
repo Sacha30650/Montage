@@ -45,45 +45,48 @@ PILOT = {
     ],
 
     # Captions — synced to silencedetect on Marie-Alice v3 VO
-    # Format: (text, t0, dur, kind:"xxl"|"hl"|"white", anim:"pop"|"stutter"|"shake")
+    # kind:
+    #   "xxl"   → yellow plein hl, font 200px — WOW reveal moments only
+    #   "hl"    → yellow plein hl, font 140px — strong emphasis
+    #   "white" → white outlined no yellow, font 115px — body default (clean)
     "hook_caps": [
         ("47",                                0.55, 1.0,  "xxl", "stutter"),
         ("stratégies pour endormir",          1.6,  1.6,  "white", "pop"),
         ("ton bébé.",                         3.0,  0.27, "white", "pop"),
-        ("46",                                3.30, 1.3,  "xxl", "shake"),  # GIGANT yellow reveal
+        ("46",                                3.30, 1.3,  "xxl", "shake"),
         ("sont FAUSSES.",                     4.65, 1.25, "hl",  "shake"),
     ],
     "bridge_caps": [
         ("Tu les essaies toutes ce soir.",    5.92, 1.83, "white", "pop"),
-        ("La VRAIE raison ?",                 7.78, 1.40, "hl",   "pop"),
+        ("La VRAIE raison ?",                 7.78, 1.40, "white", "pop"),
         ("3 erreurs invisibles 👇",           9.20, 2.50, "hl",   "pop"),
     ],
     "body_caps": [
         ("ERREUR 1",                         11.85, 1.20, "xxl", "pop"),
-        ("Les écrans après 19h",             13.20, 2.95, "hl",  "pop"),
+        ("Les écrans après 19h",             13.20, 2.95, "white", "pop"),
         ("Même la TV en arrière-plan",       16.25, 3.10, "white", "pop"),
-        ("Le cerveau confond jour & nuit",   19.45, 1.85, "hl",  "pop"),
-        ("Passe en LUMIÈRE CHAUDE 💡",        21.40, 3.45, "hl",  "pop"),
+        ("Le cerveau confond jour & nuit",   19.45, 1.85, "white", "pop"),
+        ("Lumière CHAUDE 💡 1h avant",       21.40, 3.45, "white", "pop"),
 
         ("ERREUR 2",                         24.92, 1.30, "xxl", "shake"),
-        ('"va dormir" → ANXIÉTÉ',            26.32, 3.85, "hl",  "pop"),
-        ('Dis "on va se CALMER"',            30.25, 3.25, "hl",  "pop"),
-        ("Le mot CALME ✨",                   33.55, 3.40, "hl",  "pop"),
+        ('"va dormir" → ANXIÉTÉ',            26.32, 3.85, "white", "pop"),
+        ('Dis "on va se CALMER"',            30.25, 3.25, "white", "pop"),
+        ("Utilise le mot CALME",             33.55, 3.40, "white", "pop"),
 
         ("ERREUR 3",                         37.05, 1.40, "xxl", "shake"),
         ("Tu cèdes à la 3ème demande",       38.55, 1.85, "white", "pop"),
         ("Eau · Câlin · Pipi 🤦",            40.45, 2.40, "white", "pop"),
-        ("Tu rentres dans le JEU",           42.90, 1.60, "hl",  "pop"),
-        ("Pose les règles AVANT 📋",          44.55, 1.90, "hl",  "pop"),
+        ("Tu rentres dans le JEU",           42.90, 1.60, "white", "pop"),
+        ("Règles AVANT le coucher",          44.55, 1.90, "white", "pop"),
         ("1 seule demande max",              46.55, 1.35, "white", "pop"),
 
-        ("Lumière · Phrase · Règles",        47.90, 2.45, "hl",  "pop"),
-        ("Tu gagnes 2h de sommeil 🌙",        50.40, 4.45, "hl",  "pop"),
+        ("Lumière · Phrase · Règles",        47.90, 2.45, "white", "pop"),
+        ("Tu gagnes 2h de sommeil 🌙",        50.40, 4.45, "white", "pop"),
         ("Il fait ses NUITS ✨",              54.90, 1.55, "xxl", "shake"),
     ],
     "outro_caps": [
         ("Sauvegarde 💾",                    56.45, 2.40, "xxl", "pop"),
-        ("Partage à un parent épuisé 🤝",    58.85, 6.15, "hl",  "pop"),
+        ("Partage à un parent épuisé 🤝",    58.85, 6.15, "white", "pop"),
     ],
 
     # Yellow flash overlays at key impact moments
@@ -189,7 +192,7 @@ def render(p):
             else:
                 eff_dur = dur
             inner = f'<span class="hl-mark">{text}</span>' if ck in ("hl", "xxl") else text
-            base_size = 215 if ck == "xxl" else (165 if ck == "hl" else 145)
+            base_size = 210 if ck == "xxl" else (140 if ck == "hl" else 115)
             cid = f"cap-{kind}-{i}"
             html.append(
                 f'      <div class="clip caption" id="{cid}" data-start="{t0}" data-duration="{eff_dur:.2f}" '
@@ -262,13 +265,28 @@ def render(p):
       .scrim-hook {{ position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.30) 60%, rgba(0,0,0,0.85) 100%); pointer-events:none; }}
       .scrim-body {{ position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 35%, rgba(0,0,0,0) 60%, rgba(0,0,0,0.72) 100%); pointer-events:none; }}
       .caption {{
-        position:absolute; left:40px; right:40px; top:760px;
-        text-align:center; font-weight:900; line-height:0.96;
-        color:#fbf5ef;
-        text-shadow:0 6px 28px rgba(0,0,0,0.95), 0 0 18px rgba(0,0,0,0.6);
+        position:absolute; left:60px; right:60px; top:780px;
+        text-align:center; font-weight:900; line-height:0.98;
+        color:#ffffff;
+        text-shadow:
+          4px 4px 0 #000, -4px -4px 0 #000,
+          4px -4px 0 #000, -4px 4px 0 #000,
+          0 4px 0 #000, 0 -4px 0 #000,
+          4px 0 0 #000, -4px 0 0 #000,
+          0 10px 28px rgba(0,0,0,0.85);
         letter-spacing:-0.02em;
       }}
-      .hl-mark {{ background:rgba(242,200,75,0.78); padding:0 18px; border-radius:8px; color:#1a1410; }}
+      .hl-mark {{
+        background:#FFE600;
+        padding:6px 22px;
+        color:#0a0a0a;
+        text-shadow:none;
+        font-weight:900;
+        -webkit-box-decoration-break:clone;
+        box-decoration-break:clone;
+        line-height:1.05;
+        display:inline;
+      }}
       .flash {{ position:absolute; inset:0; pointer-events:none; }}
     </style>
   </head>

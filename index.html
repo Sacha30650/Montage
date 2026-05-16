@@ -16,13 +16,28 @@
       .scrim-hook { position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.30) 60%, rgba(0,0,0,0.85) 100%); pointer-events:none; }
       .scrim-body { position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 35%, rgba(0,0,0,0) 60%, rgba(0,0,0,0.72) 100%); pointer-events:none; }
       .caption {
-        position:absolute; left:40px; right:40px; top:760px;
-        text-align:center; font-weight:900; line-height:0.96;
-        color:#fbf5ef;
-        text-shadow:0 6px 28px rgba(0,0,0,0.95), 0 0 18px rgba(0,0,0,0.6);
+        position:absolute; left:60px; right:60px; top:780px;
+        text-align:center; font-weight:900; line-height:0.98;
+        color:#ffffff;
+        text-shadow:
+          4px 4px 0 #000, -4px -4px 0 #000,
+          4px -4px 0 #000, -4px 4px 0 #000,
+          0 4px 0 #000, 0 -4px 0 #000,
+          4px 0 0 #000, -4px 0 0 #000,
+          0 10px 28px rgba(0,0,0,0.85);
         letter-spacing:-0.02em;
       }
-      .hl-mark { background:rgba(242,200,75,0.78); padding:0 18px; border-radius:8px; color:#1a1410; }
+      .hl-mark {
+        background:#FFE600;
+        padding:6px 22px;
+        color:#0a0a0a;
+        text-shadow:none;
+        font-weight:900;
+        -webkit-box-decoration-break:clone;
+        box-decoration-break:clone;
+        line-height:1.05;
+        display:inline;
+      }
       .flash { position:absolute; inset:0; pointer-events:none; }
     </style>
   </head>
@@ -55,34 +70,34 @@
       <div class="clip scrim-hook" data-start="0" data-duration="6" data-track-index="1"></div>
       <div class="clip scrim-body" data-start="6" data-duration="59" data-track-index="1"></div>
 
-      <div class="clip caption" id="cap-hook-0" data-start="0.55" data-duration="1.00" data-track-index="2" style="font-size:215px;"><span class="hl-mark">47</span></div>
-      <div class="clip caption" id="cap-hook-1" data-start="1.6" data-duration="1.38" data-track-index="2" style="font-size:145px;">stratégies pour endormir</div>
-      <div class="clip caption" id="cap-hook-2" data-start="3.0" data-duration="0.27" data-track-index="2" style="font-size:145px;">ton bébé.</div>
-      <div class="clip caption" id="cap-hook-3" data-start="3.3" data-duration="1.30" data-track-index="2" style="font-size:215px;"><span class="hl-mark">46</span></div>
-      <div class="clip caption" id="cap-hook-4" data-start="4.65" data-duration="1.25" data-track-index="2" style="font-size:165px;"><span class="hl-mark">sont FAUSSES.</span></div>
-      <div class="clip caption" id="cap-bridge-0" data-start="5.92" data-duration="1.83" data-track-index="3" style="font-size:145px;">Tu les essaies toutes ce soir.</div>
-      <div class="clip caption" id="cap-bridge-1" data-start="7.78" data-duration="1.40" data-track-index="3" style="font-size:165px;"><span class="hl-mark">La VRAIE raison ?</span></div>
-      <div class="clip caption" id="cap-bridge-2" data-start="9.2" data-duration="2.50" data-track-index="3" style="font-size:165px;"><span class="hl-mark">3 erreurs invisibles 👇</span></div>
-      <div class="clip caption" id="cap-body-0" data-start="11.85" data-duration="1.20" data-track-index="4" style="font-size:215px;"><span class="hl-mark">ERREUR 1</span></div>
-      <div class="clip caption" id="cap-body-1" data-start="13.2" data-duration="2.95" data-track-index="4" style="font-size:165px;"><span class="hl-mark">Les écrans après 19h</span></div>
-      <div class="clip caption" id="cap-body-2" data-start="16.25" data-duration="3.10" data-track-index="4" style="font-size:145px;">Même la TV en arrière-plan</div>
-      <div class="clip caption" id="cap-body-3" data-start="19.45" data-duration="1.85" data-track-index="4" style="font-size:165px;"><span class="hl-mark">Le cerveau confond jour & nuit</span></div>
-      <div class="clip caption" id="cap-body-4" data-start="21.4" data-duration="3.45" data-track-index="4" style="font-size:165px;"><span class="hl-mark">Passe en LUMIÈRE CHAUDE 💡</span></div>
-      <div class="clip caption" id="cap-body-5" data-start="24.92" data-duration="1.30" data-track-index="4" style="font-size:215px;"><span class="hl-mark">ERREUR 2</span></div>
-      <div class="clip caption" id="cap-body-6" data-start="26.32" data-duration="3.85" data-track-index="4" style="font-size:165px;"><span class="hl-mark">"va dormir" → ANXIÉTÉ</span></div>
-      <div class="clip caption" id="cap-body-7" data-start="30.25" data-duration="3.25" data-track-index="4" style="font-size:165px;"><span class="hl-mark">Dis "on va se CALMER"</span></div>
-      <div class="clip caption" id="cap-body-8" data-start="33.55" data-duration="3.40" data-track-index="4" style="font-size:165px;"><span class="hl-mark">Le mot CALME ✨</span></div>
-      <div class="clip caption" id="cap-body-9" data-start="37.05" data-duration="1.40" data-track-index="4" style="font-size:215px;"><span class="hl-mark">ERREUR 3</span></div>
-      <div class="clip caption" id="cap-body-10" data-start="38.55" data-duration="1.85" data-track-index="4" style="font-size:145px;">Tu cèdes à la 3ème demande</div>
-      <div class="clip caption" id="cap-body-11" data-start="40.45" data-duration="2.40" data-track-index="4" style="font-size:145px;">Eau · Câlin · Pipi 🤦</div>
-      <div class="clip caption" id="cap-body-12" data-start="42.9" data-duration="1.60" data-track-index="4" style="font-size:165px;"><span class="hl-mark">Tu rentres dans le JEU</span></div>
-      <div class="clip caption" id="cap-body-13" data-start="44.55" data-duration="1.90" data-track-index="4" style="font-size:165px;"><span class="hl-mark">Pose les règles AVANT 📋</span></div>
-      <div class="clip caption" id="cap-body-14" data-start="46.55" data-duration="1.33" data-track-index="4" style="font-size:145px;">1 seule demande max</div>
-      <div class="clip caption" id="cap-body-15" data-start="47.9" data-duration="2.45" data-track-index="4" style="font-size:165px;"><span class="hl-mark">Lumière · Phrase · Règles</span></div>
-      <div class="clip caption" id="cap-body-16" data-start="50.4" data-duration="4.45" data-track-index="4" style="font-size:165px;"><span class="hl-mark">Tu gagnes 2h de sommeil 🌙</span></div>
-      <div class="clip caption" id="cap-body-17" data-start="54.9" data-duration="1.55" data-track-index="4" style="font-size:215px;"><span class="hl-mark">Il fait ses NUITS ✨</span></div>
-      <div class="clip caption" id="cap-outro-0" data-start="56.45" data-duration="2.38" data-track-index="5" style="font-size:215px;"><span class="hl-mark">Sauvegarde 💾</span></div>
-      <div class="clip caption" id="cap-outro-1" data-start="58.85" data-duration="6.15" data-track-index="5" style="font-size:165px;"><span class="hl-mark">Partage à un parent épuisé 🤝</span></div>
+      <div class="clip caption" id="cap-hook-0" data-start="0.55" data-duration="1.00" data-track-index="2" style="font-size:210px;"><span class="hl-mark">47</span></div>
+      <div class="clip caption" id="cap-hook-1" data-start="1.6" data-duration="1.38" data-track-index="2" style="font-size:115px;">stratégies pour endormir</div>
+      <div class="clip caption" id="cap-hook-2" data-start="3.0" data-duration="0.27" data-track-index="2" style="font-size:115px;">ton bébé.</div>
+      <div class="clip caption" id="cap-hook-3" data-start="3.3" data-duration="1.30" data-track-index="2" style="font-size:210px;"><span class="hl-mark">46</span></div>
+      <div class="clip caption" id="cap-hook-4" data-start="4.65" data-duration="1.25" data-track-index="2" style="font-size:140px;"><span class="hl-mark">sont FAUSSES.</span></div>
+      <div class="clip caption" id="cap-bridge-0" data-start="5.92" data-duration="1.83" data-track-index="3" style="font-size:115px;">Tu les essaies toutes ce soir.</div>
+      <div class="clip caption" id="cap-bridge-1" data-start="7.78" data-duration="1.40" data-track-index="3" style="font-size:115px;">La VRAIE raison ?</div>
+      <div class="clip caption" id="cap-bridge-2" data-start="9.2" data-duration="2.50" data-track-index="3" style="font-size:140px;"><span class="hl-mark">3 erreurs invisibles 👇</span></div>
+      <div class="clip caption" id="cap-body-0" data-start="11.85" data-duration="1.20" data-track-index="4" style="font-size:210px;"><span class="hl-mark">ERREUR 1</span></div>
+      <div class="clip caption" id="cap-body-1" data-start="13.2" data-duration="2.95" data-track-index="4" style="font-size:115px;">Les écrans après 19h</div>
+      <div class="clip caption" id="cap-body-2" data-start="16.25" data-duration="3.10" data-track-index="4" style="font-size:115px;">Même la TV en arrière-plan</div>
+      <div class="clip caption" id="cap-body-3" data-start="19.45" data-duration="1.85" data-track-index="4" style="font-size:115px;">Le cerveau confond jour & nuit</div>
+      <div class="clip caption" id="cap-body-4" data-start="21.4" data-duration="3.45" data-track-index="4" style="font-size:115px;">Lumière CHAUDE 💡 1h avant</div>
+      <div class="clip caption" id="cap-body-5" data-start="24.92" data-duration="1.30" data-track-index="4" style="font-size:210px;"><span class="hl-mark">ERREUR 2</span></div>
+      <div class="clip caption" id="cap-body-6" data-start="26.32" data-duration="3.85" data-track-index="4" style="font-size:115px;">"va dormir" → ANXIÉTÉ</div>
+      <div class="clip caption" id="cap-body-7" data-start="30.25" data-duration="3.25" data-track-index="4" style="font-size:115px;">Dis "on va se CALMER"</div>
+      <div class="clip caption" id="cap-body-8" data-start="33.55" data-duration="3.40" data-track-index="4" style="font-size:115px;">Utilise le mot CALME</div>
+      <div class="clip caption" id="cap-body-9" data-start="37.05" data-duration="1.40" data-track-index="4" style="font-size:210px;"><span class="hl-mark">ERREUR 3</span></div>
+      <div class="clip caption" id="cap-body-10" data-start="38.55" data-duration="1.85" data-track-index="4" style="font-size:115px;">Tu cèdes à la 3ème demande</div>
+      <div class="clip caption" id="cap-body-11" data-start="40.45" data-duration="2.40" data-track-index="4" style="font-size:115px;">Eau · Câlin · Pipi 🤦</div>
+      <div class="clip caption" id="cap-body-12" data-start="42.9" data-duration="1.60" data-track-index="4" style="font-size:115px;">Tu rentres dans le JEU</div>
+      <div class="clip caption" id="cap-body-13" data-start="44.55" data-duration="1.90" data-track-index="4" style="font-size:115px;">Règles AVANT le coucher</div>
+      <div class="clip caption" id="cap-body-14" data-start="46.55" data-duration="1.33" data-track-index="4" style="font-size:115px;">1 seule demande max</div>
+      <div class="clip caption" id="cap-body-15" data-start="47.9" data-duration="2.45" data-track-index="4" style="font-size:115px;">Lumière · Phrase · Règles</div>
+      <div class="clip caption" id="cap-body-16" data-start="50.4" data-duration="4.45" data-track-index="4" style="font-size:115px;">Tu gagnes 2h de sommeil 🌙</div>
+      <div class="clip caption" id="cap-body-17" data-start="54.9" data-duration="1.55" data-track-index="4" style="font-size:210px;"><span class="hl-mark">Il fait ses NUITS ✨</span></div>
+      <div class="clip caption" id="cap-outro-0" data-start="56.45" data-duration="2.38" data-track-index="5" style="font-size:210px;"><span class="hl-mark">Sauvegarde 💾</span></div>
+      <div class="clip caption" id="cap-outro-1" data-start="58.85" data-duration="6.15" data-track-index="5" style="font-size:115px;">Partage à un parent épuisé 🤝</div>
 
       <div class="clip flash" id="flash-0" data-start="0.0" data-duration="0.1" data-track-index="6" style="background:#FFE600; mix-blend-mode:screen;"></div>
       <div class="clip flash" id="flash-1" data-start="3.3" data-duration="0.1" data-track-index="6" style="background:#FFE600; mix-blend-mode:screen;"></div>
