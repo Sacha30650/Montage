@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin:0; padding:0; box-sizing:border-box; }
+      html, body { width:1080px; height:1920px; overflow:hidden; background:#f0e6dc; }
+      #shake-wrap { position:absolute; inset:0; }
+      .bg-blur {
+        position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+        filter: blur(45px) brightness(0.85) saturate(1.15);
+        transform-origin: center;
+      }
+      .slide-fg {
+        position:absolute;
+        left:0; right:0;
+        width:1080px;
+        height:1335px;
+        top:292px;     /* (1920 - 1335) / 2 ≈ 292 — center vertically */
+        object-fit:contain;
+        transform-origin: center;
+        box-shadow: 0 0 80px rgba(0,0,0,0.25);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="82" data-width="1080" data-height="1920">
+      <div id="shake-wrap">
+      <img class="clip bg-blur" id="bg-0" data-start="0.0" data-duration="6.89" data-track-index="0" src="pilots/pilot-09-mensonges/assets/broll/01_hook.png">
+      <img class="clip slide-fg" id="fg-0" data-start="0.0" data-duration="6.89" data-track-index="1" src="pilots/pilot-09-mensonges/assets/broll/01_hook.png">
+      <img class="clip bg-blur" id="bg-1" data-start="6.89" data-duration="12.76" data-track-index="0" src="pilots/pilot-09-mensonges/assets/broll/02_empathy.png">
+      <img class="clip slide-fg" id="fg-1" data-start="6.89" data-duration="12.76" data-track-index="1" src="pilots/pilot-09-mensonges/assets/broll/02_empathy.png">
+      <img class="clip bg-blur" id="bg-2" data-start="19.65" data-duration="11.08" data-track-index="0" src="pilots/pilot-09-mensonges/assets/broll/03_science.png">
+      <img class="clip slide-fg" id="fg-2" data-start="19.65" data-duration="11.08" data-track-index="1" src="pilots/pilot-09-mensonges/assets/broll/03_science.png">
+      <img class="clip bg-blur" id="bg-3" data-start="30.73" data-duration="13.67" data-track-index="0" src="pilots/pilot-09-mensonges/assets/broll/04_argument2.png">
+      <img class="clip slide-fg" id="fg-3" data-start="30.73" data-duration="13.67" data-track-index="1" src="pilots/pilot-09-mensonges/assets/broll/04_argument2.png">
+      <img class="clip bg-blur" id="bg-4" data-start="44.4" data-duration="11.67" data-track-index="0" src="pilots/pilot-09-mensonges/assets/broll/05_metaphor.png">
+      <img class="clip slide-fg" id="fg-4" data-start="44.4" data-duration="11.67" data-track-index="1" src="pilots/pilot-09-mensonges/assets/broll/05_metaphor.png">
+      <img class="clip bg-blur" id="bg-5" data-start="56.07" data-duration="14.25" data-track-index="0" src="pilots/pilot-09-mensonges/assets/broll/06_advice.png">
+      <img class="clip slide-fg" id="fg-5" data-start="56.07" data-duration="14.25" data-track-index="1" src="pilots/pilot-09-mensonges/assets/broll/06_advice.png">
+      <img class="clip bg-blur" id="bg-6" data-start="70.32" data-duration="11.68" data-track-index="0" src="pilots/pilot-09-mensonges/assets/broll/07_cta.png">
+      <img class="clip slide-fg" id="fg-6" data-start="70.32" data-duration="11.68" data-track-index="1" src="pilots/pilot-09-mensonges/assets/broll/07_cta.png">
+      </div>
+
+      <audio id="voiceover" class="clip" data-start="0" data-duration="82" data-track-index="8" data-volume="1.0" src="pilots/pilot-09-mensonges/assets/audio/voiceover.mp3"></audio>
+      <audio id="wh-0" class="clip" data-start="6.89" data-duration="0.55" data-track-index="11" data-volume="0.40" src="pilots/pilot-09-mensonges/assets/audio/sfx/whoosh.mp3"></audio>
+      <audio id="wh-1" class="clip" data-start="19.65" data-duration="0.55" data-track-index="12" data-volume="0.40" src="pilots/pilot-09-mensonges/assets/audio/sfx/whoosh.mp3"></audio>
+      <audio id="wh-2" class="clip" data-start="30.73" data-duration="0.55" data-track-index="13" data-volume="0.40" src="pilots/pilot-09-mensonges/assets/audio/sfx/whoosh.mp3"></audio>
+      <audio id="wh-3" class="clip" data-start="44.40" data-duration="0.55" data-track-index="14" data-volume="0.40" src="pilots/pilot-09-mensonges/assets/audio/sfx/whoosh.mp3"></audio>
+      <audio id="wh-4" class="clip" data-start="56.07" data-duration="0.55" data-track-index="15" data-volume="0.40" src="pilots/pilot-09-mensonges/assets/audio/sfx/whoosh.mp3"></audio>
+      <audio id="wh-5" class="clip" data-start="70.32" data-duration="0.55" data-track-index="16" data-volume="0.40" src="pilots/pilot-09-mensonges/assets/audio/sfx/whoosh.mp3"></audio>
+      <audio id="bd-0" class="clip" data-start="0.00" data-duration="0.55" data-track-index="20" data-volume="0.45" src="pilots/pilot-09-mensonges/assets/audio/sfx/bass-drop.mp3"></audio>
+      <audio id="bd-1" class="clip" data-start="70.32" data-duration="0.55" data-track-index="21" data-volume="0.45" src="pilots/pilot-09-mensonges/assets/audio/sfx/bass-drop.mp3"></audio>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#fg-0", { scale: 1.045 }, { scale: 1.00, duration: 0.30, ease: "power2.out" }, 0.0);
+      tl.to("#fg-0", { scale: 1.03, duration: 6.59, ease: "power1.inOut" }, 0.3);
+      tl.fromTo("#bg-0", { scale: 1.08 }, { scale: 1.14, duration: 6.89, ease: "none" }, 0.0);
+      tl.fromTo("#fg-1", { scale: 1.045 }, { scale: 1.00, duration: 0.30, ease: "power2.out" }, 6.89);
+      tl.to("#fg-1", { scale: 1.03, duration: 12.46, ease: "power1.inOut" }, 7.1899999999999995);
+      tl.fromTo("#bg-1", { scale: 1.08 }, { scale: 1.14, duration: 12.76, ease: "none" }, 6.89);
+      tl.fromTo("#fg-2", { scale: 1.045 }, { scale: 1.00, duration: 0.30, ease: "power2.out" }, 19.65);
+      tl.to("#fg-2", { scale: 1.03, duration: 10.78, ease: "power1.inOut" }, 19.95);
+      tl.fromTo("#bg-2", { scale: 1.08 }, { scale: 1.14, duration: 11.08, ease: "none" }, 19.65);
+      tl.fromTo("#fg-3", { scale: 1.045 }, { scale: 1.00, duration: 0.30, ease: "power2.out" }, 30.73);
+      tl.to("#fg-3", { scale: 1.03, duration: 13.37, ease: "power1.inOut" }, 31.03);
+      tl.fromTo("#bg-3", { scale: 1.08 }, { scale: 1.14, duration: 13.67, ease: "none" }, 30.73);
+      tl.fromTo("#fg-4", { scale: 1.045 }, { scale: 1.00, duration: 0.30, ease: "power2.out" }, 44.4);
+      tl.to("#fg-4", { scale: 1.03, duration: 11.37, ease: "power1.inOut" }, 44.699999999999996);
+      tl.fromTo("#bg-4", { scale: 1.08 }, { scale: 1.14, duration: 11.67, ease: "none" }, 44.4);
+      tl.fromTo("#fg-5", { scale: 1.045 }, { scale: 1.00, duration: 0.30, ease: "power2.out" }, 56.07);
+      tl.to("#fg-5", { scale: 1.03, duration: 13.95, ease: "power1.inOut" }, 56.37);
+      tl.fromTo("#bg-5", { scale: 1.08 }, { scale: 1.14, duration: 14.25, ease: "none" }, 56.07);
+      tl.fromTo("#fg-6", { scale: 1.045 }, { scale: 1.00, duration: 0.30, ease: "power2.out" }, 70.32);
+      tl.to("#fg-6", { scale: 1.03, duration: 11.38, ease: "power1.inOut" }, 70.61999999999999);
+      tl.fromTo("#bg-6", { scale: 1.08 }, { scale: 1.14, duration: 11.68, ease: "none" }, 70.32);
+
+      tl.to("#shake-wrap", { x: 6,  y: -3, duration: 0.04, ease: "none" }, 0);
+      tl.to("#shake-wrap", { x: -5, y: 3,  duration: 0.04, ease: "none" }, 0.04);
+      tl.to("#shake-wrap", { x: 4,  y: -2, duration: 0.04, ease: "none" }, 0.08);
+      tl.to("#shake-wrap", { x: 0,  y: 0,  duration: 0.05, ease: "power2.out" }, 0.12);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

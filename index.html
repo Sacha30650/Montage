@@ -4,288 +4,85 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1080, height=1920" />
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@800;900&display=swap" rel="stylesheet" />
     <style>
       * { margin:0; padding:0; box-sizing:border-box; }
-      html, body { width:1080px; height:1920px; overflow:hidden; background:#0a0a0a; font-family:"Plus Jakarta Sans",sans-serif; }
+      html, body { width:1080px; height:1920px; overflow:hidden; background:#f0e6dc; }
       #shake-wrap { position:absolute; inset:0; }
-      .broll-hook { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter: blur(14px) brightness(0.45); }
-      .broll-body { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
-      .scrim-hook { position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.30) 60%, rgba(0,0,0,0.85) 100%); pointer-events:none; }
-      .scrim-body { position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 35%, rgba(0,0,0,0) 60%, rgba(0,0,0,0.72) 100%); pointer-events:none; }
-      .caption {
-        position:absolute; left:60px; right:60px; top:780px;
-        text-align:center; font-weight:900; line-height:0.98;
-        color:#ffffff;
-        text-shadow:
-          4px 4px 0 #000, -4px -4px 0 #000,
-          4px -4px 0 #000, -4px 4px 0 #000,
-          0 4px 0 #000, 0 -4px 0 #000,
-          4px 0 0 #000, -4px 0 0 #000,
-          0 10px 28px rgba(0,0,0,0.85);
-        letter-spacing:-0.02em;
+      .bg-blur {
+        position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+        filter: blur(45px) brightness(0.85) saturate(1.15);
+        transform-origin: center;
       }
-      .hl-mark {
-        background:#FFE600;
-        padding:6px 22px;
-        color:#0a0a0a;
-        text-shadow:none;
-        font-weight:900;
-        -webkit-box-decoration-break:clone;
-        box-decoration-break:clone;
-        line-height:1.05;
-        display:inline;
+      .slide-fg {
+        position:absolute;
+        left:0; right:0;
+        width:1080px;
+        height:1335px;
+        top:292px;     /* (1920 - 1335) / 2 ≈ 292 — center vertically */
+        object-fit:contain;
+        transform-origin: center;
+        box-shadow: 0 0 80px rgba(0,0,0,0.25);
       }
-      .flash { position:absolute; inset:0; pointer-events:none; }
     </style>
   </head>
   <body>
-    <div id="root" data-composition-id="main" data-start="0" data-duration="62" data-width="1080" data-height="1920">
+    <div id="root" data-composition-id="main" data-start="0" data-duration="82" data-width="1080" data-height="1920">
       <div id="shake-wrap">
-      <img class="clip broll-hook" id="img-0" data-start="0.0" data-duration="3.5" data-track-index="0" src="pilots/pilot-08-cocomelon/assets/broll/00-hook-eye.png">
-      <img class="clip broll-body" id="img-1" data-start="3.5" data-duration="2.0" data-track-index="0" src="pilots/pilot-08-cocomelon/assets/broll/00-hook-eye.png">
-      <img class="clip broll-body" id="img-2" data-start="5.5" data-duration="3.1" data-track-index="0" src="pilots/pilot-08-cocomelon/assets/broll/01-tv-flicker.png">
-      <img class="clip broll-body" id="img-3" data-start="8.6" data-duration="2.4" data-track-index="0" src="pilots/pilot-08-cocomelon/assets/broll/02-tablet-hands.png">
-      <img class="clip broll-body" id="img-4" data-start="11.0" data-duration="2.4" data-track-index="0" src="pilots/pilot-08-cocomelon/assets/broll/01-tv-flicker.png">
-      <img class="clip broll-body" id="img-5" data-start="13.4" data-duration="3.6" data-track-index="0" src="pilots/pilot-08-cocomelon/assets/broll/02-tablet-hands.png">
-      <img class="clip broll-body" id="img-6" data-start="17.0" data-duration="4.0" data-track-index="0" src="pilots/pilot-08-cocomelon/assets/broll/02-tablet-hands.png">
-      <img class="clip broll-body" id="img-7" data-start="21.0" data-duration="3.4" data-track-index="0" src="pilots/pilot-08-cocomelon/assets/broll/01-tv-flicker.png">
-      <img class="clip broll-body" id="img-8" data-start="24.4" data-duration="3.9" data-track-index="0" src="pilots/pilot-08-cocomelon/assets/broll/02-tablet-hands.png">
-      <img class="clip broll-body" id="img-9" data-start="28.3" data-duration="4.2" data-track-index="0" src="pilots/pilot-08-cocomelon/assets/broll/01-tv-flicker.png">
-      <img class="clip broll-body" id="img-10" data-start="32.5" data-duration="4.2" data-track-index="0" src="pilots/pilot-08-cocomelon/assets/broll/04-book.png">
-      <img class="clip broll-body" id="img-11" data-start="36.7" data-duration="3.9" data-track-index="0" src="pilots/pilot-08-cocomelon/assets/broll/03-three-blocks.png">
-      <img class="clip broll-body" id="img-12" data-start="40.6" data-duration="2.69" data-track-index="0" src="pilots/pilot-08-cocomelon/assets/broll/03-three-blocks.png">
-      <img class="clip broll-body" id="img-13" data-start="43.3" data-duration="3.0" data-track-index="0" src="pilots/pilot-08-cocomelon/assets/broll/03-three-blocks.png">
-      <img class="clip broll-body" id="img-14" data-start="46.3" data-duration="2.9" data-track-index="0" src="pilots/pilot-08-cocomelon/assets/broll/04-book.png">
-      <img class="clip broll-body" id="img-15" data-start="49.2" data-duration="4.59" data-track-index="0" src="pilots/pilot-08-cocomelon/assets/broll/04-book.png">
-      <img class="clip broll-body" id="img-16" data-start="53.8" data-duration="4.3" data-track-index="0" src="pilots/pilot-08-cocomelon/assets/broll/04-book.png">
-      <img class="clip broll-body" id="img-17" data-start="58.1" data-duration="3.9" data-track-index="0" src="pilots/pilot-08-cocomelon/assets/broll/04-book.png">
-
-      <div class="clip scrim-hook" data-start="0" data-duration="6" data-track-index="1"></div>
-      <div class="clip scrim-body" data-start="6" data-duration="56" data-track-index="1"></div>
-
-      <div class="clip caption" id="cap-hook-0" data-start="0.5" data-duration="1.28" data-track-index="2" style="font-size:135px;"><span class="hl-mark">Cocomelon</span></div>
-      <div class="clip caption" id="cap-hook-1" data-start="1.8" data-duration="1.38" data-track-index="2" style="font-size:175px;"><span class="hl-mark">INTERDIT</span></div>
-      <div class="clip caption" id="cap-hook-2" data-start="3.2" data-duration="1.03" data-track-index="2" style="font-size:110px;">chez les pédiatres</div>
-      <div class="clip caption" id="cap-hook-3" data-start="4.25" data-duration="1.25" data-track-index="2" style="font-size:135px;"><span class="hl-mark">Voici pourquoi 👇</span></div>
-      <div class="clip caption" id="cap-bridge-0" data-start="5.55" data-duration="1.50" data-track-index="3" style="font-size:110px;">1 minute =</div>
-      <div class="clip caption" id="cap-bridge-1" data-start="7.1" data-duration="1.45" data-track-index="3" style="font-size:175px;"><span class="hl-mark">600 CUTS</span></div>
-      <div class="clip caption" id="cap-bridge-2" data-start="8.6" data-duration="2.20" data-track-index="3" style="font-size:110px;">Le cerveau n'a AUCUNE chance</div>
-      <div class="clip caption" id="cap-bridge-3" data-start="10.85" data-duration="2.50" data-track-index="3" style="font-size:135px;"><span class="hl-mark">3 effets mesurés 👇</span></div>
-      <div class="clip caption" id="cap-body-0" data-start="13.4" data-duration="1.05" data-track-index="4" style="font-size:175px;"><span class="hl-mark">EFFET 1</span></div>
-      <div class="clip caption" id="cap-body-1" data-start="14.5" data-duration="1.10" data-track-index="4" style="font-size:135px;"><span class="hl-mark">Déficit d'ATTENTION</span></div>
-      <div class="clip caption" id="cap-body-2" data-start="15.65" data-duration="2.20" data-track-index="4" style="font-size:110px;">Après 12 min</div>
-      <div class="clip caption" id="cap-body-3" data-start="17.9" data-duration="2.95" data-track-index="4" style="font-size:110px;">→ 30 min sans concentration</div>
-      <div class="clip caption" id="cap-body-4" data-start="20.9" data-duration="1.95" data-track-index="4" style="font-size:175px;"><span class="hl-mark">EFFET 2</span></div>
-      <div class="clip caption" id="cap-body-5" data-start="22.9" data-duration="1.40" data-track-index="4" style="font-size:135px;"><span class="hl-mark">Régression du LANGAGE</span></div>
-      <div class="clip caption" id="cap-body-6" data-start="24.35" data-duration="2.95" data-track-index="4" style="font-size:110px;">Parlent moins, plus tard</div>
-      <div class="clip caption" id="cap-body-7" data-start="27.35" data-duration="0.85" data-track-index="4" style="font-size:110px;">Moins de MOTS</div>
-      <div class="clip caption" id="cap-body-8" data-start="28.3" data-duration="1.60" data-track-index="4" style="font-size:175px;"><span class="hl-mark">EFFET 3</span></div>
-      <div class="clip caption" id="cap-body-9" data-start="29.95" data-duration="2.50" data-track-index="4" style="font-size:110px;">Dépendance à la stimulation</div>
-      <div class="clip caption" id="cap-body-10" data-start="32.55" data-duration="2.00" data-track-index="4" style="font-size:110px;">Le livre devient ENNUYEUX 📕</div>
-      <div class="clip caption" id="cap-body-11" data-start="34.6" data-duration="2.10" data-track-index="4" style="font-size:110px;">La vraie vie devient ennuyeuse</div>
-      <div class="clip caption" id="cap-body-12" data-start="36.75" data-duration="2.60" data-track-index="4" style="font-size:175px;"><span class="hl-mark">LE TEST 👇</span></div>
-      <div class="clip caption" id="cap-body-13" data-start="39.4" data-duration="1.15" data-track-index="4" style="font-size:110px;">Pose 3 cubes au sol</div>
-      <div class="clip caption" id="cap-body-14" data-start="40.6" data-duration="2.65" data-track-index="4" style="font-size:110px;">5 min seul = OK ✅</div>
-      <div class="clip caption" id="cap-body-15" data-start="43.3" data-duration="2.95" data-track-index="4" style="font-size:135px;"><span class="hl-mark">Sinon → baisse la DOSE</span></div>
-      <div class="clip caption" id="cap-body-16" data-start="46.35" data-duration="2.80" data-track-index="4" style="font-size:175px;"><span class="hl-mark">Les ALTERNATIVES saines</span></div>
-      <div class="clip caption" id="cap-body-17" data-start="49.25" data-duration="4.55" data-track-index="4" style="font-size:110px;">📖 Livre · 🎵 Comptine · 🌳 Dehors</div>
-      <div class="clip caption" id="cap-body-18" data-start="53.9" data-duration="4.20" data-track-index="4" style="font-size:135px;"><span class="hl-mark">Curiosité naturelle RETROUVÉE</span></div>
-      <div class="clip caption" id="cap-outro-0" data-start="58.2" data-duration="2.00" data-track-index="5" style="font-size:175px;"><span class="hl-mark">Sauvegarde 💾</span></div>
-      <div class="clip caption" id="cap-outro-1" data-start="60.25" data-duration="1.75" data-track-index="5" style="font-size:110px;">Partage à un parent 🤝</div>
-
-      <div class="clip flash" id="flash-0" data-start="0.0" data-duration="0.1" data-track-index="6" style="background:#FFE600; mix-blend-mode:screen;"></div>
-      <div class="clip flash" id="flash-1" data-start="5.55" data-duration="0.1" data-track-index="6" style="background:#FFE600; mix-blend-mode:screen;"></div>
-      <div class="clip flash" id="flash-2" data-start="10.8" data-duration="0.06" data-track-index="6" style="background:#000000; mix-blend-mode:normal;"></div>
-      <div class="clip flash" id="flash-3" data-start="13.4" data-duration="0.08" data-track-index="6" style="background:#FFE600; mix-blend-mode:screen;"></div>
-      <div class="clip flash" id="flash-4" data-start="20.9" data-duration="0.08" data-track-index="6" style="background:#FFE600; mix-blend-mode:screen;"></div>
-      <div class="clip flash" id="flash-5" data-start="28.3" data-duration="0.08" data-track-index="6" style="background:#FFE600; mix-blend-mode:screen;"></div>
-      <div class="clip flash" id="flash-6" data-start="36.75" data-duration="0.1" data-track-index="6" style="background:#FFE600; mix-blend-mode:screen;"></div>
-      <div class="clip flash" id="flash-7" data-start="46.35" data-duration="0.08" data-track-index="6" style="background:#FFE600; mix-blend-mode:screen;"></div>
+      <img class="clip bg-blur" id="bg-0" data-start="0.0" data-duration="6.89" data-track-index="0" src="pilots/pilot-09-mensonges/assets/broll/01_hook.png">
+      <img class="clip slide-fg" id="fg-0" data-start="0.0" data-duration="6.89" data-track-index="1" src="pilots/pilot-09-mensonges/assets/broll/01_hook.png">
+      <img class="clip bg-blur" id="bg-1" data-start="6.89" data-duration="12.76" data-track-index="0" src="pilots/pilot-09-mensonges/assets/broll/02_empathy.png">
+      <img class="clip slide-fg" id="fg-1" data-start="6.89" data-duration="12.76" data-track-index="1" src="pilots/pilot-09-mensonges/assets/broll/02_empathy.png">
+      <img class="clip bg-blur" id="bg-2" data-start="19.65" data-duration="11.08" data-track-index="0" src="pilots/pilot-09-mensonges/assets/broll/03_science.png">
+      <img class="clip slide-fg" id="fg-2" data-start="19.65" data-duration="11.08" data-track-index="1" src="pilots/pilot-09-mensonges/assets/broll/03_science.png">
+      <img class="clip bg-blur" id="bg-3" data-start="30.73" data-duration="13.67" data-track-index="0" src="pilots/pilot-09-mensonges/assets/broll/04_argument2.png">
+      <img class="clip slide-fg" id="fg-3" data-start="30.73" data-duration="13.67" data-track-index="1" src="pilots/pilot-09-mensonges/assets/broll/04_argument2.png">
+      <img class="clip bg-blur" id="bg-4" data-start="44.4" data-duration="11.67" data-track-index="0" src="pilots/pilot-09-mensonges/assets/broll/05_metaphor.png">
+      <img class="clip slide-fg" id="fg-4" data-start="44.4" data-duration="11.67" data-track-index="1" src="pilots/pilot-09-mensonges/assets/broll/05_metaphor.png">
+      <img class="clip bg-blur" id="bg-5" data-start="56.07" data-duration="14.25" data-track-index="0" src="pilots/pilot-09-mensonges/assets/broll/06_advice.png">
+      <img class="clip slide-fg" id="fg-5" data-start="56.07" data-duration="14.25" data-track-index="1" src="pilots/pilot-09-mensonges/assets/broll/06_advice.png">
+      <img class="clip bg-blur" id="bg-6" data-start="70.32" data-duration="11.68" data-track-index="0" src="pilots/pilot-09-mensonges/assets/broll/07_cta.png">
+      <img class="clip slide-fg" id="fg-6" data-start="70.32" data-duration="11.68" data-track-index="1" src="pilots/pilot-09-mensonges/assets/broll/07_cta.png">
       </div>
 
-      <audio id="voiceover" class="clip" data-start="0" data-duration="62" data-track-index="8" data-volume="1.0" src="pilots/pilot-08-cocomelon/assets/audio/voiceover.mp3"></audio>
-      <audio id="music"     class="clip" data-start="0" data-duration="62" data-track-index="9" data-volume="0.10" src="pilots/pilot-08-cocomelon/assets/audio/music-loop.mp3"></audio>
-      <audio id="hook-boom" class="clip" data-start="0" data-duration="0.55" data-track-index="10" data-volume="0.55" src="pilots/pilot-08-cocomelon/assets/audio/sfx/hook-boom.mp3"></audio>
-      <audio id="wh-0" class="clip" data-start="3.50" data-duration="0.55" data-track-index="11" data-volume="0.45" src="pilots/pilot-08-cocomelon/assets/audio/sfx/whoosh.mp3"></audio>
-      <audio id="wh-1" class="clip" data-start="5.55" data-duration="0.55" data-track-index="12" data-volume="0.45" src="pilots/pilot-08-cocomelon/assets/audio/sfx/whoosh.mp3"></audio>
-      <audio id="wh-2" class="clip" data-start="8.60" data-duration="0.55" data-track-index="13" data-volume="0.45" src="pilots/pilot-08-cocomelon/assets/audio/sfx/whoosh.mp3"></audio>
-      <audio id="wh-3" class="clip" data-start="13.40" data-duration="0.55" data-track-index="14" data-volume="0.45" src="pilots/pilot-08-cocomelon/assets/audio/sfx/whoosh.mp3"></audio>
-      <audio id="wh-4" class="clip" data-start="20.90" data-duration="0.55" data-track-index="15" data-volume="0.45" src="pilots/pilot-08-cocomelon/assets/audio/sfx/whoosh.mp3"></audio>
-      <audio id="wh-5" class="clip" data-start="28.30" data-duration="0.55" data-track-index="16" data-volume="0.45" src="pilots/pilot-08-cocomelon/assets/audio/sfx/whoosh.mp3"></audio>
-      <audio id="wh-6" class="clip" data-start="36.75" data-duration="0.55" data-track-index="17" data-volume="0.45" src="pilots/pilot-08-cocomelon/assets/audio/sfx/whoosh.mp3"></audio>
-      <audio id="wh-7" class="clip" data-start="46.35" data-duration="0.55" data-track-index="18" data-volume="0.45" src="pilots/pilot-08-cocomelon/assets/audio/sfx/whoosh.mp3"></audio>
-      <audio id="bd-0" class="clip" data-start="0.00" data-duration="0.55" data-track-index="19" data-volume="0.60" src="pilots/pilot-08-cocomelon/assets/audio/sfx/bass-drop.mp3"></audio>
-      <audio id="bd-1" class="clip" data-start="5.55" data-duration="0.55" data-track-index="20" data-volume="0.60" src="pilots/pilot-08-cocomelon/assets/audio/sfx/bass-drop.mp3"></audio>
-      <audio id="bd-2" class="clip" data-start="13.40" data-duration="0.55" data-track-index="21" data-volume="0.60" src="pilots/pilot-08-cocomelon/assets/audio/sfx/bass-drop.mp3"></audio>
-      <audio id="bd-3" class="clip" data-start="20.90" data-duration="0.55" data-track-index="22" data-volume="0.60" src="pilots/pilot-08-cocomelon/assets/audio/sfx/bass-drop.mp3"></audio>
-      <audio id="bd-4" class="clip" data-start="28.30" data-duration="0.55" data-track-index="23" data-volume="0.60" src="pilots/pilot-08-cocomelon/assets/audio/sfx/bass-drop.mp3"></audio>
-      <audio id="bd-5" class="clip" data-start="36.75" data-duration="0.55" data-track-index="24" data-volume="0.60" src="pilots/pilot-08-cocomelon/assets/audio/sfx/bass-drop.mp3"></audio>
-      <audio id="bd-6" class="clip" data-start="58.20" data-duration="0.55" data-track-index="25" data-volume="0.60" src="pilots/pilot-08-cocomelon/assets/audio/sfx/bass-drop.mp3"></audio>
+      <audio id="voiceover" class="clip" data-start="0" data-duration="82" data-track-index="8" data-volume="1.0" src="pilots/pilot-09-mensonges/assets/audio/voiceover.mp3"></audio>
+      <audio id="wh-0" class="clip" data-start="6.89" data-duration="0.55" data-track-index="11" data-volume="0.40" src="pilots/pilot-09-mensonges/assets/audio/sfx/whoosh.mp3"></audio>
+      <audio id="wh-1" class="clip" data-start="19.65" data-duration="0.55" data-track-index="12" data-volume="0.40" src="pilots/pilot-09-mensonges/assets/audio/sfx/whoosh.mp3"></audio>
+      <audio id="wh-2" class="clip" data-start="30.73" data-duration="0.55" data-track-index="13" data-volume="0.40" src="pilots/pilot-09-mensonges/assets/audio/sfx/whoosh.mp3"></audio>
+      <audio id="wh-3" class="clip" data-start="44.40" data-duration="0.55" data-track-index="14" data-volume="0.40" src="pilots/pilot-09-mensonges/assets/audio/sfx/whoosh.mp3"></audio>
+      <audio id="wh-4" class="clip" data-start="56.07" data-duration="0.55" data-track-index="15" data-volume="0.40" src="pilots/pilot-09-mensonges/assets/audio/sfx/whoosh.mp3"></audio>
+      <audio id="wh-5" class="clip" data-start="70.32" data-duration="0.55" data-track-index="16" data-volume="0.40" src="pilots/pilot-09-mensonges/assets/audio/sfx/whoosh.mp3"></audio>
+      <audio id="bd-0" class="clip" data-start="0.00" data-duration="0.55" data-track-index="20" data-volume="0.45" src="pilots/pilot-09-mensonges/assets/audio/sfx/bass-drop.mp3"></audio>
+      <audio id="bd-1" class="clip" data-start="70.32" data-duration="0.55" data-track-index="21" data-volume="0.45" src="pilots/pilot-09-mensonges/assets/audio/sfx/bass-drop.mp3"></audio>
     </div>
     <script>
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#fg-0", { scale: 1.045 }, { scale: 1.00, duration: 0.30, ease: "power2.out" }, 0.0);
+      tl.to("#fg-0", { scale: 1.03, duration: 6.59, ease: "power1.inOut" }, 0.3);
+      tl.fromTo("#bg-0", { scale: 1.08 }, { scale: 1.14, duration: 6.89, ease: "none" }, 0.0);
+      tl.fromTo("#fg-1", { scale: 1.045 }, { scale: 1.00, duration: 0.30, ease: "power2.out" }, 6.89);
+      tl.to("#fg-1", { scale: 1.03, duration: 12.46, ease: "power1.inOut" }, 7.1899999999999995);
+      tl.fromTo("#bg-1", { scale: 1.08 }, { scale: 1.14, duration: 12.76, ease: "none" }, 6.89);
+      tl.fromTo("#fg-2", { scale: 1.045 }, { scale: 1.00, duration: 0.30, ease: "power2.out" }, 19.65);
+      tl.to("#fg-2", { scale: 1.03, duration: 10.78, ease: "power1.inOut" }, 19.95);
+      tl.fromTo("#bg-2", { scale: 1.08 }, { scale: 1.14, duration: 11.08, ease: "none" }, 19.65);
+      tl.fromTo("#fg-3", { scale: 1.045 }, { scale: 1.00, duration: 0.30, ease: "power2.out" }, 30.73);
+      tl.to("#fg-3", { scale: 1.03, duration: 13.37, ease: "power1.inOut" }, 31.03);
+      tl.fromTo("#bg-3", { scale: 1.08 }, { scale: 1.14, duration: 13.67, ease: "none" }, 30.73);
+      tl.fromTo("#fg-4", { scale: 1.045 }, { scale: 1.00, duration: 0.30, ease: "power2.out" }, 44.4);
+      tl.to("#fg-4", { scale: 1.03, duration: 11.37, ease: "power1.inOut" }, 44.699999999999996);
+      tl.fromTo("#bg-4", { scale: 1.08 }, { scale: 1.14, duration: 11.67, ease: "none" }, 44.4);
+      tl.fromTo("#fg-5", { scale: 1.045 }, { scale: 1.00, duration: 0.30, ease: "power2.out" }, 56.07);
+      tl.to("#fg-5", { scale: 1.03, duration: 13.95, ease: "power1.inOut" }, 56.37);
+      tl.fromTo("#bg-5", { scale: 1.08 }, { scale: 1.14, duration: 14.25, ease: "none" }, 56.07);
+      tl.fromTo("#fg-6", { scale: 1.045 }, { scale: 1.00, duration: 0.30, ease: "power2.out" }, 70.32);
+      tl.to("#fg-6", { scale: 1.03, duration: 11.38, ease: "power1.inOut" }, 70.61999999999999);
+      tl.fromTo("#bg-6", { scale: 1.08 }, { scale: 1.14, duration: 11.68, ease: "none" }, 70.32);
 
-      tl.fromTo("#img-0", { scale: 1.00 }, { scale: 1.22, duration: 0.07, ease: "power3.out" }, 0.0);
-      tl.to("#img-0", { scale: 1.04, duration: 0.07, ease: "power3.in" }, 0.07);
-      tl.to("#img-0", { scale: 1.20, duration: 0.07, ease: "power3.out" }, 0.14);
-      tl.to("#img-0", { scale: 1.03, duration: 0.07, ease: "power3.in" }, 0.21);
-      tl.to("#img-0", { scale: 1.18, duration: 0.06, ease: "power3.out" }, 0.28);
-      tl.to("#img-0", { scale: 1.00, duration: 0.40, ease: "power2.out" }, 0.34);
-      tl.to("#img-0", { scale: 1.10, duration: 2.76, ease: "power1.in" }, 0.74);
-      tl.fromTo("#img-1", { scale: 1.02 }, { scale: 1.14, duration: 2.0, ease: "none" }, 3.5);
-      tl.fromTo("#img-2", { scale: 1.02 }, { scale: 1.14, duration: 3.1, ease: "none" }, 5.5);
-      tl.fromTo("#img-3", { scale: 1.02 }, { scale: 1.14, duration: 2.4, ease: "none" }, 8.6);
-      tl.fromTo("#img-4", { scale: 1.14 }, { scale: 1.02, duration: 2.4, ease: "none" }, 11.0);
-      tl.fromTo("#img-5", { scale: 1.10, x: -50 }, { scale: 1.10, x: 50, duration: 3.6, ease: "none" }, 13.4);
-      tl.fromTo("#img-6", { scale: 1.14 }, { scale: 1.02, duration: 4.0, ease: "none" }, 17.0);
-      tl.fromTo("#img-7", { scale: 1.10, x: 50 }, { scale: 1.10, x: -50, duration: 3.4, ease: "none" }, 21.0);
-      tl.fromTo("#img-8", { scale: 1.02 }, { scale: 1.14, duration: 3.9, ease: "none" }, 24.4);
-      tl.fromTo("#img-9", { scale: 1.02 }, { scale: 1.14, duration: 4.2, ease: "none" }, 28.3);
-      tl.fromTo("#img-10", { scale: 1.02 }, { scale: 1.14, duration: 4.2, ease: "none" }, 32.5);
-      tl.fromTo("#img-11", { scale: 1.02 }, { scale: 1.14, duration: 3.9, ease: "none" }, 36.7);
-      tl.fromTo("#img-12", { scale: 1.10, x: 50 }, { scale: 1.10, x: -50, duration: 2.69, ease: "none" }, 40.6);
-      tl.fromTo("#img-13", { scale: 1.14 }, { scale: 1.02, duration: 3.0, ease: "none" }, 43.3);
-      tl.fromTo("#img-14", { scale: 1.02 }, { scale: 1.14, duration: 2.9, ease: "none" }, 46.3);
-      tl.fromTo("#img-15", { scale: 1.10, x: 50 }, { scale: 1.10, x: -50, duration: 4.59, ease: "none" }, 49.2);
-      tl.fromTo("#img-16", { scale: 1.14 }, { scale: 1.02, duration: 4.3, ease: "none" }, 53.8);
-      tl.fromTo("#img-17", { scale: 1.02 }, { scale: 1.14, duration: 3.9, ease: "none" }, 58.1);
-
-
-      tl.from("#cap-hook-0", { scale: 0.3, opacity: 0, rotation: -8, duration: 0.18, ease: "back.out(4.0)" }, 0.5);
-      tl.to("#cap-hook-0",   { scale: 1.12, duration: 0.06, ease: "power2.out" }, 0.6799999999999999);
-      tl.to("#cap-hook-0",   { scale: 1.00, duration: 0.10, ease: "power2.in" }, 0.74);
-
-      tl.from("#cap-hook-1", { scale: 0.5, opacity: 0, duration: 0.22, ease: "back.out(3.5)" }, 1.8);
-      tl.to("#cap-hook-1",   { x: 8,  duration: 0.04 }, 2.02);
-      tl.to("#cap-hook-1",   { x: -7, duration: 0.04 }, 2.06);
-      tl.to("#cap-hook-1",   { x: 5,  duration: 0.04 }, 2.1);
-      tl.to("#cap-hook-1",   { x: 0,  duration: 0.06 }, 2.14);
-      tl.from("#cap-hook-2", { y: 40, scale: 0.7, opacity: 0, duration: 0.22, ease: "back.out(3.0)" }, 3.2);
-      tl.from("#cap-hook-3", { y: 40, scale: 0.7, opacity: 0, duration: 0.22, ease: "back.out(3.0)" }, 4.25);
-      tl.from("#cap-bridge-0", { y: 40, scale: 0.7, opacity: 0, duration: 0.22, ease: "back.out(3.0)" }, 5.55);
-
-      tl.from("#cap-bridge-1", { scale: 0.5, opacity: 0, duration: 0.22, ease: "back.out(3.5)" }, 7.1);
-      tl.to("#cap-bridge-1",   { x: 8,  duration: 0.04 }, 7.319999999999999);
-      tl.to("#cap-bridge-1",   { x: -7, duration: 0.04 }, 7.359999999999999);
-      tl.to("#cap-bridge-1",   { x: 5,  duration: 0.04 }, 7.3999999999999995);
-      tl.to("#cap-bridge-1",   { x: 0,  duration: 0.06 }, 7.4399999999999995);
-      tl.from("#cap-bridge-2", { y: 40, scale: 0.7, opacity: 0, duration: 0.22, ease: "back.out(3.0)" }, 8.6);
-      tl.from("#cap-bridge-3", { y: 40, scale: 0.7, opacity: 0, duration: 0.22, ease: "back.out(3.0)" }, 10.85);
-
-      tl.from("#cap-body-0", { scale: 0.5, opacity: 0, duration: 0.22, ease: "back.out(3.5)" }, 13.4);
-      tl.to("#cap-body-0",   { x: 8,  duration: 0.04 }, 13.620000000000001);
-      tl.to("#cap-body-0",   { x: -7, duration: 0.04 }, 13.66);
-      tl.to("#cap-body-0",   { x: 5,  duration: 0.04 }, 13.700000000000001);
-      tl.to("#cap-body-0",   { x: 0,  duration: 0.06 }, 13.74);
-      tl.from("#cap-body-1", { y: 40, scale: 0.7, opacity: 0, duration: 0.22, ease: "back.out(3.0)" }, 14.5);
-      tl.from("#cap-body-2", { y: 40, scale: 0.7, opacity: 0, duration: 0.22, ease: "back.out(3.0)" }, 15.65);
-      tl.from("#cap-body-3", { y: 40, scale: 0.7, opacity: 0, duration: 0.22, ease: "back.out(3.0)" }, 17.9);
-
-      tl.from("#cap-body-4", { scale: 0.5, opacity: 0, duration: 0.22, ease: "back.out(3.5)" }, 20.9);
-      tl.to("#cap-body-4",   { x: 8,  duration: 0.04 }, 21.119999999999997);
-      tl.to("#cap-body-4",   { x: -7, duration: 0.04 }, 21.16);
-      tl.to("#cap-body-4",   { x: 5,  duration: 0.04 }, 21.2);
-      tl.to("#cap-body-4",   { x: 0,  duration: 0.06 }, 21.24);
-      tl.from("#cap-body-5", { y: 40, scale: 0.7, opacity: 0, duration: 0.22, ease: "back.out(3.0)" }, 22.9);
-      tl.from("#cap-body-6", { y: 40, scale: 0.7, opacity: 0, duration: 0.22, ease: "back.out(3.0)" }, 24.35);
-      tl.from("#cap-body-7", { y: 40, scale: 0.7, opacity: 0, duration: 0.22, ease: "back.out(3.0)" }, 27.35);
-
-      tl.from("#cap-body-8", { scale: 0.5, opacity: 0, duration: 0.22, ease: "back.out(3.5)" }, 28.3);
-      tl.to("#cap-body-8",   { x: 8,  duration: 0.04 }, 28.52);
-      tl.to("#cap-body-8",   { x: -7, duration: 0.04 }, 28.560000000000002);
-      tl.to("#cap-body-8",   { x: 5,  duration: 0.04 }, 28.6);
-      tl.to("#cap-body-8",   { x: 0,  duration: 0.06 }, 28.64);
-      tl.from("#cap-body-9", { y: 40, scale: 0.7, opacity: 0, duration: 0.22, ease: "back.out(3.0)" }, 29.95);
-      tl.from("#cap-body-10", { y: 40, scale: 0.7, opacity: 0, duration: 0.22, ease: "back.out(3.0)" }, 32.55);
-      tl.from("#cap-body-11", { y: 40, scale: 0.7, opacity: 0, duration: 0.22, ease: "back.out(3.0)" }, 34.6);
-
-      tl.from("#cap-body-12", { scale: 0.5, opacity: 0, duration: 0.22, ease: "back.out(3.5)" }, 36.75);
-      tl.to("#cap-body-12",   { x: 8,  duration: 0.04 }, 36.97);
-      tl.to("#cap-body-12",   { x: -7, duration: 0.04 }, 37.01);
-      tl.to("#cap-body-12",   { x: 5,  duration: 0.04 }, 37.05);
-      tl.to("#cap-body-12",   { x: 0,  duration: 0.06 }, 37.09);
-      tl.from("#cap-body-13", { y: 40, scale: 0.7, opacity: 0, duration: 0.22, ease: "back.out(3.0)" }, 39.4);
-      tl.from("#cap-body-14", { y: 40, scale: 0.7, opacity: 0, duration: 0.22, ease: "back.out(3.0)" }, 40.6);
-
-      tl.from("#cap-body-15", { scale: 0.5, opacity: 0, duration: 0.22, ease: "back.out(3.5)" }, 43.3);
-      tl.to("#cap-body-15",   { x: 8,  duration: 0.04 }, 43.519999999999996);
-      tl.to("#cap-body-15",   { x: -7, duration: 0.04 }, 43.559999999999995);
-      tl.to("#cap-body-15",   { x: 5,  duration: 0.04 }, 43.599999999999994);
-      tl.to("#cap-body-15",   { x: 0,  duration: 0.06 }, 43.64);
-
-      tl.from("#cap-body-16", { scale: 0.5, opacity: 0, duration: 0.22, ease: "back.out(3.5)" }, 46.35);
-      tl.to("#cap-body-16",   { x: 8,  duration: 0.04 }, 46.57);
-      tl.to("#cap-body-16",   { x: -7, duration: 0.04 }, 46.61);
-      tl.to("#cap-body-16",   { x: 5,  duration: 0.04 }, 46.65);
-      tl.to("#cap-body-16",   { x: 0,  duration: 0.06 }, 46.690000000000005);
-      tl.from("#cap-body-17", { y: 40, scale: 0.7, opacity: 0, duration: 0.22, ease: "back.out(3.0)" }, 49.25);
-      tl.from("#cap-body-18", { y: 40, scale: 0.7, opacity: 0, duration: 0.22, ease: "back.out(3.0)" }, 53.9);
-
-      tl.from("#cap-outro-0", { scale: 0.5, opacity: 0, duration: 0.22, ease: "back.out(3.5)" }, 58.2);
-      tl.to("#cap-outro-0",   { x: 8,  duration: 0.04 }, 58.42);
-      tl.to("#cap-outro-0",   { x: -7, duration: 0.04 }, 58.46);
-      tl.to("#cap-outro-0",   { x: 5,  duration: 0.04 }, 58.5);
-      tl.to("#cap-outro-0",   { x: 0,  duration: 0.06 }, 58.540000000000006);
-      tl.from("#cap-outro-1", { y: 40, scale: 0.7, opacity: 0, duration: 0.22, ease: "back.out(3.0)" }, 60.25);
-
-      tl.fromTo("#flash-0", { opacity: 0 }, { opacity: 0.9, duration: 0.03, ease: "none" }, 0.0);
-      tl.to("#flash-0", { opacity: 0, duration: 0.07, ease: "power1.out" }, 0.03);
-      tl.fromTo("#flash-1", { opacity: 0 }, { opacity: 0.95, duration: 0.03, ease: "none" }, 5.55);
-      tl.to("#flash-1", { opacity: 0, duration: 0.07, ease: "power1.out" }, 5.58);
-      tl.fromTo("#flash-2", { opacity: 0 }, { opacity: 1.0, duration: 0.03, ease: "none" }, 10.8);
-      tl.to("#flash-2", { opacity: 0, duration: 0.03, ease: "power1.out" }, 10.83);
-      tl.fromTo("#flash-3", { opacity: 0 }, { opacity: 0.85, duration: 0.03, ease: "none" }, 13.4);
-      tl.to("#flash-3", { opacity: 0, duration: 0.05, ease: "power1.out" }, 13.43);
-      tl.fromTo("#flash-4", { opacity: 0 }, { opacity: 0.85, duration: 0.03, ease: "none" }, 20.9);
-      tl.to("#flash-4", { opacity: 0, duration: 0.05, ease: "power1.out" }, 20.93);
-      tl.fromTo("#flash-5", { opacity: 0 }, { opacity: 0.85, duration: 0.03, ease: "none" }, 28.3);
-      tl.to("#flash-5", { opacity: 0, duration: 0.05, ease: "power1.out" }, 28.330000000000002);
-      tl.fromTo("#flash-6", { opacity: 0 }, { opacity: 0.95, duration: 0.03, ease: "none" }, 36.75);
-      tl.to("#flash-6", { opacity: 0, duration: 0.07, ease: "power1.out" }, 36.78);
-      tl.fromTo("#flash-7", { opacity: 0 }, { opacity: 0.85, duration: 0.03, ease: "none" }, 46.35);
-      tl.to("#flash-7", { opacity: 0, duration: 0.05, ease: "power1.out" }, 46.38);
-
-
-      tl.to("#shake-wrap", { x: 8,  y: -5, duration: 0.04, ease: "none" }, 0.0);
-      tl.to("#shake-wrap", { x: -7, y: 4,  duration: 0.04, ease: "none" }, 0.04);
-      tl.to("#shake-wrap", { x: 5,  y: -3, duration: 0.04, ease: "none" }, 0.08);
-      tl.to("#shake-wrap", { x: -3, y: 2,  duration: 0.04, ease: "none" }, 0.12);
-      tl.to("#shake-wrap", { x: 0,  y: 0,  duration: 0.05, ease: "power2.out" }, 0.16);
-      tl.to("#shake-wrap", { x: 8,  y: -5, duration: 0.04, ease: "none" }, 5.55);
-      tl.to("#shake-wrap", { x: -7, y: 4,  duration: 0.04, ease: "none" }, 5.59);
-      tl.to("#shake-wrap", { x: 5,  y: -3, duration: 0.04, ease: "none" }, 5.63);
-      tl.to("#shake-wrap", { x: -3, y: 2,  duration: 0.04, ease: "none" }, 5.67);
-      tl.to("#shake-wrap", { x: 0,  y: 0,  duration: 0.05, ease: "power2.out" }, 5.71);
-      tl.to("#shake-wrap", { x: 8,  y: -5, duration: 0.04, ease: "none" }, 13.4);
-      tl.to("#shake-wrap", { x: -7, y: 4,  duration: 0.04, ease: "none" }, 13.44);
-      tl.to("#shake-wrap", { x: 5,  y: -3, duration: 0.04, ease: "none" }, 13.48);
-      tl.to("#shake-wrap", { x: -3, y: 2,  duration: 0.04, ease: "none" }, 13.52);
-      tl.to("#shake-wrap", { x: 0,  y: 0,  duration: 0.05, ease: "power2.out" }, 13.56);
-      tl.to("#shake-wrap", { x: 8,  y: -5, duration: 0.04, ease: "none" }, 20.9);
-      tl.to("#shake-wrap", { x: -7, y: 4,  duration: 0.04, ease: "none" }, 20.939999999999998);
-      tl.to("#shake-wrap", { x: 5,  y: -3, duration: 0.04, ease: "none" }, 20.979999999999997);
-      tl.to("#shake-wrap", { x: -3, y: 2,  duration: 0.04, ease: "none" }, 21.02);
-      tl.to("#shake-wrap", { x: 0,  y: 0,  duration: 0.05, ease: "power2.out" }, 21.06);
-      tl.to("#shake-wrap", { x: 8,  y: -5, duration: 0.04, ease: "none" }, 28.3);
-      tl.to("#shake-wrap", { x: -7, y: 4,  duration: 0.04, ease: "none" }, 28.34);
-      tl.to("#shake-wrap", { x: 5,  y: -3, duration: 0.04, ease: "none" }, 28.38);
-      tl.to("#shake-wrap", { x: -3, y: 2,  duration: 0.04, ease: "none" }, 28.42);
-      tl.to("#shake-wrap", { x: 0,  y: 0,  duration: 0.05, ease: "power2.out" }, 28.46);
-      tl.to("#shake-wrap", { x: 8,  y: -5, duration: 0.04, ease: "none" }, 36.75);
-      tl.to("#shake-wrap", { x: -7, y: 4,  duration: 0.04, ease: "none" }, 36.79);
-      tl.to("#shake-wrap", { x: 5,  y: -3, duration: 0.04, ease: "none" }, 36.83);
-      tl.to("#shake-wrap", { x: -3, y: 2,  duration: 0.04, ease: "none" }, 36.87);
-      tl.to("#shake-wrap", { x: 0,  y: 0,  duration: 0.05, ease: "power2.out" }, 36.91);
-      tl.to("#shake-wrap", { x: 8,  y: -5, duration: 0.04, ease: "none" }, 58.2);
-      tl.to("#shake-wrap", { x: -7, y: 4,  duration: 0.04, ease: "none" }, 58.24);
-      tl.to("#shake-wrap", { x: 5,  y: -3, duration: 0.04, ease: "none" }, 58.28);
-      tl.to("#shake-wrap", { x: -3, y: 2,  duration: 0.04, ease: "none" }, 58.32);
-      tl.to("#shake-wrap", { x: 0,  y: 0,  duration: 0.05, ease: "power2.out" }, 58.36);
-
+      tl.to("#shake-wrap", { x: 6,  y: -3, duration: 0.04, ease: "none" }, 0);
+      tl.to("#shake-wrap", { x: -5, y: 3,  duration: 0.04, ease: "none" }, 0.04);
+      tl.to("#shake-wrap", { x: 4,  y: -2, duration: 0.04, ease: "none" }, 0.08);
+      tl.to("#shake-wrap", { x: 0,  y: 0,  duration: 0.05, ease: "power2.out" }, 0.12);
       window.__timelines["main"] = tl;
     </script>
   </body>
