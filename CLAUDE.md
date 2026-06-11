@@ -26,7 +26,9 @@
 
 ```bash
 npm run dev          # preview in browser (studio editor)
-npm run check        # lint + validate + inspect
+npm run check        # lint + validate + inspect + timeline audit
+npm run audit        # overlap + long-form pacing density audit
+npm run generate:recent # regenerate pilots 09-14 and root index.html
 npm run render       # render to MP4
 npm run publish      # publish and get a shareable link
 npx hyperframes lint --verbose  # include info-level findings
@@ -66,6 +68,12 @@ npm run check
 ```
 
 Fix all errors before presenting the result. Inspect warnings should be reviewed before rendering.
+
+## Long-Form Reels/TikTok Guardrails
+
+Videos over 60s should be generated through `scripts/hf_dynamic_carousel.py` via `npm run generate:recent` or the `gen_p09`-`gen_p14` wrappers. The template keeps carousel assets but adds 2-3s cuts, transcript-derived captions, a music bed, SFX beats, flashes, shakes, and rounded timings with tiny gaps so same-track float overlaps do not reappear.
+
+`npm run audit` checks `index.html` plus pilots 09-14 for overlaps, missing `clip` classes, cut/caption density, max image hold, music presence, SFX count, and voiceover duration drift.
 
 ## Key Rules
 

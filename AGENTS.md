@@ -14,7 +14,9 @@ Skills encode patterns like `window.__timelines` registration, `data-*` attribut
 
 ```bash
 npm run dev          # preview in browser (studio editor)
-npm run check        # lint + validate + inspect
+npm run check        # lint + validate + inspect + timeline audit
+npm run audit        # local overlap + long-form pacing density audit
+npm run generate:recent # regenerate pilots 09-14 and root index.html
 npm run render       # render to MP4
 npm run publish      # publish and get a shareable link
 npx hyperframes docs <topic> # reference docs in terminal
@@ -37,6 +39,18 @@ npm run check
 ```
 
 Fix all errors before presenting the result.
+
+## Long-Form TikTok/Reels Workflow
+
+For videos over 60s, do not ship a 7-slide static carousel. Use `scripts/hf_dynamic_carousel.py` through `npm run generate:recent` or the `gen_p09`-`gen_p14` wrappers so the output has:
+
+- short visual cuts around 2-3s, with no image hold over 4.2s
+- frequent transcript-derived caption overlays
+- a music bed plus whoosh/bass SFX on section beats
+- deterministic flashes/shakes registered in the paused GSAP timeline
+- rounded timings with tiny same-track gaps to avoid float overlap errors
+
+`npm run audit` enforces the long-form pacing guardrails for `index.html` and pilots 09-14.
 
 ## Key Rules
 
