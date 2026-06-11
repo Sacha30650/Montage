@@ -3,9 +3,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "npx --yes hyperframes@0.6.4 preview",
-    "check": "npx --yes hyperframes@0.6.4 lint && npx --yes hyperframes@0.6.4 validate && npx --yes hyperframes@0.6.4 inspect",
-    "render": "npx --yes hyperframes@0.6.4 render",
-    "publish": "npx --yes hyperframes@0.6.4 publish"
+    "dev": "npx --yes hyperframes@0.6.91 preview",
+    "check": "npx --yes hyperframes@0.6.91 lint && npx --yes hyperframes@0.6.91 validate && npx --yes hyperframes@0.6.91 inspect && npm run audit",
+    "audit": "python3 scripts/audit_timelines.py",
+    "generate:recent": "python3 scripts/gen_recent_dynamic.py",
+    "render": "npx --yes hyperframes@0.6.91 render",
+    "publish": "npx --yes hyperframes@0.6.91 publish"
   }
 }

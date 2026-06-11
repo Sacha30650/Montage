@@ -1,6 +1,11 @@
 node_modules/
 dist/
 renders/
+/out/
+/pilots/*/out/
+/deliverables*/**/*.mp4
+.agents/
+skills-lock.json
 *.log
 .DS_Store
 .env
