@@ -96,6 +96,24 @@ RECENT_PILOTS = {
         "slug": "pilot-14-parle-tard",
         "total_dur": 64,
         "asset_prefix": "pilots/pilot-14-parle-tard/assets",
+        # Full-bleed Higgsfield b-roll (see assets/visual-plans/pilot-14-parle-tard.json).
+        # Used automatically when every file exists in assets/broll-hf/; otherwise the
+        # legacy carousel "slides" below remain the fallback.
+        "hf_broll_dir": "broll-hf",
+        "hf_slides": [
+            ("01_hook_a.png", 0.0, 4.0),
+            ("01_hook_b.png", 4.0, 3.2),
+            ("02_empathy.png", 7.2, 3.92),
+            ("03_science_a.png", 11.12, 5.28),
+            ("03_science_b.png", 16.4, 5.36),
+            ("04_observe_a.png", 21.76, 6.04),
+            ("04_observe_b.png", 27.8, 5.96),
+            ("05_bamboo_a.png", 33.76, 5.14),
+            ("05_bamboo_b.png", 38.9, 5.1),
+            ("06_advice_a.png", 44.0, 6.8),
+            ("06_advice_b.png", 50.8, 6.71),
+            ("07_cta.png", 57.51, 6.49),
+        ],
         "slides": [
             ("01_hook.png", 0.0, 7.20),
             ("02_empathy.png", 7.20, 3.92),

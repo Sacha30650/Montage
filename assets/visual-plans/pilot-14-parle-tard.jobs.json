@@ -1,0 +1,20 @@
+{
+  "pilot": "pilot-14-parle-tard",
+  "model": "soul_2 (text2image_soul_v2), 9:16, 2k",
+  "submitted": "2026-06-11",
+  "target_dir": "pilots/pilot-14-parle-tard/assets/broll-hf",
+  "jobs": {
+    "01_hook_a.png": "2439a651-686c-4f16-836c-220c25d99769",
+    "01_hook_b.png": "2f6c4989-a57d-494d-98e3-cf1640c5b30b",
+    "02_empathy.png": "d2ed3c97-4d26-4f7f-9f0e-eb2a76ac6a97",
+    "03_science_a.png": "e26a0928-34f5-486d-a59b-9d379fa43082",
+    "03_science_b.png": "3434a611-907f-4124-81e3-cca976b72732",
+    "04_observe_a.png": "0b024031-a468-4d28-a6a7-fb470cbc4427",
+    "04_observe_b.png": "2dfdd5db-b555-4a5d-b2fc-605b406fa4a0",
+    "05_bamboo_a.png": "8c519d5e-7af1-48f7-a064-87a0d931cea4",
+    "05_bamboo_b.png": "defaa87a-8835-4a1c-aba2-b31477d73eee",
+    "06_advice_a.png": "f921f0af-6811-4cc8-b0e7-a5086477c0ab",
+    "06_advice_b.png": "82123b79-162f-45b8-b49c-068f730b4c38",
+    "07_cta.png": "fc73a8af-35fd-40f6-a8bd-aaad79582d41"
+  }
+}
