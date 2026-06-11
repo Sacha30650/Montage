@@ -208,11 +208,28 @@ def shake_tween(start: float) -> str:
       tl.to("#shake-wrap", {{ x: 0, y: 0, duration: 0.06, ease: "power2.out" }}, {sec(start + 0.12)});"""
 
 
+def resolve_slides(config: dict[str, object]) -> tuple[list[tuple[str, float, float]], str, bool]:
+    """Prefer full-bleed Higgsfield b-roll when every file exists; else legacy carousel slides.
+
+    Returns (slides, broll_dir, full_bleed).
+    """
+    asset = str(config["asset_prefix"])
+    hf_slides = config.get("hf_slides")
+    hf_dir = str(config.get("hf_broll_dir", "broll-hf"))
+    if hf_slides:
+        missing = [name for name, _, _ in hf_slides if not asset_exists(f"{asset}/{hf_dir}/{name}")]
+        if not missing:
+            return list(hf_slides), hf_dir, True
+        print(f"[hf_dynamic_carousel] {config['slug']}: missing {len(missing)} Higgsfield asset(s) "
+              f"in {hf_dir} ({', '.join(missing[:3])}…) — falling back to legacy slides")
+    return list(config["slides"]), "broll", False  # type: ignore[arg-type]
+
+
 def render_html(config: dict[str, object]) -> str:
     slug = str(config["slug"])
     total = float(config["total_dur"])
     asset = str(config["asset_prefix"])
-    slides = list(config["slides"])  # type: ignore[arg-type]
+    slides, broll_dir, full_bleed = resolve_slides(config)
     slide_height = int(config.get("slide_height", 1335))
     slide_top = int(config.get("slide_top", 292))
     pilot_dir = ROOT / "pilots" / slug
@@ -229,18 +246,19 @@ def render_html(config: dict[str, object]) -> str:
         duration = float(cut["duration"])
         duration_attr = sec(safe_duration(duration))
         filename = str(cut["filename"])
-        src = f"{asset}/broll/{filename}"
+        src = f"{asset}/{broll_dir}/{filename}"
         bg_id = f"bg-{idx}"
         fg_id = f"fg-{idx}"
-        img_html.append(
-            f'      <div id="{bg_id}" class="clip bg-blur" data-start="{sec(start)}" '
-            f'data-duration="{duration_attr}" data-track-index="0" style="background-image:url(&quot;{src}&quot;)"></div>'
-        )
+        if not full_bleed:
+            img_html.append(
+                f'      <div id="{bg_id}" class="clip bg-blur" data-start="{sec(start)}" '
+                f'data-duration="{duration_attr}" data-track-index="0" style="background-image:url(&quot;{src}&quot;)"></div>'
+            )
+            anim_lines.append(image_tween(bg_id, start, duration, str(cut["direction"]), is_bg=True))
         img_html.append(
             f'      <img id="{fg_id}" class="clip slide-fg" data-start="{sec(start)}" '
             f'data-duration="{duration_attr}" data-track-index="1" src="{src}" />'
         )
-        anim_lines.append(image_tween(bg_id, start, duration, str(cut["direction"]), is_bg=True))
         anim_lines.append(image_tween(fg_id, start, duration, str(cut["direction"])))
 
     caption_html: list[str] = []
@@ -299,6 +317,28 @@ def render_html(config: dict[str, object]) -> str:
 
     shake_anim = "".join(shake_tween(time) for time in times["beats"][:8])
 
+    if full_bleed:
+        slide_css = """.slide-fg {
+        position:absolute; left:0; top:0; width:1080px; height:1920px;
+        object-fit:cover; transform-origin:center; z-index:1;
+      }"""
+        scrim_css = """.scrim {
+        position:absolute; inset:0; z-index:2; pointer-events:none;
+        background:
+          radial-gradient(ellipse 140% 90% at 50% 38%, rgba(0,0,0,0) 52%, rgba(0,0,0,0.42) 100%),
+          linear-gradient(180deg, rgba(0,0,0,0.34) 0%, rgba(0,0,0,0.04) 30%, rgba(0,0,0,0.10) 54%, rgba(0,0,0,0.50) 72%, rgba(0,0,0,0.80) 100%);
+      }"""
+    else:
+        slide_css = f""".slide-fg {{
+        position:absolute; left:0; right:0; width:1080px; height:{slide_height}px; top:{slide_top}px;
+        object-fit:contain; transform-origin:center; z-index:1;
+        filter: drop-shadow(0 26px 48px rgba(0,0,0,0.45));
+      }}"""
+        scrim_css = """.scrim {
+        position:absolute; inset:0; z-index:2; pointer-events:none;
+        background:linear-gradient(180deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.14) 34%, rgba(0,0,0,0.58) 56%, rgba(0,0,0,0.92) 100%);
+      }"""
+
     return f"""<!doctype html>
 <html lang="fr">
   <head>
@@ -316,15 +356,8 @@ def render_html(config: dict[str, object]) -> str:
         position:absolute; inset:-70px; background-size:cover; background-position:center;
         filter: blur(44px) brightness(0.62) saturate(1.18); transform-origin:center; z-index:0;
       }}
-      .slide-fg {{
-        position:absolute; left:0; right:0; width:1080px; height:{slide_height}px; top:{slide_top}px;
-        object-fit:contain; transform-origin:center; z-index:1;
-        filter: drop-shadow(0 26px 48px rgba(0,0,0,0.45));
-      }}
-      .scrim {{
-        position:absolute; inset:0; z-index:2; pointer-events:none;
-        background:linear-gradient(180deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.14) 34%, rgba(0,0,0,0.58) 56%, rgba(0,0,0,0.92) 100%);
-      }}
+      {slide_css}
+      {scrim_css}
       .caption {{
         position:absolute; left:64px; right:64px; top:1248px; z-index:4;
         min-height:132px; display:flex; align-items:center; justify-content:center;

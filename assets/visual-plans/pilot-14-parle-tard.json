@@ -1,0 +1,126 @@
+{
+  "pilot": "pilot-14-parle-tard",
+  "title": "Ton enfant parle tard. Et alors ?",
+  "format": "9:16 vertical, 1080x1920, full-bleed photographic b-roll",
+  "style_dna": "Authentic documentary family photography. Cinematic warm natural light, shallow depth of field, 35mm film grain, natural skin texture, European home interiors. Emotional, intimate, never stocky. ABSOLUTELY NO TEXT, no watermark, no logo in image.",
+  "composition_rules": {
+    "caption_safe_zone": "Captions render between y=62% and y=78% of frame height. Keep faces and key subjects in the upper 55% of the frame; keep the lower third visually calm (floor, bokeh, fabric, shadow).",
+    "tiktok_ui_safe_zone": "Avoid critical detail in the right 12% (like/share rail) and bottom 20% (description bar).",
+    "vertical_negative_space": "Generous headroom or footroom so the 1.08-1.16x Ken Burns zoom never crops the subject's face."
+  },
+  "model": "soul_2",
+  "aspect_ratio": "9:16",
+  "quality": "2k",
+  "scenes": [
+    {
+      "id": "S1-hook",
+      "vo": "Ton enfant parle tard. Et alors ? Pendant qu'il se tait, son cerveau construit autre chose. Quelque chose de précieux.",
+      "time": [0.0, 7.2],
+      "shots": [
+        {
+          "file": "01_hook_a.png",
+          "time": [0.0, 4.0],
+          "prompt": "Extreme close-up portrait of a quiet French toddler boy, 2 years old, lips gently closed, enormous thoughtful brown eyes looking slightly off camera, golden hour window light raking across his face, dark moody background, cinematic documentary photography, 85mm lens, shallow depth of field, natural skin texture, film grain, face in upper half of vertical frame, lower third falls into soft dark bokeh, no text, no watermark"
+        },
+        {
+          "file": "01_hook_b.png",
+          "time": [4.0, 7.2],
+          "prompt": "A silent toddler seen in profile sitting by a rainy window at dusk, blue hour light, his face softly illuminated, intensely watching raindrops, sense of a rich inner world, cinematic still from an A24 film, moody atmosphere, vertical composition with child in upper half, dark uncluttered lower third, 35mm film photography, no text, no watermark"
+        }
+      ]
+    },
+    {
+      "id": "S2-empathy",
+      "vo": "Ce qu'on te répète : 'À son âge, le mien faisait déjà des phrases entières.'",
+      "time": [7.2, 11.12],
+      "shots": [
+        {
+          "file": "02_empathy.png",
+          "time": [7.2, 11.12],
+          "prompt": "A tired young French mother at a playground holding her quiet toddler protectively, other parents chatting blurred in the background, she looks away with a hurt guarded expression, overcast soft daylight, authentic candid documentary photography, emotional, muted colors, mother and child in upper half of vertical frame, blurred ground in lower third, 35mm, natural skin texture, no text, no watermark"
+        }
+      ]
+    },
+    {
+      "id": "S3-science",
+      "vo": "Le cerveau d'un enfant ne peut pas tout développer en parallèle. Certains investissent d'abord la motricité, l'observation, l'imitation.",
+      "time": [11.12, 21.76],
+      "shots": [
+        {
+          "file": "03_science_a.png",
+          "time": [11.12, 16.4],
+          "prompt": "Overhead close shot of toddler hands carefully stacking wooden blocks into a tall tower, intense concentration, warm morning sunlight across a wooden floor, dust particles in light beam, cinematic macro documentary photography, shallow depth of field, vertical composition with hands and tower in upper two thirds, soft empty floor at bottom, no text, no watermark"
+        },
+        {
+          "file": "03_science_b.png",
+          "time": [16.4, 21.76],
+          "prompt": "A determined toddler climbing onto a sofa by himself, mid-effort, tongue slightly out in concentration, cozy French living room with warm lamp light in the evening, candid documentary family photography, motion and energy, 35mm film grain, child in upper half of vertical frame, sofa fabric filling the calm lower third, no text, no watermark"
+        }
+      ]
+    },
+    {
+      "id": "S4-observation",
+      "vo": "Les enfants qui parlent tard observent beaucoup. Ils accumulent en silence. Puis un jour ils sortent des phrases construites qui surprennent tout le monde.",
+      "time": [21.76, 33.76],
+      "shots": [
+        {
+          "file": "04_observe_a.png",
+          "time": [21.76, 27.8],
+          "prompt": "A silent toddler at the corner of a family dinner table watching adults talk, his huge attentive eyes tracking the conversation, warm candle-like dinner light, adults blurred and cropped at frame edge, cinematic documentary photography like a Dardenne brothers film still, vertical frame with the child's face upper third, dark tablecloth lower third, no text, no watermark"
+        },
+        {
+          "file": "04_observe_b.png",
+          "time": [27.8, 33.76],
+          "prompt": "Dramatic close-up of a toddler's ear and cheek in profile against dark background, single beam of warm light, symbolizing deep listening, ultra shallow depth of field, fine baby hair backlit and glowing, cinematic macro photography, mysterious and tender mood, subject in upper half of vertical frame, lower third pure dark bokeh, no text, no watermark"
+        }
+      ]
+    },
+    {
+      "id": "S5-metaphor-bambou",
+      "vo": "C'est comme un bambou qui ne pousse pas. Pendant cinq ans il fabrique ses racines. Puis il grandit de plusieurs mètres en quelques semaines.",
+      "time": [33.76, 44.0],
+      "shots": [
+        {
+          "file": "05_bamboo_a.png",
+          "time": [33.76, 38.9],
+          "prompt": "A tiny lone bamboo shoot emerging from dark rich forest soil, dramatic single ray of sunlight hitting it, surrounding darkness, macro photography, water droplets, mystical patient mood, National Geographic quality, vertical composition with shoot in upper half, dark mossy soil lower third, no text, no watermark"
+        },
+        {
+          "file": "05_bamboo_b.png",
+          "time": [38.9, 44.0],
+          "prompt": "Looking straight up inside a towering green bamboo forest, stalks shooting skyward toward bright sunlight bursting through the canopy, god rays, awe inspiring low angle, vibrant emerald green, cinematic nature photography, strong vertical lines perfect for 9:16, brightest light in upper half of frame, no text, no watermark"
+        }
+      ]
+    },
+    {
+      "id": "S6-advice",
+      "vo": "Parle-lui normalement. Nomme ce qu'il regarde, lis-lui des histoires courtes, laisse-lui du silence pour répondre. Pas de pression, juste de la présence.",
+      "time": [44.0, 57.51],
+      "shots": [
+        {
+          "file": "06_advice_a.png",
+          "time": [44.0, 50.8],
+          "prompt": "A French father reading a picture book to his toddler nestled against him in a warm pool of bedside lamp light, both absorbed, the child's finger pointing at a page, intimate cozy bedroom at night, golden tones, authentic documentary family photography, 35mm film grain, faces in upper half of vertical frame, soft duvet in lower third, no text, no watermark"
+        },
+        {
+          "file": "06_advice_b.png",
+          "time": [50.8, 57.51],
+          "prompt": "Mother and toddler face to face on a sunlit bed in the morning, she waits smiling softly while he opens his mouth about to attempt a word, patient loving eye contact, white linen, airy bright natural light, tender candid moment, documentary family photography, shallow depth of field, faces in upper half of vertical frame, soft white linen lower third, no text, no watermark"
+        }
+      ]
+    },
+    {
+      "id": "S7-cta",
+      "vo": "Il ne parle pas en retard. Il parle quand ses racines sont prêtes.",
+      "time": [57.51, 64.0],
+      "shots": [
+        {
+          "file": "07_cta.png",
+          "time": [57.51, 64.0],
+          "prompt": "A toddler suddenly laughing and saying his first word, face lit with joy, mother lifting him against warm golden sunset light streaming through a window, lens flare, triumphant emotional payoff moment, cinematic backlit documentary photography, film grain, joyful faces in upper half of vertical frame, glowing soft light lower third, no text, no watermark"
+        }
+      ]
+    }
+  ],
+  "fallback": "While Higgsfield assets are missing, hf_dynamic_carousel falls back to the legacy carousel slides in assets/broll/ automatically (see broll_dir config in scripts/recent_pilots.py)."
+}
