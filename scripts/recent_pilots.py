@@ -163,8 +163,9 @@ RECENT_PILOTS = {
         ],
         "slide_height": 1080,
         "slide_top": 420,
-        "music_src": "assets/audio/rasenfieber.mp3",
-        "music_volume": "0.075",
+        # No music bed for this pilot: the previous render felt off with background music.
+        "music_src": "",
+        "music_volume": "0",
     },
 }
 

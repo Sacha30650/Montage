@@ -308,8 +308,8 @@ def render_html(config: dict[str, object]) -> str:
         )
 
     music_src = str(config.get("music_src", "assets/audio/rasenfieber.mp3"))
-    music_tag = ""
-    if asset_exists(music_src):
+    music_tag = "      <!-- no-music-bed: intentional voiceover-only render -->" if not music_src else ""
+    if music_src and asset_exists(music_src):
         music_tag = (
             f'      <audio id="music" class="clip" data-start="0" data-duration="{sec(total)}" '
             f'data-track-index="9" data-volume="{config.get("music_volume", "0.08")}" src="{music_src}"></audio>'
@@ -422,7 +422,7 @@ def render_pilot(config: dict[str, object], write_root: bool = False) -> Path:
 
 def copy_shared_music_to_pilot(config: dict[str, object]) -> None:
     music_src = str(config.get("music_src", "assets/audio/rasenfieber.mp3"))
-    if not asset_exists(music_src):
+    if not music_src or not asset_exists(music_src):
         return
     slug = str(config["slug"])
     destination = ROOT / "pilots" / slug / "assets/audio/music-bed.mp3"

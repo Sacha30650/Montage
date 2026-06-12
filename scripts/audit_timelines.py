@@ -120,8 +120,10 @@ def ffprobe_duration(src: str) -> float | None:
 
 
 def audit_file(path: Path) -> tuple[list[str], list[str], str]:
+    html_text = path.read_text()
     parser = TimelineParser()
-    parser.feed(path.read_text())
+    parser.feed(html_text)
+    no_music_allowed = "no-music-bed" in html_text
     errors: list[str] = []
     warnings: list[str] = []
 
@@ -181,7 +183,7 @@ def audit_file(path: Path) -> tuple[list[str], list[str], str]:
             errors.append(f"{path}: long video needs frequent captions, found {captions_per_min:.1f}/min")
         if max_image_duration > 4.2:
             errors.append(f"{path}: image hold too long ({max_image_duration:.2f}s > 4.2s)")
-        if not music_clips:
+        if not music_clips and not no_music_allowed:
             errors.append(f"{path}: long video has no music bed")
         if len(sfx_clips) < 6:
             warnings.append(f"{path}: fewer than 6 SFX clips on a long video")
