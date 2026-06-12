@@ -5,7 +5,7 @@ from hf_dynamic_carousel import render_pilot
 from recent_pilots import RECENT_ORDER, RECENT_PILOTS
 
 
-ROOT_SLUG = "pilot-14-parle-tard"
+ROOT_SLUG = "pilot-15-ennui"
 
 
 def main() -> None:

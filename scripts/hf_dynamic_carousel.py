@@ -385,7 +385,7 @@ def render_html(config: dict[str, object]) -> str:
   </head>
   <body>
     <div id="root" data-composition-id="main" data-start="0" data-duration="{sec(total)}" data-width="1080" data-height="1920">
-      <div id="shake-wrap">
+      <div id="shake-wrap" data-layout-allow-overflow>
 {chr(10).join(img_html)}
       <div id="scrim" class="clip scrim" data-start="0" data-duration="{sec(total)}" data-track-index="2"></div>
 {chr(10).join(caption_html)}
