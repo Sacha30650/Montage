@@ -308,8 +308,8 @@ def render_html(config: dict[str, object]) -> str:
         )
 
     music_src = str(config.get("music_src", "assets/audio/rasenfieber.mp3"))
-    music_tag = ""
-    if asset_exists(music_src):
+    music_tag = "      <!-- no-music-bed: intentional voiceover-only render -->" if not music_src else ""
+    if music_src and asset_exists(music_src):
         music_tag = (
             f'      <audio id="music" class="clip" data-start="0" data-duration="{sec(total)}" '
             f'data-track-index="9" data-volume="{config.get("music_volume", "0.08")}" src="{music_src}"></audio>'
@@ -385,7 +385,7 @@ def render_html(config: dict[str, object]) -> str:
   </head>
   <body>
     <div id="root" data-composition-id="main" data-start="0" data-duration="{sec(total)}" data-width="1080" data-height="1920">
-      <div id="shake-wrap">
+      <div id="shake-wrap" data-layout-allow-overflow>
 {chr(10).join(img_html)}
       <div id="scrim" class="clip scrim" data-start="0" data-duration="{sec(total)}" data-track-index="2"></div>
 {chr(10).join(caption_html)}
@@ -422,7 +422,7 @@ def render_pilot(config: dict[str, object], write_root: bool = False) -> Path:
 
 def copy_shared_music_to_pilot(config: dict[str, object]) -> None:
     music_src = str(config.get("music_src", "assets/audio/rasenfieber.mp3"))
-    if not asset_exists(music_src):
+    if not music_src or not asset_exists(music_src):
         return
     slug = str(config["slug"])
     destination = ROOT / "pilots" / slug / "assets/audio/music-bed.mp3"
